@@ -14,8 +14,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 //  Declare routes
+const food = require('./routes/food');
+const feedback = require('./routes/feedback');
+const register = require('./routes/register');
+const reports = require('./routes/reports');
 
 //  Connect routes
+app.use('/food', food);
+app.use('/feedback', feedback);
+app.use('/register', register);
+app.use('/reports', reports);
 
 //  Set up connection
 app.get('/*', function(req, res) {
