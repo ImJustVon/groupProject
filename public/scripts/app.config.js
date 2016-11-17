@@ -8,5 +8,5 @@ angular.module('routeApp')
               redirectTo: '/home',
           });
 
-          $locationProvider.html5mode(true);
+          $locationProvider.html5Mode(true);
         }); // end routeApp
