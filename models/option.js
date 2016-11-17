@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 
-const Option = mongoose.model('Option', {
+const optionSchema = {
   name: String,
   score: Number,
   type: String,
-});
+};
 
-module.exports = Option;
+const Option = mongoose.model('Option', optionSchema);
+
+module.exports = { Option, optionSchema };
