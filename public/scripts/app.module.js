@@ -1,1 +1,1 @@
-angular.module('routeApp', ['ngRoute']);
+angular.module('routeApp', ['ngRoute', 'ui.bootstrap']);

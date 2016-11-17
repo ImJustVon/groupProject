@@ -5,7 +5,8 @@ angular.module('routeApp')
           }).when('/login', {
             templateUrl: 'views/login.html',
           }).when('/admin', {
-            templateUrl: 'views/admin.html'
+            templateUrl: 'views/admin.html',
+            controller: 'AdminController as admin',
           }).otherwise({
               redirectTo: '/home',
           });
