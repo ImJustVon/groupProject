@@ -1,11 +1,13 @@
 //  From node_modules
-const express = require('exress');
+const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const connection = require('./connection');
 
 const app = express();
 
 //  Middleware
+connection.connect();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
