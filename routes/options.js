@@ -38,4 +38,31 @@ router.post('/', function (req, res) {
   });
 });
 
+/*
+updates a food with _id of /:id
+expecting this format
+req.body.name = name String
+req.body.score = modifing number
+req.body.type = type string (ex. condement, bun, etc.)
+ */
+router.put('/:id', function (req, res) {
+  Option.update({ _id: id }, { $set: {
+    name: req.body.name,
+    score: req.body.score,
+    type: req.body.type,
+  }, }).then(function () {
+    console.log('Updated an option');
+    res.sendStatus(201);
+  });
+});
+
+/*
+a delete request to /:id where :id is the _id of the document
+ */
+router.delete('/:id', function (req, res) {
+  Option.remove({ id }).then(function () {
+    res.sendStatus(204);
+  });
+});
+
 module.exports = router;

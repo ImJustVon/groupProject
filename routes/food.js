@@ -43,4 +43,40 @@ router.post('/', function (req, res) {
   });
 });
 
+/*
+updates a food with _id of /:id
+expected form
+req.body.name = String with the product name
+req.body.category = string name of the category
+req.body.options = array of option objects
+req.body.score = number score
+req.body.overRide = boolean if they have an overRide
+req.body.overRideValue = letter grade of the overRide
+req.body.tags = array of tags the are added to the food (other searchable terms)
+ */
+router.put('/:id', function (req, res) {
+  //matches _id with id then updates all the values
+  Food.update({ _id: id }, { $set: {
+    name: req.body.name,
+    category: req.body.category,
+    options: req.body.options,
+    score: req.body.score,
+    overRide: req.body.overRide,
+    overRideValue: req.body.overRideValue,
+    tags: req.body.tags,
+  }, }).then(function () {
+    console.log('Updated a food');
+    res.sendStatus(201);
+  });
+});
+
+/*
+a delete request to /:id where :id is the _id of the document
+ */
+router.delete('/:id', function (req, res) {
+  Food.remove({ id }).then(function () {
+    res.sendStatus(204);
+  });
+});
+
 module.exports = router;
