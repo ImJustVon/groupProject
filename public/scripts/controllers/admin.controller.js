@@ -9,7 +9,7 @@ function AdminController($uibModal, $log, $document) {
   admin.open = function (size, parentSelector) {
     var modalInstance = $uibModal.open({
       templateUrl: 'views/demoModal.html',
-      controller: 'ModalAdminController as modal';
+      // controller: 'ModalAdminController as modal',
       // resolve: {
       //   items: function () {
       //     return admin.items;
