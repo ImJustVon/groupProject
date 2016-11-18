@@ -12,9 +12,9 @@ angular.module('routeApp')
           }).when('/results', {
             templateUrl: 'views/results.html',
             controller: 'ResultsController as results'
-          }).when('/choice', {
-            templateUrl: 'views/choice.html',
-            controller: 'ChoiceController as choice'
+          }).when('/categories', {
+            templateUrl: 'views/categories.html',
+            controller: 'CategoriesController as categories'
           }).when('/report', {
             templateUrl: 'views/report.html',
             controller: 'ReportController as report'
