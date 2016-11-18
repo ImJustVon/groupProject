@@ -1,8 +1,8 @@
 angular.module('routeApp')
   .controller('HomeController', HomeController);
 
-function HomeController(NavService) {
+function HomeController(FoodService) {
 
   var home = this;
-  
+
 }

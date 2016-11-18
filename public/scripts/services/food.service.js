@@ -1,8 +1,8 @@
 angular.module('routeApp')
-  .service('NavService', NavService)
+  .service('FoodService', FoodService)
 
 //  Service holds data accessed across multiple controllers
-function NavService ($http) {
+function FoodService ($http) {
 
   var nav = this;
 

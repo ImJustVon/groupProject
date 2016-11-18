@@ -1,8 +1,8 @@
 angular.module('routeApp')
   .controller('CategoriesController', CategoriesController);
 
-function CategoriesController(NavService) {
+function CategoriesController(FoodService) {
 
   var categories = this;
-  
+
 }
