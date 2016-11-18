@@ -66,15 +66,7 @@ req.body.tags = array of tags the are added to the food (other searchable terms)
  */
 router.put('/:id', function (req, res) {
   //matches _id with id then updates all the values
-  Food.update({ _id: id }, { $set: {
-    name: req.body.name,
-    category: req.body.category,
-    options: req.body.options,
-    score: req.body.score,
-    overRide: req.body.overRide,
-    overRideValue: req.body.overRideValue,
-    tags: req.body.tags,
-  }, }).then(function () {
+  Food.update({ _id: id }, req.body).then(function () {
     console.log('Updated a food');
     res.sendStatus(201);
   });

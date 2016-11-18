@@ -28,9 +28,7 @@ expecting this format
 req.body.name = name String
  */
 router.put('/:id', function (req, res) {
-  Category.update({ _id: id }, { $set: {
-    name: req.body.name,
-  }, }).then(function () {
+  Category.update({ _id: id }, req.body).then(function () {
     console.log('updated a category');
     res.sendStatus(201);
   });

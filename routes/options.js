@@ -46,11 +46,7 @@ req.body.score = modifing number
 req.body.type = type string (ex. condement, bun, etc.)
  */
 router.put('/:id', function (req, res) {
-  Option.update({ _id: id }, { $set: {
-    name: req.body.name,
-    score: req.body.score,
-    type: req.body.type,
-  }, }).then(function () {
+  Option.update({ _id: id }, req.body).then(function () {
     console.log('Updated an option');
     res.sendStatus(201);
   });
