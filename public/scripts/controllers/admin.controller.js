@@ -7,9 +7,9 @@ function AdminController($uibModal, $log, $document) {
   admin.animationsEnabled = true;
 
 
-  admin.openNewCategory = function (size, parentSelector) {
+  admin.openNewCategory = function () {
     var modalInstance = $uibModal.open({
-      templateUrl: 'views/newCategoryModal.html',
+      templateUrl: 'views/modals/newCategoryModal.html',
       // controller: 'ModalAdminController as modal',
       // resolve: {
       //   items: function () {
@@ -20,9 +20,9 @@ function AdminController($uibModal, $log, $document) {
   } // end admin.openNewCategory
 
 
-  admin.openNewFood = function (size, parentSelector) {
+  admin.openNewFood = function () {
     var modalInstance = $uibModal.open({
-      templateUrl: 'views/newFoodModal.html',
+      templateUrl: 'views/modals/newFoodModal.html',
       // controller: 'ModalAdminController as modal',
       // resolve: {
       //   items: function () {
@@ -31,6 +31,18 @@ function AdminController($uibModal, $log, $document) {
       // }
     });
   } // end admin.openNewFood
+
+  admin.openNewOption = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: 'views/modals/newOptionModal.html',
+      // controller: 'ModalAdminController as modal',
+      // resolve: {
+      //   items: function () {
+      //     return admin.items;
+      //   }
+      // }
+    });
+  } // end admin.openNewOption
 
 
 

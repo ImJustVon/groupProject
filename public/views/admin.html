@@ -5,7 +5,7 @@
 
   <button type="button" class="btn btn-success" ng-click="admin.openNewCategory()">+ New Category</button>
   <button type="button" class="btn btn-success" ng-click="admin.openNewFood()">+ New Food</button>
-  <button type="button" class="btn btn-success" ng-click="admin.openNewFood()">+ New Option</button>
+  <button type="button" class="btn btn-success" ng-click="admin.openNewOption()">+ New Option</button>
 </div>
 
 
@@ -46,23 +46,27 @@
   <table class="table table-striped">
     <thead>
     <th>Name</th>
+    <th>Category</th>
     <th>Grade</th>
     <th>Modify</th>
   </thead>
   <tbody>
     <tr>
       <td>Hot Dog</td>
-      <td>C</td>
+      <td>Protein</td>
+      <td id="c">C</td>
       <td><button class="btn">Edit</button><button class="btn btn-danger">Delete</button></td>
     </tr>
     <tr>
       <td>Popcorn</td>
-      <td>B</td>
+      <td>Grain</td>
+      <td id="a">B</td>
       <td><button class="btn">Edit</button><button class="btn btn-danger">Delete</button></td>
     </tr>
     <tr>
       <td>Cheeseburger</td>
-      <td>D</td>
+      <td>Protein</td>
+      <td id="f">D</td>
       <td><button class="btn">Edit</button><button class="btn btn-danger">Delete</button></td>
     </tr>
     </tbody>
