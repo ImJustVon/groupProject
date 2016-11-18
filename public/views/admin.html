@@ -4,21 +4,37 @@
   </nav>
 
   <section>
-    <button><a href="/edit">Edit</a></button>
-      <button type="button" class="btn btn-default" ng-click="admin.open()">Add New</button>
+      <button type="button" class="btn btn-success" ng-click="admin.open()">+ New Food</button>
+      <button type="button" class="btn btn-success" ng-click="admin.open()">+ New Category</button>
   </section>
 
 <section>
-  <table>
+  <div class="col-md-2"></div>
+
+  <div class="col-md-8">
+  <table class="table table-striped">
     <tr>
     <th>Name</th>
     <th>Grade</th>
     <th>Modify</th>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>Hot Dog</td>
+      <td>C</td>
+      <td><button>Edit</button><button>Delete</button></td>
+    </tr>
+    <tr>
+      <td>Popcorn</td>
+      <td>B</td>
+      <td><button>Edit</button><button>Delete</button></td>
+    </tr>
+    <tr>
+      <td>Cheeseburger</td>
+      <td>D</td>
+      <td><button>Edit</button><button>Delete</button></td>
     </tr>
   </table>
+  </div>
+
+    <div class="col-md-2"></div>
 </section>

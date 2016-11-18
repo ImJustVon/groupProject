@@ -1,6 +1,66 @@
 <section class="modal-upload">
+<!-- .
+  <div class="col-md-1"></div>
+. -->
+<br />
 
-<label for="csv-upload">Upload CSV:</label>
-<input name="csv-upload" type="file" accept=".csv"/>
+<!--=========== CSV UPLOAD ===========-->
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+
+    <form id="csv-upload">
+      <label for="csv-upload">Upload CSV:</label>
+      <input name="csv-upload" type="file" accept=".csv"/>
+      <button type="submit">Upload</button>
+    </form>
+
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
+
+<!--=========== ADD FOOD ===========-->
+<br />
+
+<!-- CATEGORY -->
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-8">
+    <select>
+      <option selected disabled>Category</option>
+      <option>Fruit</option>
+      <option>Vegetables</option>
+      <option>Grains</option>
+      <option>Protein</option>
+      <option>Dairy</option>
+      <option>Oil</option>
+    </select>
+  </div>
+  <div class="col-md-3"></div></div>
+<br />
+
+  <!-- NAME, SCORE, OVERRIDE -->
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <input id="food-name" type="text" placeholder="Food Name"/>
+    <input id="food-score" type="number" placeholder="Score"/>
+    <input id="food-override-check" type="checkbox" />
+    <label for="food-override">Override</label>
+    <select>
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+      <option>D</option>
+      <option>F</option>
+    </select>
+  </div>
+  <div class="col-md-1"></div>
+
+
+</div>
+
+
 
 </section>

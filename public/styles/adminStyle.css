@@ -1,0 +1,18 @@
+#csv-upload label, input, button {
+  float: left;
+}
+
+#food-name {
+  width: 200px;
+}
+#food-score {
+  width: 70px;
+  margin-left: 20px;
+}
+#food-override-check {
+  margin-left: 40px;
+  margin-right: 10px;
+}
+#food-override {
+  width: 50px;
+}
