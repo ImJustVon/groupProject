@@ -15,7 +15,7 @@ router.get('/search/:word', function (req, res) {
 });
 
 /*
-Gets the whole database
+Gets the whole food database
  */
 router.get('/', function (req, res) {
   Food.find({}).then(function (dataFromTheDatabase) {
