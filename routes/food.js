@@ -24,6 +24,17 @@ router.get('/', function (req, res) {
   });
 });
 
+/*
+adds a new food to the database
+expected form
+req.body.name = String with the product name
+req.body.category = string name of the category
+req.body.options = array of option objects
+req.body.score = number score
+req.body.overRide = boolean if they have an overRide
+req.body.overRideValue = letter grade of the overRide
+req.body.tags = array of tags the are added to the food (other searchable terms)
+ */
 router.post('/', function (req, res) {
   var foodToSave = new Food(req.body);
   foodToSave.save().then(function () {
