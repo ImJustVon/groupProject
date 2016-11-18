@@ -1,40 +1,73 @@
-  <nav class="col-md-12">
-    <a href="/feedback">Feedback</a>
-    <a href="/reports">Reports</a>
-  </nav>
+<!--== SIDEBAR ==-->
+<div class="col-md-2">
+  <a href="/feedback" class="btn btn-info" role="button">Feedback</a>
+  <a href="/reports" class="btn btn-info" role="button">Reports</a>
 
-  <section>
-      <button type="button" class="btn btn-success" ng-click="admin.open()">+ New Food</button>
-      <button type="button" class="btn btn-success" ng-click="admin.open()">+ New Category</button>
-  </section>
+  <button type="button" class="btn btn-success" ng-click="admin.openNewCategory()">+ New Category</button>
+  <button type="button" class="btn btn-success" ng-click="admin.openNewFood()">+ New Food</button>
+  <button type="button" class="btn btn-success" ng-click="admin.openNewFood()">+ New Option</button>
+</div>
 
-<section>
-  <div class="col-md-2"></div>
 
-  <div class="col-md-8">
+
+
+<!--== CONTENT ==-->
+<div class="col-md-10">
+  <h2>Foods</h2>
+
+  <!-- Sort By:-->
+  <select>
+  <option selected disabled>Sort By:</option>
+  <option>Name</option>
+  <option>Category</option>
+  <option>Grade</option>
+</select>
+
+  <!-- Show:-->
+  <select>
+    <option selected disabled>Filter By:</option>
+    <option>Fruit</option>
+    <option>Vegetable</option>
+    <option>Grain</option>
+    <option>Protein</option>
+    <option>Dairy</option>
+    <option>Oil</option>
+  </select>
+
+  <select>
+    <option selected disabled>Location:</option>
+    <option>Ball Game</option>
+    <option>Concession</option>
+    <option>Italian</option>
+    <option>Mexican</option>
+
+  </select>
+
   <table class="table table-striped">
-    <tr>
+    <thead>
     <th>Name</th>
     <th>Grade</th>
     <th>Modify</th>
-    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Hot Dog</td>
       <td>C</td>
-      <td><button>Edit</button><button>Delete</button></td>
+      <td><button class="btn">Edit</button><button class="btn btn-danger">Delete</button></td>
     </tr>
     <tr>
       <td>Popcorn</td>
       <td>B</td>
-      <td><button>Edit</button><button>Delete</button></td>
+      <td><button class="btn">Edit</button><button class="btn btn-danger">Delete</button></td>
     </tr>
     <tr>
       <td>Cheeseburger</td>
       <td>D</td>
-      <td><button>Edit</button><button>Delete</button></td>
+      <td><button class="btn">Edit</button><button class="btn btn-danger">Delete</button></td>
     </tr>
+    </tbody>
   </table>
-  </div>
 
-    <div class="col-md-2"></div>
-</section>
+
+
+</div>

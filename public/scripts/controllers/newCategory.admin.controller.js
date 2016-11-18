@@ -1,1 +1,1 @@
-angular.module('routeApp').controller('NewCatergoryAdminController', NewCategoryAdminController);
+angular.module('routeApp').controller('NewCategoryAdminController', NewCategoryAdminController);
