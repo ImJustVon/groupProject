@@ -41,13 +41,17 @@ select {
 
 /* ----------- SIDEBAR ----------- */
 #sidebar {
-  background: linear-gradient(grey, white);
+  background: linear-gradient(#358e43, #59aa46, white, white);
 }
-#sidebar-btn {
+#sidebar-btn{
   font-size: 20px;
   height: 40px;
   width: 100%;
   margin-top: 5px;
+}
+#sidebar img {
+  width: 100%;
+  margin: 10px auto;
 }
 
 /* ----------- FOOD TABLE ----------- */
