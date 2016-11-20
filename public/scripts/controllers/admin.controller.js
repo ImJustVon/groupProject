@@ -44,6 +44,30 @@ function AdminController($uibModal, $log, $document) {
     });
   } // end admin.openNewOption
 
+  admin.editFood = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: 'views/modals/editFoodModal.html',
+      // controller: 'ModalAdminController as modal',
+      // resolve: {
+      //   items: function () {
+      //     return admin.items;
+      //   }
+      // }
+    });
+  } // end admin.editFood
+
+  admin.confirmDelete = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: 'views/modals/confirmDeleteModal.html',
+      // controller: 'ModalAdminController as modal',
+      // resolve: {
+      //   items: function () {
+      //     return admin.items;
+      //   }
+      // }
+    });
+  } // end admin.confirmDelete
+
 
 
 
