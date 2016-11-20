@@ -1,0 +1,117 @@
+/*---------------------------------------------------------------------------
+User Landing Page
+----------------------------------------------------------------------------*/
+.landing-page {
+  background-color: rgb(217, 255, 221);
+}
+
+.avocado img, .login-button button {
+  margin-top: 15px;
+}
+
+header.row.banner img {
+  width: 100%;
+}
+
+button.btn {
+  height: 76px;
+  font-size: 44px;
+  width: 100%;
+}
+
+.chef-marshall-logo img {
+  margin-top: 15px;
+}
+
+#food-search {
+  font-size: 100px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.where-image, .categories-image {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.where-image img, .categories-image img {
+  width: 50%;
+}
+
+
+.where-image p, .categories-image p {
+  font-size: 100px;
+  padding-top: 30px;
+}
+
+/*---------------------------------------------------------------------------
+Where?
+----------------------------------------------------------------------------*/
+.food-search-results-banner {
+  border-bottom: 2px solid black;
+  margin-top: 40px;
+}
+
+.food-search-results-banner span {
+  font-size: 60px;
+}
+
+.food-grade-banner {
+  text-align: right;
+}
+
+.search-result {
+  border-bottom: 1px solid black;
+  padding: 40px 10px;
+}
+
+.food-name, .letter-grade {
+  font-size: 60px;
+}
+
+.food-grade {
+  text-align: right;
+}
+
+.options-value {
+  font-size: 40px;
+  padding-right: 40px;
+}
+
+.letter-grade {
+  border-radius: 15px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  height: 100px;
+  text-align: center;
+  width: 100px;
+}
+
+.letter-grade.a {
+  background-color: #358e42;
+}
+
+.letter-grade.b {
+  background-color: #59aa46;
+}
+
+.letter-grade.c {
+  background-color: #fdb813;
+}
+
+.letter-grade.d {
+  background-color: #f47920;
+}
+
+.letter-grade.f {
+  background-color: #bd2408;
+}
+
+footer {
+  background-color: #373936;
+  color: #fff;
+  font-size: 40px;
+  padding: 40px;
+  text-align: center;
+}
