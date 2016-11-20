@@ -1,3 +1,5 @@
+/* ----------- GENERAL ----------- */
+
 body {
   font-family: Arvo;
 }
@@ -6,12 +8,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+
 select {
   margin-bottom: 10px;
 }
 .end-button {
   margin-top: 50px;
   float: right;
+  width: 20%;
 }
 #csv-upload label, input, button {
   float: left;
@@ -29,6 +33,24 @@ select {
   text-align: center;
   margin: 10px auto;
 }
+#admin-btn {
+  font-size: 20px;
+  height: 40px;
+  width: auto;
+}
+
+/* ----------- SIDEBAR ----------- */
+#sidebar {
+  background: linear-gradient(grey, white);
+}
+#sidebar-btn {
+  font-size: 20px;
+  height: 40px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+
 
 
 /* ----------- NEW CATEGORY ----------- */

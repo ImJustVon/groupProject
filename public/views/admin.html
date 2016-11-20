@@ -1,11 +1,11 @@
 <!--== SIDEBAR ==-->
-<div class="col-md-2">
-  <a href="/feedback" class="btn btn-info" role="button">Feedback</a>
-  <a href="/reports" class="btn btn-info" role="button">Reports</a>
-
-  <button type="button" class="btn btn-success" ng-click="admin.openNewCategory()">+ New Category</button>
-  <button type="button" class="btn btn-success" ng-click="admin.openNewFood()">+ New Food</button>
-  <button type="button" class="btn btn-success" ng-click="admin.openNewOption()">+ New Option</button>
+<div class="col-md-2" id="sidebar">
+  <a href="/feedback" class="btn btn-info" id="sidebar-btn" role="button">Feedback</a>
+  <a href="/reports" class="btn btn-info" id="sidebar-btn" role="button">Reports</a>
+<hr />
+  <button type="button" class="btn btn-success" id="sidebar-btn" ng-click="admin.openNewCategory()">+ New Category</button>
+  <button type="button" class="btn btn-success" id="sidebar-btn" ng-click="admin.openNewFood()">+ New Food</button>
+  <button type="button" class="btn btn-success" id="sidebar-btn" ng-click="admin.openNewOption()">+ New Option</button>
 </div>
 
 
@@ -55,19 +55,19 @@
       <td>Hot Dog</td>
       <td>Protein</td>
       <td id="c">C</td>
-      <td><button class="btn">Edit</button><button class="btn btn-danger">Delete</button></td>
+      <td><button class="btn" id="admin-btn">Edit</button><button class="btn btn-danger" id="admin-btn">Delete</button></td>
     </tr>
     <tr>
       <td>Popcorn</td>
       <td>Grain</td>
       <td id="a">B</td>
-      <td><button class="btn">Edit</button><button class="btn btn-danger">Delete</button></td>
+      <td><button class="btn" id="admin-btn">Edit</button><button class="btn btn-danger" id="admin-btn">Delete</button></td>
     </tr>
     <tr>
       <td>Cheeseburger</td>
       <td>Protein</td>
       <td id="f">D</td>
-      <td><button class="btn">Edit</button><button class="btn btn-danger">Delete</button></td>
+      <td><button class="btn" id="admin-btn">Edit</button><button class="btn btn-danger" id="admin-btn">Delete</button></td>
     </tr>
     </tbody>
   </table>
