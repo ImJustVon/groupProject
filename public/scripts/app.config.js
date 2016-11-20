@@ -27,8 +27,6 @@ angular.module('routeApp')
           }).when('/chosen-food', {
             templateUrl: 'views/chosen-food.html',
             controller: 'FoodController as food'
-          }).when('/edit-food', {
-            templateUrl: 'views/edit-food.html',
           }).otherwise({
               redirectTo: '/home',
           });
