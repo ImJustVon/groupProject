@@ -2,14 +2,15 @@
 <!-- .
   <div class="col-md-1"></div>
 . -->
-<h3>Add New Food</h3>
-<br />
 
 
 <!--=========== CSV UPLOAD ===========-->
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-10">
+    <h3>Add New Food</h3>
+
+    <hr />
 
     <form id="csv-upload">
       <label for="csv-upload">Upload CSV:</label>
@@ -22,13 +23,16 @@
 </div>
 
 
+<!-- <p class="s-center">- OR -</p>
+<hr /> -->
 <!--=========== ADD FOOD ===========-->
-<br />
+
 
 <!-- CATEGORY -->
 <div class="row">
   <div class="col-md-1"></div>
-  <div class="col-md-8">
+  <div class="col-md-10">
+<hr />
     <form>
     <select>
       <option selected disabled>Category</option>
@@ -40,7 +44,7 @@
       <option>Oil</option>
     </select>
   </div>
-  <div class="col-md-3"></div></div>
+  <div class="col-md-1"></div></div>
 <br />
 
   <!-- NAME, SCORE, OVERRIDE -->
@@ -59,8 +63,8 @@
       <option>F</option>
     </select>
 
-    <h4>Options</h4>
-    <button id="add-option">+</button><br />
+    <h4>Options</h4> <button id="add-option">+</button>
+
 
   <select>
     <option selected disabled>Type</option>
@@ -74,10 +78,26 @@
     <option>Ketchup</option>
     <option>Mustard</option>
   </select>
+  <br />
+
+  <select>
+    <option selected disabled>Type</option>
+    <option>Condiment</option>
+    <option>Bread</option>
+    <option>Topping</option>
+  </select>
+
+  <select>
+    <option selected disabled>Option</option>
+    <option>Ketchup</option>
+    <option>Mustard</option>
+  </select>
+  <br />
 
 
-      <button class="end-button btn">Cancel</button>
-      <button class="end-button btn btn-success" type="submit">Save</button>
+
+    <button class="end-button btn">Cancel</button>
+    <button class="end-button btn btn-success" type="submit">Save</button>
     </form>
 
   </div> <!-- END COL 10 -->

@@ -3,20 +3,33 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: Futura;
-}
-h3 {
-  padding-left: 50px;
+  font-weight: bold;
 }
 
+select {
+  margin-bottom: 10px;
+}
 .end-button {
   margin-top: 50px;
   float: right;
 }
-
-
 #csv-upload label, input, button {
   float: left;
 }
+#f {
+  color: red;
+}
+#c {
+  color: orange;
+}
+#a {
+  color: green;
+}
+.s-center {
+  text-align: center;
+  margin: 10px auto;
+}
+
 
 /* ----------- NEW CATEGORY ----------- */
 
@@ -36,17 +49,8 @@ h3 {
 #food-override {
   width: 50px;
 }
-#f {
-  color: red;
-}
-#c {
-  color: orange;
-}
-#a {
-  color: green;
+#add-option {
 }
 
+
 /* ----------- NEW OPTION ----------- */
-#add-option {
-  display: block;
-}
