@@ -8,7 +8,7 @@ Returns the document with matches
  */
 router.get('/search/:word', function (req, res) {
   //checks the name for a match and the tags array for a matching index then returns the document
-  Food.find({ $or: [{ name: word }, { tags: word }] }).then(function (dataFromTheDatabase) {
+  Food.find({ $or: [{ name: req.params.word }, { tags: word }] }).then(function (dataFromTheDatabase) {
     console.log('Search result ', dataFromTheDatabase);
     res.send(dataFromTheDatabase);
   });
@@ -66,7 +66,7 @@ req.body.tags = array of tags the are added to the food (other searchable terms)
  */
 router.put('/:id', function (req, res) {
   //matches _id with id then updates all the values
-  Food.update({ _id: id }, req.body).then(function () {
+  Food.update({ _id: req.params.id }, req.body).then(function () {
     console.log('Updated a food');
     res.sendStatus(201);
   });
@@ -76,7 +76,8 @@ router.put('/:id', function (req, res) {
 a delete request to /:id where :id is the _id of the document
  */
 router.delete('/:id', function (req, res) {
-  Food.remove({ id }).then(function () {
+  console.log('trying to remove: ', req.params.id);
+  Food.remove({ _id: req.params.id }).then(function () {
     res.sendStatus(204);
   });
 });

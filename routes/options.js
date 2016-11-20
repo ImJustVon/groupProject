@@ -8,7 +8,7 @@ Returns the document with matches
  */
 router.get('/search/:word', function (req, res) {
   //checks the name for a match and the tags array for a matching index then returns the document
-  Option.find({ name: word }).then(function (dataFromTheDatabase) {
+  Option.find({ name: req.params.word }).then(function (dataFromTheDatabase) {
     console.log('Search result ', dataFromTheDatabase);
     res.send(dataFromTheDatabase);
   });
@@ -46,7 +46,7 @@ req.body.score = modifing number
 req.body.type = type string (ex. condement, bun, etc.)
  */
 router.put('/:id', function (req, res) {
-  Option.update({ _id: id }, req.body).then(function () {
+  Option.update({ _id: req.params.id }, req.body).then(function () {
     console.log('Updated an option');
     res.sendStatus(201);
   });
@@ -56,7 +56,7 @@ router.put('/:id', function (req, res) {
 a delete request to /:id where :id is the _id of the document
  */
 router.delete('/:id', function (req, res) {
-  Option.remove({ id }).then(function () {
+  Option.remove({ _id: req.params.id }).then(function () {
     res.sendStatus(204);
   });
 });

@@ -28,7 +28,7 @@ expecting this format
 req.body.name = name String
  */
 router.put('/:id', function (req, res) {
-  Category.update({ _id: id }, req.body).then(function () {
+  Category.update({ _id: req.params.id }, req.body).then(function () {
     console.log('updated a category');
     res.sendStatus(201);
   });
@@ -38,7 +38,7 @@ router.put('/:id', function (req, res) {
 a delete request to /:id where :id is the _id of the document
  */
 router.delete('/:id', function (req, res) {
-  Category.remove({ id }).then(function () {
+  Category.remove({ _id: req.params.id }).then(function () {
     res.sendStatus(204);
   });
 });
