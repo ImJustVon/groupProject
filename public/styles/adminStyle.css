@@ -32,6 +32,9 @@ select {
   text-align: center;
   margin: 10px auto;
 }
+.f-left {
+  float: left;
+}
 #admin-btn {
   font-size: 20px;
   height: 40px;
