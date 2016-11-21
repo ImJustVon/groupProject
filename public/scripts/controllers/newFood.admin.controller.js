@@ -4,6 +4,8 @@ function NewFoodAdminController(FoodService, OptionService) {
 
   var admin = this;
 
+  admin.category = 'initial';
+  admin.location = ['initial', 'initial'];
   //  Visible foods will be visible in admin.allFoods
   //  Option objects will be held in admin.options
 

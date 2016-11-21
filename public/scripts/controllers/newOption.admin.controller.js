@@ -4,6 +4,8 @@ angular.module('routeApp')
 function NewOptionAdminController(OptionService, $uibModalInstance) {
 
   var admin = this;
+  admin.typeData = {};
+  admin.typeData.display='checkbox';
 
   //  Post a new option
   admin.addOption = function() {
@@ -29,7 +31,7 @@ function NewOptionAdminController(OptionService, $uibModalInstance) {
   admin.addOptionType = function() {
     OptionService.addOptionType(admin.typeData).then(function(response) {
       console.log('POSTed option type:', response);
-      // admin.getOptionTypes();
+      admin.getOptionTypes();
     });
   }
 
@@ -38,6 +40,6 @@ function NewOptionAdminController(OptionService, $uibModalInstance) {
   }
 
   //  Called on modal open
-  // admin.getOptionTypes();
+  admin.getOptionTypes();
 
 }
