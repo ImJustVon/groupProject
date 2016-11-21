@@ -45,4 +45,6 @@ function NewFoodAdminController(FoodService, OptionService) {
     });
   }
 
+  admin.getOptions();
+
 }
