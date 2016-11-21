@@ -3,27 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Chef Marshall</title>
-
+    <!-- Vendor files -->
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="vendors/angular-route.min.js" charset="utf-8"></script>
-
+    <script src="vendors/ui-bootstrap-tpls.js" charset="utf-8"></script>
+    <!-- Angular config -->
     <script src="scripts/app.module.js" charset="utf-8"></script>
     <script src="scripts/app.config.js" charset="utf-8"></script>
-    <script src="vendors/ui-bootstrap-tpls.js" charset="utf-8"></script>
+    <!-- Angular controllers -->
     <script src="scripts/controllers/admin.controller.js"></script>
     <script src="scripts/controllers/newFood.admin.controller.js"></script>
-    <script src="scripts/controllers/newCatergory.admin.controller.js"></script>
+    <script src="scripts/controllers/newCategory.admin.controller.js"></script>
     <script src="scripts/controllers/categories.controller.js"></script>
     <script src="scripts/controllers/food.controller.js"></script>
     <script src="scripts/controllers/home.controller.js"></script>
     <script src="scripts/controllers/login.controller.js"></script>
     <script src="scripts/controllers/report.controller.js"></script>
     <script src="scripts/controllers/results.controller.js"></script>
-
+    <!-- Angular services -->
     <script src="scripts/services/food.service.js"></script>
     <script src="scripts/services/category.service.js"></script>
     <script src="scripts/services/options.service.js"></script>
-
+    <!-- Stylesheets and fonts -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Arvo" />
     <link rel="stylesheet" href="vendors/bootstrap.min.css"/>
     <link rel="stylesheet" href="styles/ui-bootstrap-csp.css" />
@@ -34,7 +35,7 @@
 
   </head>
   <body>
-
+    <!-- Angular routes -->
     <ng-view></ng-view>
 
   </body>
