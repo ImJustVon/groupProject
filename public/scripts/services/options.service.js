@@ -8,20 +8,21 @@ function OptionService($http) {
   //  Get all options in database
   option.getOptions = function() {
     return $http.get('/options').then(function(response) {
-      //  Returns array of objects {_id, name, score, type}
+      //  Returns array of objects {_id, name, modifier, type}
       return response.data;
     });
   }
 
-  //  Post an option, needs {name, score, type}
+  //  Post an option, needs {name, modifier, type}
   option.postOption = function(optionData) {
     return $http({
       method: 'POST',
       url: '/options',
       data: optionData
     }).then(function(response) {
-      //  Returns array of objects {_id, name, score, type}
+      //  Returns array of objects {_id, name, modifier, type}
       console.log('POST successful:', response.data);
+      return response.data;
     });
   }
 
@@ -32,8 +33,9 @@ function OptionService($http) {
       url: '/options/' + optionData._id,
       data: optionData
     }).then(function(response) {
-      //  Returns array of objects {_id, name, score, type}
+      //  Returns array of objects {_id, name, modifier, type}
       console.log('PUT successful:', response.data);
+      return response.data;
     });
   }
 
@@ -51,7 +53,7 @@ function OptionService($http) {
   //  Search the option database
   option.search = function(searchTerm) {
     return $http.get('/options/search/' + searchTerm).then(function(response) {
-      //  Returns array of objects {_id, name, score, type}
+      //  Returns array of objects {_id, name, modifier, type}
       return response.data;
     });
   }
