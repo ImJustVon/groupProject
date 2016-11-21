@@ -20,6 +20,7 @@ const register = require('./routes/register');
 const reports = require('./routes/reports');
 const options = require('./routes/options');
 const category = require('./routes/category');
+const type = require('./routes/type');
 
 //  Connect routes
 app.use('/food', food);
@@ -28,6 +29,7 @@ app.use('/register', register);
 app.use('/reports', reports);
 app.use('/options', options);
 app.use('/category', category);
+app.use('/type', type);
 
 //  Set up connection
 app.get('/*', function (req, res) {
