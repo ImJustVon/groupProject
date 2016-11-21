@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Food = require('../models/type');
+const Type = require('../models/type');
 
 /*
 gets all the types of options
