@@ -1,6 +1,6 @@
 angular.module('routeApp').controller('NewCategoryAdminController', NewCategoryAdminController);
 
-function NewCategoryAdminController(CategoryService) {
+function NewCategoryAdminController(CategoryService, $uibModalInstance) {
 
   var admin = this;
 
@@ -23,6 +23,10 @@ function NewCategoryAdminController(CategoryService) {
     CategoryService.getCategories().then(function(response) {
       console.log('GET successful:', response);
     });
+  }
+
+  admin.cancel = function() {
+    $uibModalInstance.close();
   }
 
 }

@@ -69,9 +69,6 @@ function AdminController($uibModal, $log, $document) {
   } // end admin.confirmDelete
 
 
-  admin.cancel = function () {
-    var modalInstance = $uibModal.close();
-  };
 
 
 
