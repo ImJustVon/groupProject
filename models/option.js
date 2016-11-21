@@ -9,5 +9,3 @@ const optionSchema = {
 const Option = mongoose.model('Option', optionSchema);
 
 module.exports = { Option, optionSchema };
-
-//not working the way it's writen

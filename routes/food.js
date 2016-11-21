@@ -20,7 +20,7 @@ Returns the document with matches
  */
 router.get('/search/:word', function (req, res) {
   //checks the name for a match and the tags array for a matching index then returns the document
-  Food.find({ $or: [{ name: req.params.word }, { tags: word }] }).then(function (dataFromTheDatabase) {
+  Food.find({ $or: [{ name: req.params.word }, { tags: req.params.word }, { location: req.params.word }] }).then(function (dataFromTheDatabase) {
     console.log('Search result ', dataFromTheDatabase);
     res.send(dataFromTheDatabase);
   });
@@ -59,6 +59,7 @@ req.body.tags = array of tags the are added to the food (other searchable terms)
  */
 router.post('/', function (req, res) {
   var foodToSave = new Food(req.body);
+  console.log('Food to save, ', req.body);
   foodToSave.save().then(function () {
     console.log('Saved a new food');
     res.sendStatus(201);
