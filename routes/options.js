@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Option = require('../models/option');
+const Option = require('../models/option').Option;
 
 /*
 Search request is sent to /option/search/word seraching for
