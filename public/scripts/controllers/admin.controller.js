@@ -35,7 +35,7 @@ function AdminController($uibModal, $log, $document) {
   admin.openNewOption = function () {
     var modalInstance = $uibModal.open({
       templateUrl: 'views/modals/newOptionModal.html',
-      // controller: 'ModalAdminController as modal',
+      controller: 'NewOptionAdminController as new',
       // resolve: {
       //   items: function () {
       //     return admin.items;

@@ -2,31 +2,51 @@
 
 
 <div class="row">
-
-
 <div class="col-md-1"></div>
-
 <div class="col-md-10">
   <h3>Add New Option</h3>
 
   <hr />
 
   <h4>New Type</h4>
+<form>
 <input type="text" placeholder="New Type"/><button>Add</button><br />
+</form>
   <hr />
 
-  <select class="f-left">
-    <option selected disabled>Type</option>
-    <option>Condiment</option>
-    <option>Bread</option>
-    <option>Topping</option>
-  </select>
 
-<input type="text" placeholder="New Option"/><br />
+  <form class="form-horizontal">
+    <div class="row">
+      <div class="col-md-4">
+  <select class="form-control" ng-model="new.type">
+    <option selected disabled>Type</option>
+    <option ng-value="Condiment">Condiment</option>
+    <option ng-value="Bread">Bread</option>
+    <option ng-value="Topping">Topping</option>
+  </select>
+  </div>
+  <div class="col-md-5">
+<input class="form-control" ng-model="new.name" type="text" placeholder="New Option"/>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <label for="modifier" class="col-md-3 col-form-label">Modifier:</label>
+    <div class="col-md-3">
+    <input class="form-control" type="number" ng-model="new.modifier"/>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
+
 
 <div class="row">
   <button class="end-button btn" id="admin-btn">Cancel</button>
-  <button class="end-button btn btn-success"  id="admin-btn" type="submit">Save</button>
+  <button class="end-button btn btn-success"  id="admin-btn" type="submit" ng-click="new.addOption()">Save</button>
+  </form>
 </div>
 
 
