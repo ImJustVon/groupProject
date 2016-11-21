@@ -14,6 +14,14 @@ function NewCategoryAdminController(CategoryService) {
     CategoryService.postCategory(categoryData).then(function(response) {
       //  Do something
       console.log('Response:', response);
+      admin.getCategories();
+    });
+  }
+
+  //  Get all categories
+  admin.getCategories = function() {
+    CategoryService.getCategories().then(function(response) {
+      console.log('GET successful:', response);
     });
   }
 
