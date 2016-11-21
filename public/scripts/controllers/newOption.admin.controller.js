@@ -17,6 +17,22 @@ function NewOptionAdminController(OptionService, $uibModalInstance) {
     });
   }
 
+  //  Get all option types, store in admin.types
+  admin.getOptionTypes = function() {
+    OptionService.getOptionTypes().then(function(response) {
+      console.log('Got option types, in admin.types:', response);
+      admin.types = response;
+    });
+  }
+
+  //  Adds a type for options
+  admin.addOptionType = function() {
+    OptionService.addOptionType(typeData).then(function(response) {
+      console.log('POSTed option type:', response);
+      admin.getOptionTypes();
+    });
+  }
+
   admin.cancel = function() {
     $uibModalInstance.close();
   }

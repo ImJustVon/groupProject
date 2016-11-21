@@ -58,4 +58,22 @@ function OptionService($http) {
     });
   }
 
+  //  Get all option types
+  option.getOptionTypes = function() {
+    return $http.get('/type').then(function(response) {
+      return response.data;
+    });
+  }
+
+  //  Adds option type {name, display}
+  option.addOptionType = function(typeData) {
+    return $http({
+      method: 'POST',
+      url:'/type',
+      data: typeData
+    }).then(function(response) {
+      return response.data;
+    });
+  }
+
 }
