@@ -37,4 +37,7 @@ function NewOptionAdminController(OptionService, $uibModalInstance) {
     $uibModalInstance.close();
   }
 
+  //  Called on modal open
+  admin.getOptionTypes();
+
 }
