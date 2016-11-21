@@ -47,3 +47,5 @@ router.delete('/:id', function (req, res) {
     res.sendStatus(204);
   });
 });
+
+module.exports = router;
