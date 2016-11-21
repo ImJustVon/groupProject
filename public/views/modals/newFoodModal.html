@@ -1,4 +1,4 @@
-<section class="modal-upload">
+<section class="modal-upload" id="new-food">
 <!-- .
   <div class="col-md-1"></div>
 . -->
@@ -16,8 +16,8 @@
       <label for="csv-upload">Upload CSV:</label>
       <input name="csv-upload" type="file" accept=".csv"/>
       <button type="submit">Upload</button>
-    </form>
-
+    </form><br />
+<hr />
   </div>
   <div class="col-md-1"></div>
 </div>
@@ -29,28 +29,14 @@
 
 
 <!-- CATEGORY -->
-<div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-10">
-<hr />
-    <form>
-    <select>
-      <option selected disabled>Category</option>
-      <option>Fruit</option>
-      <option>Vegetables</option>
-      <option>Grains</option>
-      <option>Protein</option>
-      <option>Dairy</option>
-      <option>Oil</option>
-    </select>
-  </div>
-  <div class="col-md-1"></div></div>
-<br />
+
 
   <!-- NAME, SCORE, OVERRIDE -->
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-10">
+    <form>
+
     <input id="food-name" type="text" placeholder="Food Name"/>
     <input id="food-score" type="number" placeholder="Score"/>
     <input id="food-override-check" type="checkbox" />
@@ -63,8 +49,32 @@
       <option>F</option>
     </select>
 
-    <h4>Options</h4> <button id="add-option">+</button>
+    <select>
+      <option selected disabled>Category</option>
+      <option>Fruit</option>
+      <option>Vegetables</option>
+      <option>Grains</option>
+      <option>Protein</option>
+      <option>Dairy</option>
+      <option>Oil</option>
+    </select>
 
+    <h4>Options</h4>
+    <!-- <button id="add-option">+</button> -->
+
+<div class="row">
+<div class="col-md-6">
+  <select>
+    <option selected disabled>Type</option>
+    <option>Condiment</option>
+    <option>Bread</option>
+    <option>Topping</option>
+  </select>
+  <select>
+    <option selected disabled>Option</option>
+    <option>Ketchup</option>
+    <option>Mustard</option>
+  </select>
 
   <select>
     <option selected disabled>Type</option>
@@ -72,13 +82,11 @@
     <option>Bread</option>
     <option>Topping</option>
   </select>
-
   <select>
     <option selected disabled>Option</option>
     <option>Ketchup</option>
     <option>Mustard</option>
   </select>
-  <br />
 
   <select>
     <option selected disabled>Type</option>
@@ -86,13 +94,53 @@
     <option>Bread</option>
     <option>Topping</option>
   </select>
-
   <select>
     <option selected disabled>Option</option>
     <option>Ketchup</option>
     <option>Mustard</option>
   </select>
-  <br />
+</div>
+
+<div class="col-md-6">
+  <select>
+    <option selected disabled>Type</option>
+    <option>Condiment</option>
+    <option>Bread</option>
+    <option>Topping</option>
+  </select>
+  <select>
+    <option selected disabled>Option</option>
+    <option>Ketchup</option>
+    <option>Mustard</option>
+  </select>
+
+  <select>
+    <option selected disabled>Type</option>
+    <option>Condiment</option>
+    <option>Bread</option>
+    <option>Topping</option>
+  </select>
+  <select>
+    <option selected disabled>Option</option>
+    <option>Ketchup</option>
+    <option>Mustard</option>
+  </select>
+
+  <select>
+    <option selected disabled>Type</option>
+    <option>Condiment</option>
+    <option>Bread</option>
+    <option>Topping</option>
+  </select>
+  <select>
+    <option selected disabled>Option</option>
+    <option>Ketchup</option>
+    <option>Mustard</option>
+  </select>
+</div>
+
+</div>
+
 
 
 

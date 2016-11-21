@@ -36,8 +36,11 @@ select {
   font-size: 20px;
   height: 40px;
   width: auto;
-
 }
+.modal-upload {
+  border-left: 10px solid #358e42;
+}
+
 
 /* ----------- SIDEBAR ----------- */
 #sidebar {
@@ -56,10 +59,14 @@ select {
 
 /* ----------- FOOD TABLE ----------- */
 #admin-content {
-  background: linear-gradient(#f47920, #fdb813, white, white, white, white, white);
+  background: linear-gradient(#f47920, #fdb813, white, white, white, white, white, white, white, white);
 }
 #admin-content h2 {
   font-size: 40px
+}
+#admin-content img {
+  height: 40px;
+  margin-bottom: 15px;
 }
 .admin-table thead {
   font-weight: bold;
@@ -81,6 +88,10 @@ select {
 
 
 /* ----------- NEW FOOD ----------- */
+/*#new-food {
+  background: linear-gradient(#358e42, #59aa46, white, white, white, white, white, white, white, white, white, white, white, white, white, white, white, white, white);
+}*/
+
 #food-name {
   width: 200px;
 }
@@ -97,6 +108,7 @@ select {
 }
 #add-option {
 }
+
 
 
 /* ----------- NEW OPTION ----------- */
