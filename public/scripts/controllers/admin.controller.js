@@ -68,6 +68,20 @@ function AdminController($uibModal, $log, $document) {
     });
   } // end admin.confirmDelete
 
+  admin.closeModal = function () {
+    var modalInstance = $uibModal.close({
+      templateUrl: 'views/modals/confirmDeleteModal.html',
+      // controller: 'ModalAdminController as modal',
+      // resolve: {
+      //   items: function () {
+      //     return admin.items;
+      //   }
+      // }
+    });
+  } // end admin.closeModal
+
+
+
 
 
 

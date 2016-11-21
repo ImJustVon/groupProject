@@ -8,7 +8,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-
 select {
   margin-bottom: 10px;
 }
@@ -37,6 +36,7 @@ select {
   font-size: 20px;
   height: 40px;
   width: auto;
+
 }
 
 /* ----------- SIDEBAR ----------- */
@@ -55,9 +55,24 @@ select {
 }
 
 /* ----------- FOOD TABLE ----------- */
+#admin-content {
+  background: linear-gradient(#f47920, #fdb813, white, white, white, white, white);
+}
+#admin-content h2 {
+  font-size: 40px
+}
 .admin-table thead {
   font-weight: bold;
   font-size: 20px;
+}
+.admin-table td:nth-child(3) {
+  font-weight: bold;
+}
+#table-mod {
+  font-size: 12px;
+  height: 30px;
+  width: auto;
+  margin-right: 5px;
 }
 
 
