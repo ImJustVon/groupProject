@@ -27,7 +27,7 @@ function NewOptionAdminController(OptionService, $uibModalInstance) {
 
   //  Adds a type for options
   admin.addOptionType = function() {
-    OptionService.addOptionType(typeData).then(function(response) {
+    OptionService.addOptionType(admin.typeData).then(function(response) {
       console.log('POSTed option type:', response);
       admin.getOptionTypes();
     });
@@ -38,6 +38,6 @@ function NewOptionAdminController(OptionService, $uibModalInstance) {
   }
 
   //  Called on modal open
-  admin.getOptionTypes();
+  // admin.getOptionTypes();
 
 }
