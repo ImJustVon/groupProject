@@ -16,12 +16,13 @@ function FoodService ($http) {
 
   //  Post a food, takes object {name, category, options, score, overRide, overRideValue, tags, location}
   food.postFood = function(foodData) {
+    console.log('Step 3: inside food service');
     return $http({
       method: 'POST',
       url: '/food',
       data: foodData
     }).then(function(response) {
-      console.log('POST successful:', response.data);
+      console.log('Step 4: POST successful:', response.data);
       return response.data;
     });
   }

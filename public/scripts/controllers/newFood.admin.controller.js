@@ -25,6 +25,7 @@ function NewFoodAdminController(FoodService, OptionService) {
 
   //  Function to add a new food
   admin.addFood = function() {
+    console.log('Step 1: function clicked');
     var foodData = {
       name: admin.name,
       category: admin.category,
@@ -38,8 +39,9 @@ function NewFoodAdminController(FoodService, OptionService) {
     if (foodData.overRide) {
       foodData.overRideValue = admin.overRideValue;
     }
+    console.log('Step 2: foodData packed:', foodData);
     FoodService.postFood(foodData).then(function(response) {
-      console.log('POST successful:', response);
+      console.log('Step 5: Controller POST successful:', response);
     });
   }
 
