@@ -2,6 +2,18 @@ const router = require('express').Router();
 const Food = require('../models/food');
 
 /*
+Gets all documents with the specified location /food/location/(the location)
+Searches through location array of all documents
+Returns the document with matches
+ */
+router.get('/location/:location', function (req, res) {
+  Food.find({ location: req.params.location }).then(function (dataFromTheDatabase) {
+    console.log('Location result ', dataFromTheDatabase);
+    res.send(dataFromTheDatabase);
+  });
+});
+
+/*
 Search request is sent to /food/search/(the phrase they are searching for)
 Searches for the phrase in the name and the tags to match
 Returns the document with matches

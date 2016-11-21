@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const optionSchema = {
   name: String,
-  score: Number,
+  modifier: Number,
   type: String,
 };
 
