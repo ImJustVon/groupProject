@@ -10,7 +10,9 @@
 
   <h4>New Type</h4>
 <form>
-<input type="text" placeholder="New Type"/><button>Add</button><br />
+<input type="text" placeholder="New Type" ng-model="new.type"/><button ng-click="new.addOptionType()">Add</button><br />
+<label for="radio"><input class="radio-inline" type="radio" name="radio" ng-model="new.display" value="radio"/>Radio</label>
+<label for="checkbox"><input class="radio-inline" type="radio" name="checkbox" ng-model="new.display" value="checkbox"/>Checkbox</label>
 </form>
   <hr />
 
@@ -42,7 +44,7 @@
 </div>
 
 
-
+<!--== SAVE / CANCEL ==-->
 <div class="row">
   <button class="end-button btn" id="admin-btn" ng-click="new.cancel()">Cancel</button>
   <button class="end-button btn btn-success"  id="admin-btn" type="submit" ng-click="new.addOption()">Save</button>

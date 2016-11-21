@@ -1,8 +1,4 @@
 <section class="modal-upload" id="new-food">
-<!-- .
-  <div class="col-md-1"></div>
-. -->
-
 
 <!--=========== CSV UPLOAD ===========-->
 <div class="row">
@@ -23,48 +19,54 @@
 </div>
 
 
-<!-- <p class="s-center">- OR -</p>
-<hr /> -->
 <!--=========== ADD FOOD ===========-->
 
-
-<!-- CATEGORY -->
-
-
-  <!-- NAME, SCORE, OVERRIDE -->
+<!-- NAME, SCORE, OVERRIDE -->
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-10">
     <form>
 
-    <input id="food-name" type="text" placeholder="Food Name"/>
-    <input id="food-score" type="number" placeholder="Score"/>
-    <input id="food-override-check" type="checkbox" />
+    <input id="food-name" type="text" placeholder="Food Name" ng-model="new.name"/>
+    <input id="food-score" type="number" placeholder="Score" ng-model="new.score"/>
+
+<!-- OVERRIDE -->
+    <input id="food-override-check" type="checkbox" ng-model="new.overRide"/>
     <label for="food-override">Override</label>
-    <select>
-      <option>A</option>
-      <option>B</option>
-      <option>C</option>
-      <option>D</option>
-      <option>F</option>
+    <select ng-model="new.overRideValue">
+      <option ng-value="A">A</option>
+      <option ng-value="B">B</option>
+      <option ng-value="C">C</option>
+      <option ng-value="D">D</option>
+      <option ng-value="F">F</option>
     </select>
 
-    <select>
+<!-- CATEGORY -->
+    <select ng-model="new.category">
       <option selected disabled>Category</option>
-      <option>Fruit</option>
-      <option>Vegetables</option>
-      <option>Grains</option>
-      <option>Protein</option>
-      <option>Dairy</option>
-      <option>Oil</option>
+      <option ng-value="Fruit">Fruit</option>
+      <option ng-value="Vegetables">Vegetables</option>
+      <option ng-value="Grains">Grains</option>
+      <option ng-value="Protein">Protein</option>
+      <option ng-value="Dairy">Dairy</option>
+      <option ng-value="Oil">Oil</option>
     </select>
 
-    <select>
+<!-- LOCATION -->
+    <select ng-model="new.location[0]">
       <option selected disabled>Location:</option>
-      <option>Ball Game</option>
-      <option>Concession</option>
-      <option>Italian</option>
-      <option>Mexican</option>
+      <option ng-value="Ball-Game">Ball Game</option>
+      <option ng-value="Concession">Concession</option>
+      <option ng-value="Italian">Italian</option>
+      <option ng-value="Mexican">Mexican</option>
+    </select>
+
+    <select ng-model="new.location[1]">
+      <option selected disabled>Location:</option>
+      <option ng-value="Ball-Game">Ball Game</option>
+      <option ng-value="Concession">Concession</option>
+      <option ng-value="Italian">Italian</option>
+      <option ng-value="Mexican">Mexican</option>
     </select>
 
     <h4>Options</h4>
@@ -78,10 +80,10 @@
     <option>Bread</option>
     <option>Topping</option>
   </select>
-  <select>
+  <select ng-model="new.options[0]">
     <option selected disabled>Option</option>
-    <option>Ketchup</option>
-    <option>Mustard</option>
+    <option ng-value="Ketchup">Ketchup</option>
+    <option ng-value="Mustard">Mustard</option>
   </select>
 
   <select>
@@ -90,10 +92,10 @@
     <option>Bread</option>
     <option>Topping</option>
   </select>
-  <select>
+  <select ng-model="new.options[1]">
     <option selected disabled>Option</option>
-    <option>Ketchup</option>
-    <option>Mustard</option>
+    <option ng-value="Ketchup">Ketchup</option>
+    <option ng-value="Mustard">Mustard</option>
   </select>
 
   <select>
@@ -102,10 +104,10 @@
     <option>Bread</option>
     <option>Topping</option>
   </select>
-  <select>
+  <select ng-model="new.options[2]">
     <option selected disabled>Option</option>
-    <option>Ketchup</option>
-    <option>Mustard</option>
+    <option ng-value="Ketchup">Ketchup</option>
+    <option ng-value="Mustard">Mustard</option>
   </select>
 </div>
 
@@ -116,10 +118,10 @@
     <option>Bread</option>
     <option>Topping</option>
   </select>
-  <select>
+  <select ng-model="new.options[3]">
     <option selected disabled>Option</option>
-    <option>Ketchup</option>
-    <option>Mustard</option>
+    <option ng-value="Ketchup">Ketchup</option>
+    <option ng-value="Mustard">Mustard</option>
   </select>
 
   <select>
@@ -128,10 +130,10 @@
     <option>Bread</option>
     <option>Topping</option>
   </select>
-  <select>
+  <select ng-model="new.options[4]">
     <option selected disabled>Option</option>
-    <option>Ketchup</option>
-    <option>Mustard</option>
+    <option ng-value="Ketchup">Ketchup</option>
+    <option ng-value="Mustard">Mustard</option>
   </select>
 
   <select>
@@ -140,28 +142,23 @@
     <option>Bread</option>
     <option>Topping</option>
   </select>
-  <select>
+  <select ng-model="new.options[5]">
     <option selected disabled>Option</option>
-    <option>Ketchup</option>
-    <option>Mustard</option>
+    <option ng-value="Ketchup">Ketchup</option>
+    <option ng-value="Mustard">Mustard</option>
   </select>
 </div>
 
 </div>
 
-
-
-
+<!--== SAVE / CANCEL ==-->
     <button class="btn end-button" id="admin-btn">Cancel</button>
-    <button class="btn btn-success end-button"  id="admin-btn" type="submit">Save</button>
+    <button class="btn btn-success end-button"  id="admin-btn" type="submit" ng-click="new.addFood()">Save</button>
     </form>
 
   </div> <!-- END COL 10 -->
-
   </div>
 
-
   <div class="col-md-1"></div>
-
 
 </section>

@@ -23,7 +23,7 @@ function AdminController($uibModal, $log, $document) {
   admin.openNewFood = function () {
     var modalInstance = $uibModal.open({
       templateUrl: 'views/modals/newFoodModal.html',
-      // controller: 'ModalAdminController as modal',
+      controller: 'NewFoodAdminController as new',
       // resolve: {
       //   items: function () {
       //     return admin.items;
