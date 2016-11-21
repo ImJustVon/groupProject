@@ -10,7 +10,7 @@ function AdminController($uibModal, $log, $document) {
   admin.openNewCategory = function () {
     var modalInstance = $uibModal.open({
       templateUrl: 'views/modals/newCategoryModal.html',
-      // controller: 'ModalAdminController as modal',
+      controller: 'NewCategoryAdminController as new',
       // resolve: {
       //   items: function () {
       //     return admin.items;
