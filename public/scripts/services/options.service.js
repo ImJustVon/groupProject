@@ -25,4 +25,35 @@ function OptionService($http) {
     });
   }
 
+  //  Update an existing option
+  option.updateOption = function(optionData) {
+    return $http({
+      method: 'PUT',
+      url: '/options/' + optionData._id,
+      data: optionData
+    }).then(function(response) {
+      //  Returns array of objects {_id, name, score, type}
+      console.log('PUT successful:', response.data);
+    });
+  }
+
+  //  Delete an option
+  option.deleteOption = function(optionData) {
+    return $http({
+      method: 'DELETE',
+      url: '/options/' + optionData._id,
+      data: optionData
+    }).then(function(response) {
+      console.log('DELETE successful');
+    });
+  }
+
+  //  Search the option database
+  option.search = function(searchTerm) {
+    return $http.get('/options/search/' + searchTerm).then(function(response) {
+      //  Returns array of objects {_id, name, score, type}
+      return response.data;
+    });
+  }
+
 }
