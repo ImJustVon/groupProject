@@ -17,4 +17,8 @@ function NewOptionAdminController(OptionService, $uibModalInstance) {
     });
   }
 
+  admin.cancel = function() {
+    $uibModalInstance.close();
+  }
+
 }
