@@ -59,7 +59,7 @@ function AdminController($uibModal, $log, $document) {
   admin.editFood = function () {
     var modalInstance = $uibModal.open({
       templateUrl: 'views/modals/editFoodModal.html',
-      // controller: 'ModalAdminController as modal',
+      controller: 'EditFoodAdminController as new',
       // resolve: {
       //   items: function () {
       //     return admin.items;
@@ -67,6 +67,48 @@ function AdminController($uibModal, $log, $document) {
       // }
     });
   } // end admin.editFood
+
+  admin.editCategory = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: 'views/modals/editCategoryModal.html',
+      controller: 'EditCategoryAdminController as edit',
+      // resolve: {
+      //   items: function () {
+      //     return admin.items;
+      //   }
+      // }
+    });
+  } // end admin.editFood
+
+  admin.editOption = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: 'views/modals/editOptionModal.html',
+      controller: 'EditOptionAdminController as edit',
+      // resolve: {
+      //   items: function () {
+      //     return admin.items;
+      //   }
+      // }
+    });
+  } // end admin.editFood
+
+  admin.editLocation = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: 'views/modals/editLocationModal.html',
+      controller: 'EditLocationAdminController as edit',
+      // resolve: {
+      //   items: function () {
+      //     return admin.items;
+      //   }
+      // }
+    });
+  } // end admin.editFood
+
+
+
+
+
+
 
   admin.confirmDelete = function () {
     var modalInstance = $uibModal.open({
