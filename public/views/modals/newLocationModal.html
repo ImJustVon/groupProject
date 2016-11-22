@@ -1,0 +1,26 @@
+<section class="modal-upload">
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <h3>Add New Location</h3>
+  <hr />
+
+<form>
+  <input type="text" ng-model="new.name" id="new-location" placeholder="New Location"/>
+
+<!--== SAVE / CANCEL ==-->
+    <div class="row">
+      <button class="end-button btn" id="admin-btn" ng-click="new.cancel()">Cancel</button>
+      <button class="end-button btn btn-success" id="admin-btn" type="submit" ng-click="new.addLocation()">Save</button>
+</form>
+    </div>
+
+
+  </div>
+  <div class="col-md-1">
+</div>
+
+</div>
+
+</section>

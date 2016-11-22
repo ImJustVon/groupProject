@@ -44,6 +44,18 @@ function AdminController($uibModal, $log, $document) {
     });
   } // end admin.openNewOption
 
+  admin.openNewLocation = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: 'views/modals/newLocationModal.html',
+      controller: 'NewLocationAdminController as new',
+      // resolve: {
+      //   items: function () {
+      //     return admin.items;
+      //   }
+      // }
+    });
+  } // end admin.openNewLocation
+
   admin.editFood = function () {
     var modalInstance = $uibModal.open({
       templateUrl: 'views/modals/editFoodModal.html',
