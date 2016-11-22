@@ -1,0 +1,61 @@
+<section class="modal-upload">
+
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-10">
+  <h3>Edit Options</h3>
+  <hr />
+
+  <uib-accordion close-others="true">
+    <div uib-accordion-group class="panel panel-success" heading="Edit Option Types">
+      <table>
+        <thead>
+          <th class="col-md-7">Name</th>
+          <th>Modify</th>
+        </thead>
+        <tbody>
+          <tr>
+          <td>Type 1</td>
+          <td><button class="btn btn-info" id="table-mod">Edit</button><button class="btn btn-warning" id="table-mod">Delete</button></td>
+          </tr>
+          <tr>
+          <td>Type 2</td>
+          <td><button class="btn btn-info" id="table-mod">Edit</button><button class="btn btn-warning" id="table-mod">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div uib-accordion-group class="panel panel-warning" heading="Edit Options">
+      <form class="form-horizontal">
+      <select class="form-control">
+        <option selected disabled>Type</option>
+        <option>Type 1</option>
+        <option>Type 2</option>
+      </select>
+      <input value="Option 1"/>
+      <input value="Option 2"/>
+      <input value="Option 3"/>
+      <input value="Option 4"/>
+      <input value="Option 5"/>
+      <input value="Option 6"/>
+
+  </form>
+    </div>
+    </uib-accordion>
+
+
+
+
+  <!--== SAVE / CANCEL ==-->
+    <div class="row">
+      <button class="end-button btn" id="admin-btn" ng-click="edit.cancel()">Cancel</button>
+      <button class="end-button btn btn-success" id="admin-btn" type="submit" ng-click="edit.editCategory()">Save</button>
+  </form>
+    </div>
+
+</div>
+</div>
+<div class="col-md-1"></div>
+
+</section>

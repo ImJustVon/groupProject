@@ -1,17 +1,37 @@
 <section class="modal-upload">
 
-<table>
-  <thead>
-    <th>Name</th>
-    <th>Modify</th>
-  </thead>
-  <tbody>
-    <tr ng-repeat="">
-    <td>{{edit.category}}</td>
-    <td><button class="btn btn-info" id="table-mod">Edit</button><button class="btn btn-warning" id="table-mod">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-10">
+  <h3>Edit Categories</h3>
+  <hr />
+  <form>
+  <table>
+    <thead>
+      <th class="col-md-7">Name</th>
+      <th>Modify</th>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Category 1</td>
+      <td><button class="btn btn-info" id="table-mod">Edit</button><button class="btn btn-warning" id="table-mod">Delete</button></td>
+      </tr>
+      <tr>
+      <td>Category 2</td>
+      <td><button class="btn btn-info" id="table-mod">Edit</button><button class="btn btn-warning" id="table-mod">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
 
+  <!--== SAVE / CANCEL ==-->
+    <div class="row">
+      <button class="end-button btn" id="admin-btn" ng-click="edit.cancel()">Cancel</button>
+      <button class="end-button btn btn-success" id="admin-btn" type="submit" ng-click="edit.editCategory()">Save</button>
+  </form>
+    </div>
+
+</div>
+</div>
+<div class="col-md-1"></div>
 
 </section>
