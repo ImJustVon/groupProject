@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Location = mongoose.model('Location', {
-  name: { type: String, validate: required },
+  name: { type: String, required: true },
 });
 
 module.exports = Location;
