@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Category = mongoose.model('Category', {
-  name: String,
+  name: { type: String, validate: required },
 });
 
 module.exports = Category;

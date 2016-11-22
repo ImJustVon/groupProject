@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const optionSchema = {
-  name: String,
-  modifier: Number,
-  type: Object,
+  name: { type: String, validate: required },
+  modifier: { type: Number, validate: required },
+  type: { type: Object, validate: required },
 };
 
 const Option = mongoose.model('Option', optionSchema);
