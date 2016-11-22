@@ -12,6 +12,9 @@ angular.module('routeApp')
           }).when('/user-landing', {
             templateUrl: 'views/user-landing.html',
             //controller: ''
+          }).when('/categories', {
+            templateUrl: 'views/categories.html',
+            //controller: ''
           }).when('/admin', {
             templateUrl: 'views/admin.html',
             controller: 'AdminController as admin'
