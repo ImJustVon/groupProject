@@ -16,6 +16,8 @@ function NewOptionAdminController(OptionService, $uibModalInstance) {
     }
     OptionService.postOption(optionData).then(function(response) {
       console.log('POST successful:', response);
+      admin.name = '';
+      admin.modifier = '';
     });
   }
 
