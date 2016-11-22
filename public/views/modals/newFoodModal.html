@@ -7,158 +7,126 @@
     <h3>Add New Food</h3>
 
     <hr />
+    <uib-accordion close-others="true">
+      <div uib-accordion-group class="panel panel-success" heading="Upload CSV">
+        <form id="csv-upload">
+          <label for="csv-upload">Upload CSV:</label>
+          <input name="csv-upload" type="file" accept=".csv"/>
+          <button type="submit">Upload</button>
+        </form>
+      </div>
 
-    <form id="csv-upload">
-      <label for="csv-upload">Upload CSV:</label>
-      <input name="csv-upload" type="file" accept=".csv"/>
-      <button type="submit">Upload</button>
-    </form><br />
-<hr />
+      <div uib-accordion-group class="panel panel-warning" heading="Add New Food">
+        <form>
+
+        <input id="food-name" type="text" placeholder="Food Name" ng-model="new.name"/>
+        <input id="food-score" type="number" placeholder="Score" ng-model="new.score"/>
+
+    <!-- OVERRIDE -->
+        <input id="food-override-check" type="checkbox" ng-model="new.overRide"/>
+        <label for="food-override">Override</label>
+        <select ng-model="new.overRideValue">
+          <option ng-value="A">A</option>
+          <option ng-value="B">B</option>
+          <option ng-value="C">C</option>
+          <option ng-value="D">D</option>
+          <option ng-value="F">F</option>
+        </select>
+
+    <!-- CATEGORY -->
+        <select ng-model="new.category">
+          <option disabled value="initial">Category</option>
+          <option value="Fruit">Fruit</option>
+          <option value="Vegetables">Vegetables</option>
+          <option value="Grains">Grains</option>
+          <option value="Protein">Protein</option>
+          <option value="Dairy">Dairy</option>
+          <option value="Oil">Oil</option>
+        </select>
+
+    <!-- LOCATION -->
+        <select ng-model="new.location[0]">
+          <option disabled value="initial">Location</option>
+          <option ng-value="Ball-Game">Ball Game</option>
+          <option ng-value="Concession">Concession</option>
+          <option ng-value="Italian">Italian</option>
+          <option ng-value="Mexican">Mexican</option>
+        </select>
+
+        <select ng-model="new.location[1]">
+          <option disabled value="initial">Location</option>
+          <option ng-value="Ball-Game">Ball Game</option>
+          <option ng-value="Concession">Concession</option>
+          <option ng-value="Italian">Italian</option>
+          <option ng-value="Mexican">Mexican</option>
+        </select>
+
+        <h4>Options</h4>
+        <!-- <button id="add-option">+</button> -->
+        <select>
+          <option selected disabled>Type</option>
+          <option>Condiment</option>
+          <option>Bread</option>
+          <option>Topping</option>
+        </select>
+        <select ng-model="new.options[0]">
+          <option selected disabled>Option</option>
+          <option ng-value="Ketchup">Ketchup</option>
+          <option ng-value="Mustard">Mustard</option>
+        </select>
+
+        <select>
+          <option selected disabled>Type</option>
+          <option>Condiment</option>
+          <option>Bread</option>
+          <option>Topping</option>
+        </select>
+        <select ng-model="new.options[1]">
+          <option selected disabled>Option</option>
+          <option ng-value="Ketchup">Ketchup</option>
+          <option ng-value="Mustard">Mustard</option>
+        </select>
+
+        <select>
+          <option selected disabled>Type</option>
+          <option>Condiment</option>
+          <option>Bread</option>
+          <option>Topping</option>
+        </select>
+        <select ng-model="new.options[2]">
+          <option selected disabled>Option</option>
+          <option ng-value="Ketchup">Ketchup</option>
+          <option ng-value="Mustard">Mustard</option>
+        </select>
+
+        <select>
+          <option selected disabled>Type</option>
+          <option>Condiment</option>
+          <option>Bread</option>
+          <option>Topping</option>
+        </select>
+        <select ng-model="new.options[3]">
+          <option selected disabled>Option</option>
+          <option ng-value="Ketchup">Ketchup</option>
+          <option ng-value="Mustard">Mustard</option>
+        </select>
+
+
+
+    <!--== SAVE / CANCEL ==-->
+        <button class="btn btn-success end-button"  id="admin-btn" type="submit" ng-click="new.addFood()">Save</button>
+        </form>
+      </div>
+      </uib-accordion>
+<div class="row">
+  <button class="btn end-button" id="admin-btn" ng-click="new.cancel()">Cancel</button>
+
+</div>
+
   </div>
   <div class="col-md-1"></div>
 </div>
 
 
-<!--=========== ADD FOOD ===========-->
-
-<!-- NAME, SCORE, OVERRIDE -->
-<div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-10">
-    <form>
-
-    <input id="food-name" type="text" placeholder="Food Name" ng-model="new.name"/>
-    <input id="food-score" type="number" placeholder="Score" ng-model="new.score"/>
-
-<!-- OVERRIDE -->
-    <input id="food-override-check" type="checkbox" ng-model="new.overRide"/>
-    <label for="food-override">Override</label>
-    <select ng-model="new.overRideValue">
-      <option ng-value="A">A</option>
-      <option ng-value="B">B</option>
-      <option ng-value="C">C</option>
-      <option ng-value="D">D</option>
-      <option ng-value="F">F</option>
-    </select>
-
-<!-- CATEGORY -->
-    <select ng-model="new.category">
-      <option disabled value="initial">Category</option>
-      <option value="Fruit">Fruit</option>
-      <option value="Vegetables">Vegetables</option>
-      <option value="Grains">Grains</option>
-      <option value="Protein">Protein</option>
-      <option value="Dairy">Dairy</option>
-      <option value="Oil">Oil</option>
-    </select>
-
-<!-- LOCATION -->
-    <select ng-model="new.location[0]">
-      <option disabled value="initial">Location</option>
-      <option ng-value="Ball-Game">Ball Game</option>
-      <option ng-value="Concession">Concession</option>
-      <option ng-value="Italian">Italian</option>
-      <option ng-value="Mexican">Mexican</option>
-    </select>
-
-    <select ng-model="new.location[1]">
-      <option disabled value="initial">Location</option>
-      <option ng-value="Ball-Game">Ball Game</option>
-      <option ng-value="Concession">Concession</option>
-      <option ng-value="Italian">Italian</option>
-      <option ng-value="Mexican">Mexican</option>
-    </select>
-
-    <h4>Options</h4>
-    <!-- <button id="add-option">+</button> -->
-
-<div class="row">
-<div class="col-md-6">
-  <select>
-    <option selected disabled>Type</option>
-    <option>Condiment</option>
-    <option>Bread</option>
-    <option>Topping</option>
-  </select>
-  <select ng-model="new.options[0]">
-    <option selected disabled>Option</option>
-    <option ng-value="Ketchup">Ketchup</option>
-    <option ng-value="Mustard">Mustard</option>
-  </select>
-
-  <select>
-    <option selected disabled>Type</option>
-    <option>Condiment</option>
-    <option>Bread</option>
-    <option>Topping</option>
-  </select>
-  <select ng-model="new.options[1]">
-    <option selected disabled>Option</option>
-    <option ng-value="Ketchup">Ketchup</option>
-    <option ng-value="Mustard">Mustard</option>
-  </select>
-
-  <select>
-    <option selected disabled>Type</option>
-    <option>Condiment</option>
-    <option>Bread</option>
-    <option>Topping</option>
-  </select>
-  <select ng-model="new.options[2]">
-    <option selected disabled>Option</option>
-    <option ng-value="Ketchup">Ketchup</option>
-    <option ng-value="Mustard">Mustard</option>
-  </select>
-</div>
-
-<div class="col-md-6">
-  <select>
-    <option selected disabled>Type</option>
-    <option>Condiment</option>
-    <option>Bread</option>
-    <option>Topping</option>
-  </select>
-  <select ng-model="new.options[3]">
-    <option selected disabled>Option</option>
-    <option ng-value="Ketchup">Ketchup</option>
-    <option ng-value="Mustard">Mustard</option>
-  </select>
-
-  <select>
-    <option selected disabled>Type</option>
-    <option>Condiment</option>
-    <option>Bread</option>
-    <option>Topping</option>
-  </select>
-  <select ng-model="new.options[4]">
-    <option selected disabled>Option</option>
-    <option ng-value="Ketchup">Ketchup</option>
-    <option ng-value="Mustard">Mustard</option>
-  </select>
-
-  <select>
-    <option selected disabled>Type</option>
-    <option>Condiment</option>
-    <option>Bread</option>
-    <option>Topping</option>
-  </select>
-  <select ng-model="new.options[5]">
-    <option selected disabled>Option</option>
-    <option ng-value="Ketchup">Ketchup</option>
-    <option ng-value="Mustard">Mustard</option>
-  </select>
-</div>
-
-</div>
-
-<!--== SAVE / CANCEL ==-->
-    <button class="btn end-button" id="admin-btn" ng-click="new.cancel()">Cancel</button>
-    <button class="btn btn-success end-button"  id="admin-btn" type="submit" ng-click="new.addFood()">Save</button>
-    </form>
-
-  </div> <!-- END COL 10 -->
-  </div>
-
-  <div class="col-md-1"></div>
 
 </section>
