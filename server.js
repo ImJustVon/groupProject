@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const connection = require('./connection');
+const favicon = require('serve-favicon');
 
 const app = express();
 
@@ -30,6 +31,9 @@ app.use('/reports', reports);
 app.use('/options', options);
 app.use('/category', category);
 app.use('/type', type);
+
+//favicon
+app.use(favicon(__dirname + '/public/assets/images/favicon.ico'));
 
 //  Set up connection
 app.get('/*', function (req, res) {
