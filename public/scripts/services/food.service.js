@@ -6,6 +6,11 @@ function FoodService ($http) {
 
   var food = this;
 
+  //  This will hold various values:
+    //  food.foods.current holds an array of foods, accessed in a view
+    //  food.foods.saved holds an array of foods favorited by the user
+  food.foods = {};
+
   //  Get all foods
   food.getFoods = function() {
     return $http.get('/food').then(function(response) {
