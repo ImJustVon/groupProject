@@ -4,17 +4,16 @@
   <a href="/feedback" class="btn btn-info" id="sidebar-btn" role="button">Feedback</a>
   <a href="/reports" class="btn btn-info" id="sidebar-btn" role="button">Reports</a>
 <hr />
-<!-- <div uib-accordian-group class="panel-default" heading="New" is-open="false"> -->
-  <button type="button" class="btn btn-success" id="sidebar-btn" ng-click="admin.openNewFood()">+ New Food</button>
-  <button type="button" class="btn btn-success" id="sidebar-btn" ng-click="admin.openNewOption()">+ New Option</button>
-  <button type="button" class="btn btn-success" id="sidebar-btn" ng-click="admin.openNewCategory()">+ New Category</button>
-  <button type="button" class="btn btn-success" id="sidebar-btn" ng-click="admin.openNewLocation()">+ New Location</button>
-<!-- </div> -->
 
-  <button type="button" class="btn btn-warning" id="sidebar-btn">Edit Categories</button>
-  <button type="button" class="btn btn-warning" id="sidebar-btn">Edit Options</button>
-  <button type="button" class="btn btn-warning" id="sidebar-btn">Edit Locations</button>
+<uib-accordion close-others="true">
+  <div uib-accordion-group class="panel-default" heading="New">
+    <button type="button" class="btn btn-success" id="sidebar-btn" ng-click="admin.openNewCategory()">+ New Category</button>
+    <button type="button" class="btn btn-success" id="sidebar-btn" ng-click="admin.openNewFood()">+ New Food</button>
+    <button type="button" class="btn btn-success" id="sidebar-btn" ng-click="admin.openNewOption()">+ New Option</button>
+    <button type="button" class="btn btn-success" id="sidebar-btn" ng-click="admin.openNewLocation()">+ New Location</button>
 
+  </div>
+  </uib-accordion>
 </div>
 
 
