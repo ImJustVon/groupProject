@@ -1,6 +1,6 @@
 angular.module('routeApp').controller('NewFoodAdminController', NewFoodAdminController);
 
-function NewFoodAdminController(FoodService, OptionService) {
+function NewFoodAdminController(FoodService, OptionService, $uibModalInstance) {
 
   var admin = this;
 
@@ -48,5 +48,9 @@ function NewFoodAdminController(FoodService, OptionService) {
   }
 
   admin.getOptions();
+
+  admin.cancel = function() {
+    $uibModalInstance.close();
+  }
 
 }
