@@ -54,11 +54,22 @@
     <select name="type" ng-model="new.type" ng-options="type.name for type in new.types" ng-change="new.populateOptions(new.type.name)">
     </select>
 
-    <label for="option">Option:</label>
+    <!-- <label for="option">Option:</label>
     <select name="option" ng-model="new.options[0]" ng-options="option in new.OptionsList">
       <option selected disabled>Option</option>
       <option ng-value="{{option}}">{{option.name.replace('_', ' ')}}</option>
-    </select>
+    </select> -->
+
+    <ui-select multiple ng-model="new.options" ng-options="option in new.OptionsList" theme="bootstrap" ng-disabled="new.disabled" sortable="true" close-on-select="false" style="width: 100%;">
+  <ui-select-match placeholder="Select option...">{{option.name}}</ui-select-match>
+  <!-- <ui-select-choices repeat="person in ctrl.people | propsFilter: {name: $select.search, age: $select.search}"> -->
+    <div ng-bind-html="option.name | highlight: $select.search"></div>
+    <small>
+      type: {{option.type.name}}
+    </small>
+  <!-- </ui-select-choices> -->
+</ui-select>
+<!-- <p>Selected: {{ctrl.multipleDemo.selectedPeople}}</p> -->
 
 
     <!--== SAVE / CANCEL ==-->
