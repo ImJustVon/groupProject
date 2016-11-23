@@ -1,7 +1,7 @@
 angular.module('routeApp').controller('NewLocationAdminController', NewLocationAdminController);
 
-function NewLocationAdminController($uibModalInstance) {
-// LocationService,
+function NewLocationAdminController(LocationService, $uibModalInstance) {
+
   var admin = this;
 
   //  admin.name -> new location name
@@ -16,7 +16,7 @@ function NewLocationAdminController($uibModalInstance) {
       console.log('Response:', response);
       admin.getLocations();
     });
-  // }
+  }
 
   //  Get all locations
   admin.getLocations = function() {
