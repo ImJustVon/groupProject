@@ -24,4 +24,29 @@ function LocationService($http) {
     });
   }
 
+  //  Update a location, takes an object {_id}
+  location.updateLocation = function(locationData) {
+    return $http({
+      method: 'PUT',
+      url: '/location/' + locationData._id,
+      data: locationData
+    }).then(function(response) {
+      console.log('Update successful:', response.data);
+      return response.data;
+    });
+  }
+
+  //  Delete a location, takes an object {_id}
+  location.deleteLocation = function(locationData) {
+    return $http({
+      method: 'DELETE',
+      url: '/location/' + locationData._id,
+      data: locationData
+    }).then(function(response) {
+      console.log('Delete successful:', response);
+      return response;
+    });
+    
+  }
+
 }

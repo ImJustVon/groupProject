@@ -7,9 +7,17 @@ function FoodService ($http) {
   var food = this;
 
   //  This will hold various values:
+    //  Object with properties holding arrays of objects
     //  food.foods.current holds an array of foods, accessed in a view
     //  food.foods.saved holds an array of foods favorited by the user
-  food.foods = {};
+  food.foods = {
+    current: [],
+    saved: []
+  };
+
+  //  A specific chosen food will be stored in an object called food.chosen
+    //  {_id, name, category, options, score, overRide, overRideValue, tags, location}
+  food.chosen = {};
 
   //  Get all foods
   food.getFoods = function() {
