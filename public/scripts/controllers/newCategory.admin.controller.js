@@ -9,7 +9,7 @@ function NewCategoryAdminController(CategoryService, $uibModalInstance) {
   //  Post the new category
   admin.addCategory = function() {
     var categoryData = {
-      name: admin.name
+      name: admin.name.replace(/ /g,'_'),
     }
     CategoryService.postCategory(categoryData).then(function(response) {
       //  Do something

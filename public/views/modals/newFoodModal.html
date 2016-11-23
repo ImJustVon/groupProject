@@ -36,81 +36,29 @@
     <!-- CATEGORY -->
         <select ng-model="new.category">
           <option disabled value="initial">Category</option>
-          <option value="Fruit">Fruit</option>
-          <option value="Vegetables">Vegetables</option>
-          <option value="Grains">Grains</option>
-          <option value="Protein">Protein</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Oil">Oil</option>
+          <option ng-repeat="category in new.categories" ng-value="{{category.name}}">{{category.name.replace('_', ' ')}}</option>
+
         </select>
 
     <!-- LOCATION -->
-        <select ng-model="new.location[0]">
+        <select ng-model="new.location">
           <option disabled value="initial">Location</option>
-          <option ng-value="Ball-Game">Ball Game</option>
-          <option ng-value="Concession">Concession</option>
-          <option ng-value="Italian">Italian</option>
-          <option ng-value="Mexican">Mexican</option>
+          <option ng-repeat="location in new.locations" ng-value="{{location.name}}">{{location.name.replace('_', ' ')}}</option>
         </select>
 
-        <select ng-model="new.location[1]">
-          <option disabled value="initial">Location</option>
-          <option ng-value="Ball-Game">Ball Game</option>
-          <option ng-value="Concession">Concession</option>
-          <option ng-value="Italian">Italian</option>
-          <option ng-value="Mexican">Mexican</option>
-        </select>
 
-        <h4>Options</h4>
+    <!-- OPTIONS -->
+    <h4>Options</h4>
         <!-- <button id="add-option">+</button> -->
-        <select>
-          <option selected disabled>Type</option>
-          <option>Condiment</option>
-          <option>Bread</option>
-          <option>Topping</option>
-        </select>
-        <select ng-model="new.options[0]">
-          <option selected disabled>Option</option>
-          <option ng-value="Ketchup">Ketchup</option>
-          <option ng-value="Mustard">Mustard</option>
-        </select>
+    <label for="type">Type:</label>
+    <select name="type" ng-model="new.type" ng-options="type.name for type in new.types" ng-change="new.populateOptions(new.type.name)">
+    </select>
 
-        <select>
-          <option selected disabled>Type</option>
-          <option>Condiment</option>
-          <option>Bread</option>
-          <option>Topping</option>
-        </select>
-        <select ng-model="new.options[1]">
-          <option selected disabled>Option</option>
-          <option ng-value="Ketchup">Ketchup</option>
-          <option ng-value="Mustard">Mustard</option>
-        </select>
-
-        <select>
-          <option selected disabled>Type</option>
-          <option>Condiment</option>
-          <option>Bread</option>
-          <option>Topping</option>
-        </select>
-        <select ng-model="new.options[2]">
-          <option selected disabled>Option</option>
-          <option ng-value="Ketchup">Ketchup</option>
-          <option ng-value="Mustard">Mustard</option>
-        </select>
-
-        <select>
-          <option selected disabled>Type</option>
-          <option>Condiment</option>
-          <option>Bread</option>
-          <option>Topping</option>
-        </select>
-        <select ng-model="new.options[3]">
-          <option selected disabled>Option</option>
-          <option ng-value="Ketchup">Ketchup</option>
-          <option ng-value="Mustard">Mustard</option>
-        </select>
-
+    <label for="option">Option:</label>
+    <select name="option" ng-model="new.options[0]" ng-options="option in new.OptionsList">
+      <option selected disabled>Option</option>
+      <option ng-value="{{option}}">{{option.name.replace('_', ' ')}}</option>
+    </select>
 
 
     <!--== SAVE / CANCEL ==-->

@@ -1,22 +1,22 @@
 <!--== SIDEBAR ==-->
 <div class="col-md-2" id="sidebar">
   <img src="../assets/images/chef-marshall-logo.png"/>
-  <a href="/feedback" class="btn btn-info" id="sidebar-btn" role="button">Feedback</a>
-  <a href="/reports" class="btn btn-info" id="sidebar-btn" role="button">Reports</a>
+  <a href="/feedback" class="btn btn-info" id="sidebar-btn">Feedback</a>
+  <a href="/reports" class="btn btn-info" id="sidebar-btn">Reports</a>
 <hr />
 
 <uib-accordion close-others="true">
-  <div uib-accordion-group class="panel panel-success" heading="New +">
-    <button type="button" class="btn btn-success" id="accordion-btn" ng-click="admin.openNewCategory()">+ New Category</button>
-    <button type="button" class="btn btn-success" id="accordion-btn" ng-click="admin.openNewFood()">+ New Food</button>
-    <button type="button" class="btn btn-success" id="accordion-btn" ng-click="admin.openNewOption()">+ New Option</button>
-    <button type="button" class="btn btn-success" id="accordion-btn" ng-click="admin.openNewLocation()">+ New Location</button>
+  </a><div uib-accordion-group class="panel panel-success" heading="New +">
+    <a role="button" class="btn btn-success" id="accordion-btn" ng-click="admin.openNewCategory()">+ New Category</a>
+    <a role="button" class="btn btn-success" id="accordion-btn" ng-click="admin.openNewFood()">+ New Food</a>
+    <a role="button" class="btn btn-success" id="accordion-btn" ng-click="admin.openNewOption()">+ New Option</a>
+    <a role="button" class="btn btn-success" id="accordion-btn" ng-click="admin.openNewLocation()">+ New Location</a>
   </div>
 
   <div uib-accordion-group class="panel panel-warning" heading="Edit *">
-    <button type="button" class="btn btn-warning" id="accordion-btn" ng-click="admin.editCategory()">Edit Category</button>
-    <button type="button" class="btn btn-warning" id="accordion-btn" ng-click="admin.editOption()">Edit Option</button>
-    <button type="button" class="btn btn-warning" id="accordion-btn" ng-click="admin.editLocation()">Edit Location</button>
+    <a role="button" class="btn btn-warning" id="accordion-btn" ng-click="admin.editCategory()">Edit Category</a>
+    <a role="button" class="btn btn-warning" id="accordion-btn" ng-click="admin.editOption()">Edit Option</a>
+    <a role="button" class="btn btn-warning" id="accordion-btn" ng-click="admin.editLocation()">Edit Location</a>
   </div>
   </uib-accordion>
 
