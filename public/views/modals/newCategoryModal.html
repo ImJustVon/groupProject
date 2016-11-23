@@ -11,7 +11,9 @@
 
 <form>
   <input type="text" ng-model="new.name" id="new-category" placeholder="New Food Category"/>
-
+<div class="row">
+  <label for="img-upload">Image Upload:</label><input name="img-upload" type="file" accepts=".png" />
+</div>
 <!--== SAVE / CANCEL ==-->
   <div class="row">
     <button class="end-button btn" id="admin-btn" ng-click="new.cancel()">Cancel</button>
