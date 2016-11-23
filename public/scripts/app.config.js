@@ -15,6 +15,12 @@ angular.module('routeApp')
           }).when('/categories', {
             templateUrl: 'views/categories.html',
             //controller: ''
+          }).when('/chosen-food', {
+            templateUrl: 'views/chosen-food.html',
+            //controller: ''
+          }).when('/chosen-food-hotdog', {
+            templateUrl: 'views/chosen-food-hotdog.html',
+            //controller: ''
           }).when('/admin', {
             templateUrl: 'views/admin.html',
             controller: 'AdminController as admin'

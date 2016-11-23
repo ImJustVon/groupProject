@@ -1,4 +1,26 @@
 /*---------------------------------------------------------------------------
+Gloal
+----------------------------------------------------------------------------*/
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+span, input[type=checkbox] {
+  display: inline-block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+/*---------------------------------------------------------------------------
 User Landing Page
 ----------------------------------------------------------------------------*/
 .landing-page {
@@ -85,7 +107,6 @@ Where?
 .letter-grade {
   border-radius: 10px;
   color: #fff;
-  display: inline-block;
   font-weight: 700;
   height: 30px;
   margin-left: 10px;
@@ -145,4 +166,76 @@ Categories
 
 .category-photo img {
   width: 35%;
+}
+
+/*---------------------------------------------------------------------------
+Chosen Food
+----------------------------------------------------------------------------*/
+.chosen-food-header {
+  border-bottom: 2px solid black;
+  margin-top: 15px;
+  padding-bottom: 15px;
+}
+
+.chosen-food-name {
+  font-size: 40px;
+}
+
+.chosen-food-letter-grade {
+  font-size: 40px;
+  height: 60px;
+  width: 60px;
+}
+
+.option-checkbox-container {
+  margin: 20px 0;
+}
+
+.options-header {
+  font-size: 30px;
+  padding: 15px;
+  text-align: center;
+}
+
+.option-checkbox-div {
+  font-size: 18px;
+  padding-left: 40px;
+  padding-right: 0;
+}
+
+.option-checkbox-div label {
+  padding-left: 10px;
+}
+
+.option-checkbox {
+  height: 18px;
+  width: 18px;
+}
+
+/*---------------------------------------------------------------------------
+Chosen Food-Hotdog
+----------------------------------------------------------------------------*/
+.type-header {
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.type-list {
+  border: 1px solid black;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.type-list label {
+  padding-left: 10px;
+}
+
+.type-list ul {
+  padding: 10px;
+}
+
+.type-option {
+  height: 18px;
+  width: 18px;
 }
