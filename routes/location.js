@@ -20,6 +20,9 @@ router.post('/', function (req, res) {
   locationToSave.save().then(function () {
     console.log('Saved a new location');
     res.sendStatus(201);
+  }).catch(function (err) {
+    console.log('Error saving location', err);
+    res.sendStatus(500);
   });
 });
 

@@ -35,6 +35,9 @@ router.post('/', function (req, res) {
   optionToSave.save().then(function () {
     console.log('Saved a new option');
     res.sendStatus(201);
+  }).catch(function (err) {
+    console.log('Error saving option', err);
+    res.sendStatus(500);
   });
 });
 

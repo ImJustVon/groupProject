@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Food = require('../models/food');
+const Search = require('../models/search');
 
 /*
 Gets all documents with the specified location /food/location/(the location)
@@ -17,8 +18,21 @@ router.get('/location/:location', function (req, res) {
 Search request is sent to /food/search/(the phrase they are searching for)
 Searches for the phrase in the name and the tags to match
 Returns the document with matches
+saves search word in the searches database
  */
 router.get('/search/:word', function (req, res) {
+  Search.find({ word: req.params.word }).then(function (responseFromDatabase) {
+    console.log('response: ', responseFromDatabase);
+    console.log(responseFromDatabase.length);
+    if (responseFromDatabase.length === 0) {
+      var searchTerm = new Search({ word: req.params.word, count: 1 });
+      searchTerm.save();
+    } else {
+      console.log(responseFromDatabase[0]);
+      Search.update({ _id: responseFromDatabase[0]._id }, { $inc: { count: 1 } }).exec();
+    }
+  });
+
   //checks the name for a match and the tags array for a matching index then returns the document
   Food.find({ $or: [{ name: req.params.word }, { tags: req.params.word }, { location: req.params.word }] }).then(function (dataFromTheDatabase) {
     console.log('Search result ', dataFromTheDatabase);
@@ -63,6 +77,9 @@ router.post('/', function (req, res) {
   foodToSave.save().then(function () {
     console.log('Saved a new food');
     res.sendStatus(201);
+  }).catch(function (err) {
+    console.log('Error saving food', err);
+    res.sendStatus(500);
   });
 });
 

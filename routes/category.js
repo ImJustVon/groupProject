@@ -20,6 +20,9 @@ router.post('/', function (req, res) {
   categoryToSave.save().then(function () {
     console.log('Saved a new category');
     res.sendStatus(201);
+  }).catch(function (err) {
+    console.log('Error saving category', err);
+    res.sendStatus(500);
   });
 });
 
