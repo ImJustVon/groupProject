@@ -12,9 +12,6 @@ angular.module('routeApp')
           }).when('/user-landing', {
             templateUrl: 'views/user-landing.html',
             //controller: ''
-          }).when('/categories', {
-            templateUrl: 'views/categories.html',
-            //controller: ''
           }).when('/chosen-food', {
             templateUrl: 'views/chosen-food.html',
             //controller: ''
@@ -29,7 +26,7 @@ angular.module('routeApp')
             controller: 'ResultsController as results'
           }).when('/categories', {
             templateUrl: 'views/categories.html',
-            controller: 'CategoriesController as categories'
+            controller: 'CategoriesController as cat'
           }).when('/report', {
             templateUrl: 'views/report.html',
             controller: 'ReportController as report'
