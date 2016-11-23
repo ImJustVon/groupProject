@@ -21,6 +21,7 @@ const register = require('./routes/register');
 const reports = require('./routes/reports');
 const options = require('./routes/options');
 const category = require('./routes/category');
+const location = require('./routes/location');
 const type = require('./routes/type');
 
 //  Connect routes
@@ -30,6 +31,7 @@ app.use('/register', register);
 app.use('/reports', reports);
 app.use('/options', options);
 app.use('/category', category);
+app.use('/location', location);
 app.use('/type', type);
 
 //favicon
