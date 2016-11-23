@@ -8,12 +8,12 @@ function CategoryService($http) {
   //  Get all categories
   cat.getCategories = function() {
     return $http.get('/category').then(function(response) {
-      //  Returns array of objects {_id, name}
+      //  Returns array of objects {_id, name, imageLocation}
       return response.data;
     });
   }
 
-  //  Post a category, takes object {name}
+  //  Post a category, takes object {name, imageLocation}
   cat.postCategory = function(categoryData) {
     return $http({
       method: 'POST',
@@ -25,7 +25,7 @@ function CategoryService($http) {
     });
   }
 
-  //  Update a category, takes object {_id, name}
+  //  Update a category, takes object {_id, name, imageLocation}
   cat.updateCategory = function(categoryData) {
     return $http({
       method: 'PUT',
@@ -37,7 +37,7 @@ function CategoryService($http) {
     });
   }
 
-  //  Delete a category, takes object {_id, name}
+  //  Delete a category, takes object {_id, name, imageLocation}
   cat.deleteCategory = function(categoryData) {
     return $http({
       method: 'DELETE',
