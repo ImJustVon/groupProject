@@ -1,5 +1,5 @@
 angular.module('routeApp')
-  .service('LocationService');
+  .service('LocationService', LocationService);
 
 function LocationService($http) {
 
@@ -46,7 +46,7 @@ function LocationService($http) {
       console.log('Delete successful:', response);
       return response;
     });
-    
+
   }
 
 }
