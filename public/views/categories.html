@@ -5,7 +5,7 @@
             <img src='assets/images/web-art/chef-marshall-logo.png' alt="Chef Marshall O'Brien Group logo" />
         </div>
         <div class='col-xs-2 avocado'>
-            <img src='assets/images/avocado.png' alt="It's an Avodcado!">
+            <img src='assets/images/web-art/avocado.png' alt="It's an Avodcado!">
         </div>
         <div class='col-xs-5 login-button'>
             <button class='btn' type='submit'>Login/Out</button>
@@ -14,7 +14,16 @@
 
     <section class='categories-list'>
 
-      <div class='row category'>
+      <div class='row category' ng-repeat='category in cat.categories'>
+        <div class='col-xs-6 category-name'>
+          <span>{{ category.name }}</span>
+        </div>
+        <div class='col-xs-6 category-photo'>
+          <img src="{{ category.imageLocation }}" />
+        </div>
+      </div>
+
+      <!-- <div class='row category'>
         <div class='col-xs-6 category-name'>
           <span>Vegetables</span>
         </div>
@@ -66,7 +75,7 @@
         <div class='col-xs-6 category-photo'>
           <img src="assets/images/category-items/olive-oil.png" alt="Oils" />
         </div>
-      </div>
+      </div> -->
 
       <footer class='row footer'>
         <p>  That's Pretty Neat &copy; How 'Bout A Beer? - 2016 </p>
