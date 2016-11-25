@@ -10,6 +10,7 @@ function NewLocationAdminController(LocationService, $uibModalInstance) {
   admin.addLocation = function() {
     var locationData = {
       name: admin.name.replace(/ /g,'_'),
+      imageLocation: admin.image,
     }
     LocationService.postLocation(locationData).then(function(response) {
       //  Do something

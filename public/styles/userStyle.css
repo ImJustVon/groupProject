@@ -169,6 +169,33 @@ Categories
 }
 
 /*---------------------------------------------------------------------------
+Locations
+----------------------------------------------------------------------------*/
+
+.locations-banner {
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+.location {
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+}
+
+.location-name {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.location-photo {
+  text-align: right;
+}
+
+.location-photo img {
+  width: 35%;
+}
+
+/*---------------------------------------------------------------------------
 Chosen Food
 ----------------------------------------------------------------------------*/
 .chosen-food-header {

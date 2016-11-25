@@ -1,0 +1,28 @@
+<div class='container-fluid where-page' ng-init='location.getLocations()'>
+
+    <header class='row banner locations-banner'>
+        <div class='col-xs-5 chef-marshall-logo'>
+            <img src='assets/images/web-art/chef-marshall-logo.png' alt="Chef Marshall O'Brien Group logo" />
+        </div>
+        <div class='col-xs-2 avocado'>
+            <img src='assets/images/web-art/avocado.png' alt="It's an Avodcado!">
+        </div>
+        <div class='col-xs-5 login-button'>
+            <button class='btn' type='submit'>Login/Out</button>
+        </div>
+    </header>
+
+    <section class='locations-list'>
+
+      <div class='row location' ng-repeat='location in location.locations'>
+        <div class='col-xs-6 location-name'>
+          <span>{{ location.name }}</span>
+        </div>
+        <div class='col-xs-6 location-photo'>
+          <img src="{{ location.imageLocation }}" />
+        </div>
+      </div>
+
+    </section>
+
+</div>
