@@ -35,7 +35,7 @@ app.use('/location', location);
 app.use('/type', type);
 
 //favicon
-app.use(favicon(__dirname + '/public/assets/images/favicon.ico'));
+app.use(favicon(__dirname + '/public/assets/images/web-art/favicon.ico'));
 
 //  Set up connection
 app.get('/*', function (req, res) {

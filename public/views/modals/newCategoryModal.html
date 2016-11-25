@@ -8,11 +8,12 @@
   <div class="col-md-10">
     <h3>Add New Category</h3>
   <hr />
-
+<!-- Should the ng-model be on the form input to encompass both inputs? -->
 <form>
   <input type="text" ng-model="new.name" id="new-category" placeholder="New Food Category"/>
 <div class="row">
-  <label for="img-upload">Image Upload:</label><input name="img-upload" type="file" accepts=".png" />
+  <input type="text" ng-model="new.image" id="new-image" placeholder="Category Image Path"  />
+  <!-- <label for="img-upload">Image Upload:</label><input name="img-upload" type="file" accepts=".png" /> -->
 </div>
 <!--== SAVE / CANCEL ==-->
   <div class="row">
