@@ -5,6 +5,9 @@ function CategoriesController(CategoryService, FoodService) {
 
   var cat = this;
 
+  //  Array to hold all categories
+  cat.categories = [];
+
   //  Get all categories from database
   cat.getCategories = function() {
     CategoryService.getCategories().then(function(response) {
@@ -23,4 +26,6 @@ function CategoriesController(CategoryService, FoodService) {
     });
   }
 
+  //  Get all categories when page loads [{_id, name, imageLocation}]
+  cat.getCategories();
 }

@@ -23,4 +23,7 @@ function LocationController(LocationService, FoodService) {
     });
   }
 
+//  Get all locations when page loads
+location.getLocations();
+
 }
