@@ -28,9 +28,9 @@ router.get('/', function (req, res) {
 /*
 expecting this format
 req.body.name = name String
-req.body.imageLocation = string of location
+req.file = file object
  */
-router.post('/', upload.single('file'), function (req, res) {
+router.post('/upload', upload.single('file'), function (req, res) {
   console.log('req.file', req.file);
   var categoryToSave = new Category({ name: req.body.name, file: req.file, created: Date.now(), });
   categoryToSave.save().then(function () {
@@ -42,6 +42,16 @@ router.post('/', upload.single('file'), function (req, res) {
   });
 });
 
+router.post('/default', function (req, res) {
+  var categoryToSave = new Category({ name: req.body.name, file: req.file, created: Date.now(), });
+  categoryToSave.save().then(function () {
+    console.log('Saved a new category');
+    res.sendStatus(201);
+  }).catch(function (err) {
+    console.log('Error saving category', err);
+    res.sendStatus(500);
+  });
+});
 /*
 expecting this format
 req.body.name = name String
