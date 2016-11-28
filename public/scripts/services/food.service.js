@@ -29,6 +29,7 @@ function FoodService ($http) {
 
   //  Post a food, takes object {name, category, options, score, overRide, overRideValue, tags, location}
   food.postFood = function(foodData) {
+    foodData.name.trim();
     console.log('Step 3: inside food service');
     return $http({
       method: 'POST',

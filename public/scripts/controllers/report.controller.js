@@ -70,7 +70,7 @@ function ReportController(ReportService) {
   }
 
   //  Get feedback and search information on page load
-  report.getFeedback();
+  // report.getFeedback();
   report.getSearchReport();
-
+  console.log('Feedback:', report.feedback);
 }

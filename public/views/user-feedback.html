@@ -20,6 +20,40 @@
 <!--== CONTENT ==-->
 <div class="col-md-10" id="admin-content">
   <h2>User Feedback and Requests</h2>
-  
+  <table class="table table-striped admin-table">
+    <thead>
+      <th class="col-md-2">
+        Type
+      </th>
+      <th class="col-md-4">
+        Feedback
+      </th>
+      <th class="col-md-2">
+        Date
+      </th>
+      <th class="col-md-2">
+        Status
+      </th>
+      <th class="col-md-2">
+        Actions
+      </th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="entry in report.feedback">
+        <td>{{entry.type}}</td>
+        <td>{{entry.content}}</td>
+        <td>{{entry.date | date:"short"}}</td>
+        <td>Status: <span ng-show="entry.resolved">Resolved</span><span ng-hide="entry.resolved">Unresolved</span></td>
+        <td>
+          <div class="row">
+            <button id="table-mod" class="btn btn-info col-md-6" ng-hide="entry.resolved" ng-click="report.changeFeedbackStatus(entry)">Resolve</button>
+            <button id="table-mod" class="btn btn-info col-md-6" ng-show="entry.resolved" ng-click="report.changeFeedbackStatus(entry)">Unresolve</button>
+            <button id="table-mod" class="btn btn-danger col-md-6" ng-click="report.deleteFeedback(entry)">Delete</button>
+          </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
 </div>
