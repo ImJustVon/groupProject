@@ -12,7 +12,7 @@ function ReportController(ReportService) {
   //  Function to get all feedback from database
   report.getFeedback = function() {
     ReportService.getFeedback().then(function(response) {
-      console.log('Controller received feedback:', reponse);
+      console.log('Controller received feedback:', response);
       report.feedback = response;
     });
   }
