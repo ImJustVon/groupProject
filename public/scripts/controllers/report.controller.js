@@ -5,20 +5,25 @@ function ReportController(ReportService) {
 
   var report = this;
 
-  //  Store all feedback objects and search terms
+  //  Store feedback objects and search terms
   report.feedback = [];
-
   report.resolvedFeedback = [];
   report.unresolvedFeedback = [];
-
   report.searchData = [];
+
+  //  This information will be displayed on the feedback screen
+  report.current = [];
+
+  //  This variable determines which list is assigned to report.current
+  report.selected = 'all';
 
   //  Function to get all feedback from database
   report.getFeedback = function() {
-    console.log('Running 1');
     ReportService.getFeedback().then(function(response) {
       console.log('Controller received feedback:', response);
       report.feedback = response;
+      sortFeedback();
+      report.assignList(report.selected);
     });
   }
 
@@ -88,6 +93,18 @@ function ReportController(ReportService) {
   function sortFeedback() {
     report.resolvedFeedback = report.feedback.filter(isResolved);
     report.unresolvedFeedback = report.feedback.filter(isUnresolved);
+  }
+
+  //  Function to assign the list displayed on screen
+  report.assignList = function(value) {
+    if (value == 'all') {
+      report.current = report.feedback;
+    } else if (value == 'unresolved') {
+      report.current = report.unresolvedFeedback;
+    } else if (value == 'resolved') {
+      report.current = report.resolvedFeedback;
+    }
+    report.getFeedback
   }
 
   //  Get feedback and search information on page load

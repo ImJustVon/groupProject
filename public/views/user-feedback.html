@@ -9,11 +9,11 @@
 
 
 <!-- Show all -->
-<button class="btn btn-success" ng-click="report.getFeedback()">Show All ({{report.feedback.length}})</button>
+<button class="btn btn-success" ng-click="report.assignList('all')">Show All ({{report.feedback.length}})</button>
 <!-- Show unresolved -->
-<button class="btn btn-success">Show Unresolved ({{report.unresolvedFeedback.length}})</button>
+<button class="btn btn-success" ng-click="report.assignList('unresolved')">Show Unresolved ({{report.unresolvedFeedback.length}})</button>
 <!-- Show resolved -->
-<button class="btn btn-success">Show Resolved ({{report.resolvedFeedback.length}})</button>
+<button class="btn btn-success" ng-click="report.assignList('resolved')">Show Resolved ({{report.resolvedFeedback.length}})</button>
 
 
 </div> <!-- END SIDEBAR -->
