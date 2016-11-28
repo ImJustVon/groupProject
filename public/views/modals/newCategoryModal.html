@@ -23,7 +23,7 @@
     <form>
       <input type="text" ng-model="new.name" id="new-category" placeholder="New Food Category"/>
       <ui-select ng-model="new.file" theme="selectize">
-        <ui-select-match placeholder="Choose an image...">$select.name</ui-select-match>
+        <ui-select-match placeholder="Choose an image...">$select.file</ui-select-match>
         <ui-select-chocies repeat="pic in new.defaults">{{pic.url}}</ui-select-chocies>
       </ui-select>
     </form>
