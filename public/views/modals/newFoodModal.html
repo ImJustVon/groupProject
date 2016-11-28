@@ -53,6 +53,7 @@
     <label for="type">Type:</label>
     <select name="type" ng-model="new.type" ng-options="type.name for type in new.types" ng-change="new.populateOptions(new.type.name)">
     </select>
+<!-- ng-change="new.populateOptions(new.type.name)" -->
 
     <!-- <label for="option">Option:</label>
     <select name="option" ng-model="new.options[0]" ng-options="option in new.OptionsList">
@@ -60,19 +61,22 @@
       <option ng-value="{{option}}">{{option.name.replace('_', ' ')}}</option>
     </select> -->
 
-    <ui-select multiple ng-model="new.options" ng-options="option in new.OptionsList" theme="bootstrap" ng-disabled="new.disabled" sortable="true" close-on-select="false" style="width: 100%;">
-  <ui-select-match placeholder="Select option...">{{option.name}}</ui-select-match>
-  <!-- <ui-select-choices repeat="person in ctrl.people | propsFilter: {name: $select.search, age: $select.search}"> -->
+<!-- Multiple Selection -->
+<ui-select multiple ng-model="new.array" theme="bootstrap" ng-disabled="new.disabled" close-on-select="false" style="width: 100%;" title="Select an option">
+  <ui-select-match placeholder="Select option...">{{$item.name}}</ui-select-match>
+  <ui-select-choices repeat="option in new.options | filter: new.type.name" >
+     <!-- | propsFilter: {type:{name:type.name}} -->
     <div ng-bind-html="option.name | highlight: $select.search"></div>
-    <small>
-      type: {{option.type.name}}
-    </small>
-  <!-- </ui-select-choices> -->
+    <small>type: {{option.type.name}}</small>
+  </ui-select-choices>
 </ui-select>
-<!-- <p>Selected: {{ctrl.multipleDemo.selectedPeople}}</p> -->
+<!-- <p>Selected: {{ctrl.multipleDemo.selectedPeople}}</p>
 
 
-    <!--== SAVE / CANCEL ==-->
+
+
+
+    <!- == SAVE / CANCEL == -->
         <button class="btn btn-success end-button"  id="admin-btn" type="submit" ng-click="new.addFood(); new.cancel()">Save</button>
         </form>
       </div>

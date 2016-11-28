@@ -15,6 +15,7 @@ function NewFoodAdminController(FoodService, OptionService, CategoryService, Loc
     OptionService.getOptions().then(function(response) {
       console.log('GET successful:', response);
       admin.options = response;
+      console.log('Options:', admin.options);
     });
   }
 
@@ -37,6 +38,7 @@ function NewFoodAdminController(FoodService, OptionService, CategoryService, Loc
 
 
     }
+    console.log('options.list:', admin.optionsList);
   }
 
 
@@ -69,13 +71,13 @@ function NewFoodAdminController(FoodService, OptionService, CategoryService, Loc
   admin.addFood = function() {
     console.log('Step 1: function clicked');
     var foodData = {
-      name: admin.name.replace(/ /g,'_'),
+      name: admin.name,
       category: admin.category,
-      options: admin.options,
+      options: admin.array,
       score: admin.score,
       overRide: admin.overRide,
       // overRideValue: ,
-      tags: admin.tags.replace(/ /g,'_'),
+      tags: admin.tags,
       location: admin.location
     }
     if (foodData.overRide) {
@@ -91,6 +93,7 @@ function NewFoodAdminController(FoodService, OptionService, CategoryService, Loc
   admin.getOptionTypes();
   admin.getCategories();
   admin.getLocations();
+
 
 
   admin.cancel = function() {

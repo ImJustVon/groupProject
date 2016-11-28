@@ -10,14 +10,16 @@ function NewOptionAdminController(OptionService, $uibModalInstance) {
   //  Post a new option
   admin.addOption = function () {
     var optionData = {
-      name: admin.name.replace(/ /g, '_'),
+      name: admin.name,
       modifier: admin.modifier,
-      type: admin.type.replace(/ /g, '_'),
+      type: admin.type.selected,
     };
     OptionService.postOption(optionData).then(function (response) {
       console.log('POST successful:', response);
       admin.name = '';
       admin.modifier = '';
+      console.log(optionData);
+
     });
   };
 
