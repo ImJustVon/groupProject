@@ -39,7 +39,7 @@ router.post('/', function(req, res) {
 Updates a feedback entry
 Takes form {_id, type, content, date, resolved}
 */
-router.put('/:id', funciton(req, res) {
+router.put('/:id', function(req, res) {
   Feedback.update({ _id: req.params.id }, req.body).then(function() {
     console.log('Updated feedback entry');
     res.sendStatus(204);
