@@ -43,6 +43,7 @@ function ReportService($http) {
 
   //  Get all feedback
   report.getFeedback = function() {
+    console.log('2');
     return $http.get('/feedback').then(function(response) {
       //  Returns array of objects {_id, type, content, date, resolved}
       console.log('Feedback reports:', response.data);

@@ -7,9 +7,13 @@
   <a href="/report" class="btn btn-info" id="sidebar-btn">Reports</a>
 <hr />
 
-<!-- Show resolved -->
 
+<!-- Show all -->
+<button class="btn btn-success" ng-click="report.getFeedback()">Show All ({{report.feedback.length}})</button>
 <!-- Show unresolved -->
+<button class="btn btn-success">Show Unresolved ({{report.unresolvedFeedback.length}})</button>
+<!-- Show resolved -->
+<button class="btn btn-success">Show Resolved ({{report.resolvedFeedback.length}})</button>
 
 
 </div> <!-- END SIDEBAR -->
@@ -46,7 +50,7 @@
         <td>Status: <span ng-show="entry.resolved">Resolved</span><span ng-hide="entry.resolved">Unresolved</span></td>
         <td>
           <div class="row">
-            <button id="table-mod" class="btn btn-info col-md-6" ng-hide="entry.resolved" ng-click="report.changeFeedbackStatus(entry)">Resolve</button>
+            <button id="table-mod" class="btn btn-success col-md-6" ng-hide="entry.resolved" ng-click="report.changeFeedbackStatus(entry)">Resolve</button>
             <button id="table-mod" class="btn btn-info col-md-6" ng-show="entry.resolved" ng-click="report.changeFeedbackStatus(entry)">Unresolve</button>
             <button id="table-mod" class="btn btn-danger col-md-6" ng-click="report.deleteFeedback(entry)">Delete</button>
           </div>
