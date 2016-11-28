@@ -10,6 +10,7 @@ const Food = mongoose.model('Food', {
   overRideValue: String,
   tags: Array,
   location: Array,
+  tip: String,
 });
 
 module.exports = Food;

@@ -12,3 +12,5 @@ cp node_modules/bootstrap/dist/css/bootstrap.min.css.map public/vendors;
 
 cp node_modules/angular-ui-bootstrapgit/dist/ui-bootstrap-tpls.js public/vendors;
 cp node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css public/vendors;
+
+cp node_modules/ng-file-upload/dist/ng-file-upload-all.min.js public/vendors;
