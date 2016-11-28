@@ -14,6 +14,21 @@ function ReportService($http) {
     });
   }
 
+  report.addSearchReport = function(searchterm) {
+    var searchData = {
+      searchterm: searchterm
+    };
+    return $http({
+      method: 'POST',
+      url: '/reports',
+      data: searchData
+    }).then(function(response) {
+      //  Returns array of objects {_id, ???}
+      console.log('POST successful:', response.data);
+      return response.data;
+    });
+  }
+
   //  Delete search term, takes {_id}
   report.deleteSearchReport = function(searchData) {
     return $http({
@@ -32,6 +47,19 @@ function ReportService($http) {
       //  Returns array of objects {_id, type, content, date, resolved}
       console.log('Feedback reports:', response);
       return response;
+    });
+  }
+
+  //  Create feedback
+  report.postFeedback = function(feedbackData) {
+    return $http({
+      method: 'POST',
+      url: '/feedback',
+      data: feedbackData
+    }).then(function(response) {
+      //  Returns array of objects {_id, type, content, date, resolved}
+      console.log('Created  feedback:', response.data);
+      return response.data;
     });
   }
 

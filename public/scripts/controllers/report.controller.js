@@ -25,11 +25,25 @@ function ReportController(ReportService) {
     });
   }
 
+  //  Function to add search information to database, takes string 'searchterm'
+  report.addSearchReport = function(searchterm) {
+    ReportService.addSearchReport(searchterm).then(function(response) {
+      console.log('Got response from service:', response);
+    });
+  }
+
   //  Function to delete search data, takes {_id}
   report.deleteSearchReport = function(searchData) {
     ReportService.deleteSearchReport(searchData).then(function(response) {
       console.log('Controller received response:', response);
       report.getSearchReport();
+    });
+  }
+
+  //  Function to add feedback
+  report.addFeedback = function (feedbackData) {
+    ReportService.postFeedback(feedbackData).then(function(response) {
+      console.log('Controller received response:', reponse);
     });
   }
 
