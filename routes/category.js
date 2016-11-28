@@ -43,7 +43,8 @@ router.post('/upload', upload.single('file'), function (req, res) {
 });
 
 router.post('/default', function (req, res) {
-  var categoryToSave = new Category({ name: req.body.name, file: req.file, created: Date.now(), });
+  console.log('req.body: ', req.body);
+  var categoryToSave = new Category({ name: req.body.name, file: req.body.file, created: Date.now(), });
   categoryToSave.save().then(function () {
     console.log('Saved a new category');
     res.sendStatus(201);

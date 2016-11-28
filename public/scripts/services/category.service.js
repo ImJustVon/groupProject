@@ -27,7 +27,7 @@ function CategoryService($http, Upload) {
 
   //  Post a category, takes object {name, imageLocation}
   cat.postCategoryDefault = function (categoryData) {
-    return Upload.upload({
+    return $http({
       method: 'POST',
       url: '/category/default',
       data: categoryData,

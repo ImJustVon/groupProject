@@ -4,23 +4,14 @@ function NewCategoryAdminController(CategoryService, $uibModalInstance) {
 
   var admin = this;
 
-  admin.itemArray = [
-    { id: 1, name: 'first' },
-    { id: 2, name: 'second' },
-    { id: 3, name: 'third' },
-    { id: 4, name: 'fourth' },
-    { id: 5, name: 'fifth' },
-];
-
-  admin.selectedItem = admin.itemArray[0];
-
+  admin.language_list = [{ name: 'english', url: 'https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/gb.png' }, { name: 'italian', url: 'https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/it.png' }];
   admin.defaults = [
-    { url: '/assets/images/category-items/apple.png' },
-    { url: '/assets/images/category-items/carrot.png' },
-    { url: '/assets/images/category-items/cheese.png' },
-    { url: '/assets/images/category-items/grain.png' },
-    { url: '/assets/images/category-items/olive-oil.png' },
-    { url: '/assets/images/category-items/steak.png' }, ];
+    { name: 'Apple', url: '/assets/images/category-items/apple.png' },
+    { name: 'Carrot', url: '/assets/images/category-items/carrot.png' },
+    { name: 'Cheese', url: '/assets/images/category-items/cheese.png' },
+    { name: 'Grain', url: '/assets/images/category-items/grain.png' },
+    { name: 'Oil', url: '/assets/images/category-items/olive-oil.png' },
+    { name: 'Steak', url: '/assets/images/category-items/steak.png' }, ];
 
   //  admin.name -> new category name
 
@@ -38,10 +29,13 @@ function NewCategoryAdminController(CategoryService, $uibModalInstance) {
   };
   // Post the new category with a default image
   admin.addCategoryDefault = function () {
+    console.log('admin.file.selected: ', admin.file.selected);
+    console.log('admin.name: ', admin.name);
     var categoryData = {
-      name: admin.name.replace(/ /g, '_'), //What is this?
-      file: admin.file,
+      name: admin.name,
+      file: admin.file.selected,
     };
+    console.log('categoryData', categoryData);
     CategoryService.postCategoryDefault(categoryData).then(function (response) {
       //  Do something
       console.log('Response:', response);
@@ -59,5 +53,4 @@ function NewCategoryAdminController(CategoryService, $uibModalInstance) {
   admin.cancel = function () {
     $uibModalInstance.close();
   };
-
 }
