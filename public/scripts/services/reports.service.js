@@ -50,7 +50,7 @@ function ReportService($http) {
     });
   }
 
-  //  Create feedback
+  //  Create feedback, takes {type, content}.  Resolved and date added in server
   report.postFeedback = function(feedbackData) {
     return $http({
       method: 'POST',

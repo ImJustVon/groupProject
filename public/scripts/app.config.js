@@ -33,6 +33,9 @@ angular.module('routeApp')
           }).when('/chosen-food', {
             templateUrl: 'views/chosen-food.html',
             controller: 'FoodController as food'
+          }).when('/user-feedback', {
+            templateUrl: 'views/user-feedback.html',
+            controller: 'ReportController as report'
           }).otherwise({
               redirectTo: '/home',
           });
