@@ -14,3 +14,12 @@ cp node_modules/angular-ui-bootstrapgit/dist/ui-bootstrap-tpls.js public/vendors
 cp node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css public/vendors;
 
 cp node_modules/ng-file-upload/dist/ng-file-upload-all.min.js public/vendors;
+
+cp node_modules/ui-select/dist/select.min.js public/vendors;
+cp node_modules/ui-select/dist/select.min.js.map public/vendors;
+
+cp node_modules/angular-sanitize/dist/angular-sanitize.min.js public/vendors;
+cp node_modules/angular-sanitize/dist/angular-sanitize.min.js.map public/vendors;
+
+cp node_modules/ui-select/dist/select.min.css public/vendors;
+cp node_modules/ui-select/dist/select.min.css.map public/vendors;

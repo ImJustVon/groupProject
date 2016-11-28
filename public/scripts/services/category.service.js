@@ -17,7 +17,19 @@ function CategoryService($http, Upload) {
   cat.postCategory = function (categoryData) {
     return Upload.upload({
       method: 'POST',
-      url: '/category',
+      url: '/category/upload',
+      data: categoryData,
+    }).then(function (response) {
+      console.log('POST successful:', response.data);
+      return response.data;
+    });
+  };
+
+  //  Post a category, takes object {name, imageLocation}
+  cat.postCategoryDefault = function (categoryData) {
+    return Upload.upload({
+      method: 'POST',
+      url: '/category/default',
       data: categoryData,
     }).then(function (response) {
       console.log('POST successful:', response.data);

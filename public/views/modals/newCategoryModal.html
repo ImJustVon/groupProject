@@ -9,16 +9,30 @@
     <h3>Add New Category</h3>
   <hr />
 <!-- Should the ng-model be on the form input to encompass both inputs? -->
-<form>
-  <input type="text" ng-model="new.name" id="new-category" placeholder="New Food Category"/>
-<div class="row">
-  <label for="file">Picture:</label> <input type="file" name="file" id="file" ng-model="new.file" ngf-select ngf-max-size="5MB" required/>
-</div>
+<uib-accordion close-others="true">
+  <div uib-accordion-group class="panel panel-success" heading="Upload custom">
+    <form>
+      <input type="text" ng-model="new.name" id="new-category" placeholder="New Food Category"/>
+    <div class="row">
+    <input type="file" name="file" id="file" ng-model="new.file" ngf-select ngf-max-size="5MB" required/>
+    </form>
+    </div>
+        <button class="end-button btn btn-success" id="admin-btn" type="submit" ng-click="new.addCategory(); new.cancel()">Save</button>
+  </div>
+  <div uib-accordion-group class="panel panel-success" heading="Use Default">
+    <form>
+      <input type="text" ng-model="new.name" id="new-category" placeholder="New Food Category"/>
+      <ui-select ng-model="new.file" theme="selectize">
+        <ui-select-match placeholder="Choose an image...">$select.file</ui-select-match>
+        <ui-select-chocies repeat="pic in new.defaults">{{pic.url}}</ui-select-chocies>
+      </ui-select>
+    </form>
+        <button class="end-button btn btn-success" id="admin-btn" type="submit" ng-click="new.addCategoryDefault(); new.cancel()">Save</button>
+  </div>
+
 <!--== SAVE / CANCEL ==-->
   <div class="row">
     <button class="end-button btn" id="admin-btn" ng-click="new.cancel()">Cancel</button>
-    <button class="end-button btn btn-success" id="admin-btn" type="submit" ng-click="new.addCategory(); new.cancel()">Save</button>
-</form>
   </div>
 
 
