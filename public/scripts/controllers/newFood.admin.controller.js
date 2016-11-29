@@ -75,14 +75,29 @@ function NewFoodAdminController(FoodService, OptionService, CategoryService, Loc
       category: admin.category,
       options: admin.array,
       score: admin.score,
+      grade: admin.grade,
       overRide: admin.overRide,
       // overRideValue: ,
       tags: admin.tags,
       location: admin.location
+
     }
     if (foodData.overRide) {
       foodData.overRideValue = admin.overRideValue;
     }
+
+    if (foodData.score >= 81) {
+      foodData.grade = 'A';
+    } else if (foodData.score >= 61 && foodData.score < 81) {
+      foodData.grade = 'B';
+    } else if (foodData.score >= 41 && foodData.score < 61) {
+      foodData.grade = 'C';
+    } else if (foodData.score >= 26 && foodData.score < 41) {
+      foodData.grade = 'D';
+    } else if (foodData.score < 26) {
+      foodData.grade = 'F';
+    }
+
     console.log('Step 2: foodData packed:', foodData);
     FoodService.postFood(foodData).then(function(response) {
       console.log('Step 5: Controller POST successful:', response);

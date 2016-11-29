@@ -6,6 +6,7 @@ const Food = mongoose.model('Food', {
   category: { type: String, required: true },
   options: [optionSchema],
   score: { type: Number, required: true },
+  grade: String,
   overRide: Boolean,
   overRideValue: String,
   tags: Array,
