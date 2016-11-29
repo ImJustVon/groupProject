@@ -88,6 +88,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
     LocationService.getLocations().then(function(response) {
       console.log('GET successful:', response);
       admin.locations = response;
+      LocationService.locations = admin.locations;
     });
   }
 
@@ -96,6 +97,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
     CategoryService.getCategories().then(function(response) {
       console.log('GET successful:', response);
       admin.categories = response;
+      CategoryService.categories = admin.categories;
     });
   }
 

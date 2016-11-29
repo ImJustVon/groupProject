@@ -6,21 +6,16 @@
     <hr />
 
     <form>
-    <select>
+    <select ng-model="edit.food.category">
       <option selected disabled>Category</option>
-      <option>Fruit</option>
-      <option>Vegetables</option>
-      <option>Grains</option>
-      <option>Protein</option>
-      <option>Dairy</option>
-      <option>Oil</option>
+      <option ng-repeat="category in edit.categories">{{category.name}}</option>
     </select>
 <br />
     <input id="food-name" type="text" ng-model="edit.food.name" placeholder="Food Name"/>
-    <input id="food-score" type="number" placeholder="Score"/>
-    <input id="food-override-check" type="checkbox" />
+    <input id="food-score" type="number" ng-model="edit.food.score" placeholder="Score"/>
+    <input id="food-override-check" ng-checked="edit.food.overRide" ng-model="edit.food.overRide" type="checkbox" />
     <label for="food-override">Override</label>
-    <select>
+    <select ng-model="edit.food.overRideValue">
       <option>A</option>
       <option>B</option>
       <option>C</option>
@@ -30,39 +25,37 @@
 
     <h4>Options</h4> <button id="add-option">+</button>
 
+  <div class="row" ng-repeat="option in edit.food.options">
+    <select ng-model="option.type.name">
+      <option disabled>Type</option>
+      <option ng-repeat="type in edit.types">{{option.type.name}}</option>
+    </select>
 
-  <select>
-    <option selected disabled>Type</option>
-    <option>Condiment</option>
-    <option>Bread</option>
-    <option>Topping</option>
-  </select>
+    <select ng-model="option.name">
+      <option disabled>Option</option>
+      <option ng-repeat="option in edit.options | filter: option.type.name" ng-if="option.type">{{option.name}}</option>
+    </select>
+    <br />
+  </div>
 
-  <select>
-    <option selected disabled>Option</option>
-    <option>Ketchup</option>
-    <option>Mustard</option>
-  </select>
-  <br />
+  <h4>Locations</h4>
+  <!-- Do repeat on locations -->
+  <div class="row" ng-repeat="locale in edit.food.location">
+    <select ng-model="locale">
+      <option disabled>Location</option>
+      <option ng-repeat="venue in edit.locations">{{venue.name.replace('_', ' ')}}</option>
+    </select>
+  </div>
 
-  <select>
-    <option selected disabled>Type</option>
-    <option>Condiment</option>
-    <option>Bread</option>
-    <option>Topping</option>
-  </select>
+  <h4>Tags</h4>
+  <!-- Do tags -->
 
-  <select>
-    <option selected disabled>Option</option>
-    <option>Ketchup</option>
-    <option>Mustard</option>
-  </select>
-  <br />
+
 
 
 
     <button class="btn end-button" id="admin-btn">Cancel</button>
-    <button class="btn btn-success end-button"  id="admin-btn" type="submit">Save</button>
+    <button class="btn btn-success end-button"  id="admin-btn" ng-click="edit.updateFood()">Save</button>
     </form>
 
 
