@@ -1,6 +1,6 @@
 angular.module('routeApp').controller('AdminController', AdminController);
 
-function AdminController(FoodService, LocationService, $uibModal, $log, $document) {
+function AdminController(FoodService, CategoryService, LocationService, $uibModal, $log, $document) {
   var admin = this;
 
   admin.animationsEnabled = true;
@@ -68,7 +68,7 @@ function AdminController(FoodService, LocationService, $uibModal, $log, $documen
   admin.confirmDelete = function () {
     var modalInstance = $uibModal.open({
       templateUrl: 'views/modals/confirmDeleteModal.html',
-      // controller: 'ModalAdminController as modal',
+      controller: 'DeleteFoodAdminController as delete',
     });
   } // end admin.confirmDelete
 
@@ -78,21 +78,6 @@ function AdminController(FoodService, LocationService, $uibModal, $log, $documen
     FoodService.getFoods().then(function(response) {
       console.log('GET successful:', response);
       admin.allFoods = response;
-
-
-      // Food scoring function
-      // if (admin.allFoods.score >= 81) {
-      //   admin.allFoods.score = 'A';
-      // } else if (admin.allFoods.score >= 61 && admin.allFoods.score < 81) {
-      //   admin.allFoods.score = 'B';
-      // } else if (admin.allFoods.score >= 41 && admin.allFoods.score < 61) {
-      //   admin.allFoods.score = 'C';
-      // } else if (admin.allFoods.food.score >= 26 && admin.allFoods.score < 41) {
-      //   admin.allFoods.score = 'D';
-      // } else if (admin.allFoods.score < 26) {
-      //   admin.allFoods.score = 'F';
-      // }
-
     });
   }
 
@@ -104,9 +89,18 @@ function AdminController(FoodService, LocationService, $uibModal, $log, $documen
     });
   }
 
+  //  Get categories for food creation/updating
+  admin.getCategories = function() {
+    CategoryService.getCategories().then(function(response) {
+      console.log('GET successful:', response);
+      admin.categories = response;
+    });
+  }
+
 
   admin.getFoods();
   admin.getLocations();
+  admin.getCategories();
 
 
 
