@@ -6,8 +6,8 @@ angular.module('routeApp')
           }).when('/login', {
             templateUrl: 'views/login.html',
             controller: 'LoginController as login'
-          }).when('/location', {
-            templateUrl: 'views/location.html',
+          }).when('/locations', {
+            templateUrl: 'views/locations.html',
             controller: 'LocationController as location'
           }).when('/user-landing', {
             templateUrl: 'views/user-landing.html',
