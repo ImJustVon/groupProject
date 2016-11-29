@@ -66,8 +66,8 @@ function FoodService ($http) {
   }
 
   //  Get foods by category
-  food.getCategory = function(catName) {
-    return $http.get('food/category/' + catName).then(function(response) {
+  food.getCategory = function(category) {
+    return $http.get('food/category/' + category.name).then(function(response) {
       //  Returns array of objects {_id, name, category, options, score, overRide, overRideValue, tags, location}
       return response.data;
     })

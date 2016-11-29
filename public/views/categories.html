@@ -14,14 +14,17 @@
 
     <section class='categories-list'>
 
-      <div class='row category' ng-repeat='category in cat.categories'>
-        <div class='col-xs-6 category-name'>
-          <span>{{ category.name }}</span>
+      <a href="/results" ng-repeat='category in cat.categories' ng-click="cat.getCategoryFoods(category)">
+        <div class='row category'>
+          <div class='col-xs-6 category-name'>
+            <span>{{ category.name }}</span>
+          </div>
+          <div class='col-xs-6 category-photo'>
+            <img src="{{ category.imageLocation }}" />
+          </div>
         </div>
-        <div class='col-xs-6 category-photo'>
-          <img src="{{ category.imageLocation }}" />
-        </div>
-      </div>
+      </a>
+
 
     </section>
 <!-- ALL THIS SHIT COMMENTED OUT BELOW IS NO LONGER NECESSARY. IT WAS THE MOCK-UP HTML -->

@@ -44,7 +44,7 @@ router.get('/search/:word', function (req, res) {
 Gets all foods with specified category
  */
 router.get('/category/:name', function (req, res) {
-  Food.find({ category: name }).then(function (dataFromTheDatabase) {
+  Food.find({ category: req.params.name }).then(function (dataFromTheDatabase) {
     console.log('Documents from mongo ', dataFromTheDatabase);
     res.send(dataFromTheDatabase);
   });
