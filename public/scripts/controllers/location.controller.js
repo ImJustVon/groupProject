@@ -3,6 +3,8 @@ angular.module('routeApp')
 
 function LocationController(LocationService, FoodService) {
 
+  console.log('LocationController Loaded');
+
   var location = this;
 
   //  Get all locations from database
@@ -15,7 +17,6 @@ function LocationController(LocationService, FoodService) {
 
   //  Get all foods in a particular location
   location.getLocationFoods = function(location) {
-    console.log('clicked');
     FoodService.getLocation(location).then(function(response) {
       console.log('Foods in chosen location, in location.locationFoods:', response);
       location.locationFoods = response;

@@ -7,6 +7,6 @@ function ResultsController(FoodService) {
 
   var results = this;
 
-  results.foods = FoodService.foods.current;
+  results.foods = FoodService.foods;
 
 }

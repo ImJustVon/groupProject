@@ -23,7 +23,7 @@
 
     <section class="food-search-results">
 
-      <div class="row search-result" ng-repeat="food in results.foods">
+      <div class="row search-result" ng-repeat="food in results.foods.current">
         <div class="col-xs-6 food-name">
           <a href="/chosen-food"><span>{{ food.name }}</span></a>
         </div>
@@ -32,6 +32,8 @@
           <span class="letter-grade {{ food.grade }}">{{ food.grade }}</span>
         </div>
       </div>
+
+<!-- Everything below is no longer necessary. It is from the MOCK UP -->
 
       <!-- <div class="row search-result">
         <div class="col-xs-6 food-name">
