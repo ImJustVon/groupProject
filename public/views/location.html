@@ -14,14 +14,16 @@
 
     <section class='locations-list'>
 
-      <div class='row location' ng-repeat='location in location.locations'>
-        <div class='col-xs-6 location-name'>
-          <span>{{ location.name }}</span>
+      <a ng-repeat='location in location.locations' href="/results" ng-click="location.getLocationFoods(location)">
+        <div class='row location'>
+          <div class='col-xs-6 location-name'>
+            <span>{{ location.name }}</span>
+          </div>
+          <div class='col-xs-6 location-photo'>
+            <img src="{{ location.imageLocation }}" />
+          </div>
         </div>
-        <div class='col-xs-6 location-photo'>
-          <img src="{{ location.imageLocation }}" />
-        </div>
-      </div>
+      </a>
 
     </section>
 

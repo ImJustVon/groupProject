@@ -73,6 +73,14 @@ function FoodService ($http) {
     })
   }
 
+  //  Get foods by location
+  food.getLocation(locationData) {
+    return $http.get('food/location/' + locationData.name).then(function(response) {
+      //  Returns array of objects {_id, name, category, options, score, overRide, overRideValue, tags, location}
+      return response.data;
+    });
+  }
+
   //  Search database
   food.search = function(searchTerm) {
     return $http.get('/food/search/' + searchTerm).then(function(response) {
