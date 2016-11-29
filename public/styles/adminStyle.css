@@ -37,23 +37,23 @@ select {
 }
 
 /* --- LETTER GRADES --- */
-.A {
+#A {
   color: #358e42;
 }
 
-.B {
+#B {
   color: #59aa46;
 }
 
-.C {
+#C {
   color: #fdb813;
 }
 
-.D {
+#D {
   color: #f47920;
 }
 
-.F {
+#F {
   color: #bd2408;
 }
 
@@ -87,11 +87,18 @@ select {
 }
 
 /* ----------- FOOD TABLE ----------- */
-#admin-content {
+/*#admin-content {
   background: linear-gradient(#f47920, #fdb813, white, white, white, white, white, white, white, white);
-}
+}*/
 #admin-content h2 {
-  font-size: 40px
+  font-size: 40px;
+  background: linear-gradient(#f47920, #fdb813, white);
+  width: 110%;
+  margin-left: -15px;
+  margin-top: -12px;
+  padding-left: 20px;
+  padding-top: 20px;
+
 }
 #admin-content img {
   height: 40px;
