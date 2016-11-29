@@ -68,8 +68,8 @@
     <tr ng-repeat="food in admin.allFoods">
       <td>{{food.name}}</td>
       <td>{{food.category}}</td>
-      <td class="{{food.grade}}">{{food.grade}}</td>
-      <td><button class="btn btn-info" id="table-mod" ng-click="admin.editFood()">Edit</button><button class="btn btn-danger" id="table-mod" ng-click="admin.confirmDelete()">Delete</button></td>
+      <td id="{{food.grade}}">{{food.grade}}</td>
+      <td><button class="btn btn-info" id="table-mod" ng-click="admin.editFood(food)">Edit</button><button class="btn btn-danger" id="table-mod" ng-click="admin.confirmDelete()">Delete</button></td>
     </tr>
     </tbody>
   </table>

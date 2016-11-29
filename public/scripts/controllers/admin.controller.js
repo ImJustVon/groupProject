@@ -36,10 +36,12 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
     });
   } // end admin.openNewLocation
 
-  admin.editFood = function () {
+  admin.editFood = function (food) {
+    //  Assign edited food to FoodService
+    FoodService.editFood = food;
     var modalInstance = $uibModal.open({
       templateUrl: 'views/modals/editFoodModal.html',
-      controller: 'EditFoodAdminController as new',
+      controller: 'EditFoodAdminController as edit',
     });
   } // end admin.editFood
 
