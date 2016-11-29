@@ -67,7 +67,7 @@
   <ui-select-choices repeat="option in new.options | filter: new.type.name" >
      <!-- | propsFilter: {type:{name:type.name}} -->
     <div ng-bind-html="option.name | highlight: $select.search"></div>
-    <small>type: {{option.type.name}}</small>
+    <small>Type: {{option.type.name}} | Modifier: {{option.modifier}}</small>
   </ui-select-choices>
 </ui-select>
 <!-- <p>Selected: {{ctrl.multipleDemo.selectedPeople}}</p>
