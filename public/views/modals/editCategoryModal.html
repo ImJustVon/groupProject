@@ -12,12 +12,8 @@
       <th>Modify</th>
     </thead>
     <tbody>
-      <tr>
-      <td>Category 1</td>
-      <td><button class="btn btn-info" id="table-mod">Edit</button><button class="btn btn-warning" id="table-mod">Delete</button></td>
-      </tr>
-      <tr>
-      <td>Category 2</td>
+      <tr ng-repeat="category in edit.categories">
+      <td><input type="text" ng-value="category.name" /></td>
       <td><button class="btn btn-info" id="table-mod">Edit</button><button class="btn btn-warning" id="table-mod">Delete</button></td>
       </tr>
     </tbody>

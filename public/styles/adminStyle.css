@@ -87,9 +87,7 @@ select {
 }
 
 /* ----------- FOOD TABLE ----------- */
-/*#admin-content {
-  background: linear-gradient(#f47920, #fdb813, white, white, white, white, white, white, white, white);
-}*/
+
 #admin-content h2 {
   font-size: 40px;
   background: linear-gradient(#f47920, #fdb813, white);
