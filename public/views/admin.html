@@ -31,17 +31,19 @@
   <h2>Foods<img src="../assets/images/web-art/avocado.png" /></h2>
 
   <!-- Sort By:-->
-  <select ng-model="sort">
-  <option selected disabled>Sort By:</option>
+  <label for="order">Order By:</label>
+  <select ng-model="sort" name="order">
   <option ng-value="admin.food.name">Name</option>
   <option ng-value="admin.location.name">Category</option>
   <option>Grade</option>
-</select>
+</select> &emsp;
 
   <!-- Show:-->
-  <select ng-model="admin.category"  ng-options="category.name for category in admin.categories"></select>
-
-  <select ng-model="admin.location" ng-options="location.name for location in admin.locations"></select>
+  <label for="filter-cat">Category:</label>
+  <select name="filter-cat" ng-model="admin.category"  ng-options="category.name for category in admin.categories"></select>
+  &emsp;
+  <label for="filter-loc">Location:</label>
+  <select name="filter-loc" ng-model="admin.location" ng-options="location.name for location in admin.locations"></select>
 
   <table class="table table-striped admin-table">
     <thead>
