@@ -6,7 +6,7 @@
 <hr />
 
 <uib-accordion close-others="true">
-</a><div uib-accordion-group class="panel panel-success" heading="Add New">
+  <div uib-accordion-group class="panel panel-success" heading="Add New">
     <a role="button" class="btn btn-success" id="accordion-btn" ng-click="admin.openNewCategory()">Category</a>
     <a role="button" class="btn btn-success" id="accordion-btn" ng-click="admin.openNewFood()">Food</a>
     <a role="button" class="btn btn-success" id="accordion-btn" ng-click="admin.openNewOption()">Option</a>
@@ -39,23 +39,9 @@
 </select>
 
   <!-- Show:-->
-  <select>
-    <option selected disabled>Filter By:</option>
-    <option>None</option>
-    <option ng-repeat="category in admin.categories">
-      {{category.name}}
-    </option>
-  </select>
+  <select ng-model="admin.category"  ng-options="category.name for category in admin.categories"></select>
 
-
-
-  <select>
-    <option selected disabled>Location:</option>
-    <option>All</option>
-    <option ng-repeat="location in admin.locations">
-      {{location.name}}
-    </option>
-  </select>
+  <select ng-model="admin.location" ng-options="location.name for location in admin.locations"></select>
 
   <table class="table table-striped admin-table">
     <thead>
@@ -65,7 +51,7 @@
     <th>Modify</th>
   </thead>
   <tbody>
-    <tr ng-repeat="food in admin.allFoods">
+    <tr ng-repeat="food in admin.allFoods | filter: admin.category.name | filter: admin.location.name">
       <td>{{food.name}}</td>
       <td>{{food.category}}</td>
       <td id="{{food.grade}}">{{food.grade}}</td>
