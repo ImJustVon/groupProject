@@ -19,15 +19,7 @@ select {
 #csv-upload label, input, button {
   float: left;
 }
-#f {
-  color: red;
-}
-#c {
-  color: orange;
-}
-#a {
-  color: green;
-}
+
 .s-center {
   text-align: center;
   margin: 10px auto;
@@ -42,6 +34,27 @@ select {
 }
 .modal-upload {
   border-left: 10px solid #358e42;
+}
+
+/* --- LETTER GRADES --- */
+.A {
+  color: #358e42;
+}
+
+.B {
+  color: #59aa46;
+}
+
+.C {
+  color: #fdb813;
+}
+
+.D {
+  color: #f47920;
+}
+
+.F {
+  color: #bd2408;
 }
 
 
