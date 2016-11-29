@@ -15,6 +15,7 @@ function LocationController(LocationService, FoodService) {
 
   //  Get all foods in a particular location
   location.getLocationFoods = function(location) {
+    console.log('clicked');
     FoodService.getLocation(location).then(function(response) {
       console.log('Foods in chosen location, in location.locationFoods:', response);
       location.locationFoods = response;
