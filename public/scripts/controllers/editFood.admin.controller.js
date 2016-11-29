@@ -49,8 +49,9 @@ function EditFoodAdminController(FoodService, CategoryService, LocationService, 
     }
 
     if (edit.food.overRide) {
-      edit.food.overRideValue = admin.overRideValue;
       edit.food.grade = edit.food.overRideValue;
+    } else {
+      edit.food.overRideValue = false;
     }
 
     FoodService.updateFood(edit.food).then(function(response) {

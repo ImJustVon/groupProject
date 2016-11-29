@@ -23,19 +23,29 @@
       <option>F</option>
     </select>
 
-    <h4>Options</h4> <button id="add-option">+</button>
+    <h4>Options</h4>
 
   <div class="row" ng-repeat="option in edit.food.options">
-    <select ng-model="option.type.name">
-      <option disabled>Type</option>
-      <option ng-repeat="type in edit.types">{{option.type.name}}</option>
-    </select>
+    <div class="col-xs-6">
+      <select ng-model="option.type.name">
+        <option disabled>Type</option>
+        <option ng-repeat="type in edit.types">{{type.name}}</option>
+      </select>
 
-    <select ng-model="option.name">
-      <option disabled>Option</option>
-      <option ng-repeat="option in edit.options | filter: option.type.name" ng-if="option.type">{{option.name}}</option>
-    </select>
+      <select ng-model="option.name">
+        <option disabled>Option</option>
+        <option ng-repeat="option in edit.options | filter: option.type.name" ng-if="option.type">{{option.name}}</option>
+      </select>
+    </div>
+    <div class="col-xs-6">
+      <button class="btn-danger">Delete</button>
+
+    </div>
     <br />
+  </div>
+  <div class="row">
+    <!-- TO BE FIXED -->
+    <button class="btn btn-success col-xs-4" id="add-option">Add Option</button>
   </div>
 
   <h4>Locations</h4>
