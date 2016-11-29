@@ -14,12 +14,8 @@
           <th>Modify</th>
         </thead>
         <tbody>
-          <tr>
-          <td>Type 1</td>
-          <td><button class="btn btn-info" id="table-mod">Edit</button><button class="btn btn-warning" id="table-mod">Delete</button></td>
-          </tr>
-          <tr>
-          <td>Type 2</td>
+          <tr ng-repeat="option in edit.options">
+          <td>{{option.type.name}}</td>
           <td><button class="btn btn-info" id="table-mod">Edit</button><button class="btn btn-warning" id="table-mod">Delete</button></td>
           </tr>
         </tbody>
