@@ -31,10 +31,10 @@
   <h2>Foods<img src="../assets/images/web-art/avocado.png" /></h2>
 
   <!-- Sort By:-->
-  <select>
+  <select ng-model="sort">
   <option selected disabled>Sort By:</option>
-  <option>Name</option>
-  <option>Category</option>
+  <option ng-value="admin.food.name">Name</option>
+  <option ng-value="admin.location.name">Category</option>
   <option>Grade</option>
 </select>
 
@@ -51,7 +51,7 @@
     <th>Modify</th>
   </thead>
   <tbody>
-    <tr ng-repeat="food in admin.allFoods | filter: admin.category.name | filter: admin.location.name">
+    <tr ng-repeat="food in admin.allFoods | filter: admin.category.name | filter: admin.location.name | orderBy: sort">
       <td>{{food.name}}</td>
       <td>{{food.category}}</td>
       <td id="{{food.grade}}">{{food.grade}}</td>
