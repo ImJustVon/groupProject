@@ -82,9 +82,6 @@ function NewFoodAdminController(FoodService, OptionService, CategoryService, Loc
       location: admin.location
 
     }
-    if (foodData.overRide) {
-      foodData.overRideValue = admin.overRideValue;
-    }
 
     if (foodData.score >= 81) {
       foodData.grade = 'A';
@@ -97,6 +94,13 @@ function NewFoodAdminController(FoodService, OptionService, CategoryService, Loc
     } else if (foodData.score < 26) {
       foodData.grade = 'F';
     }
+
+    if (foodData.overRide) {
+      foodData.overRideValue = admin.overRideValue;
+      foodData.grade = foodData.overRideValue;
+
+    }
+
 
     console.log('Step 2: foodData packed:', foodData);
     FoodService.postFood(foodData).then(function(response) {
