@@ -98,7 +98,11 @@ select {
   margin-top: -12px;
   padding-left: 20px;
   padding-top: 20px;
-
+  padding-bottom: 15px;
+}
+#admin-content h2 img {
+  margin-top: -10px;
+  margin-bottom: 0;
 }
 #admin-content img {
   height: 40px;
