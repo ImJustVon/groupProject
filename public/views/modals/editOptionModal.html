@@ -15,7 +15,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="type in edit.types">
-          <td>{{type.name}}</td>
+          <td><input type="text" ng-value="type.name" /></td>
           <td><button class="btn btn-info" id="table-mod">Edit</button><button class="btn btn-warning" id="table-mod">Delete</button></td>
           </tr>
         </tbody>
@@ -24,17 +24,22 @@
 
     <div uib-accordion-group class="panel panel-warning" heading="Edit Options">
       <form class="form-horizontal">
-      <select class="form-control">
-        <option selected disabled>Type</option>
-        <option>Type 1</option>
-        <option>Type 2</option>
-      </select>
-      <input value="Option 1"/>
-      <input value="Option 2"/>
-      <input value="Option 3"/>
-      <input value="Option 4"/>
-      <input value="Option 5"/>
-      <input value="Option 6"/>
+
+      <label for="type">Type:</label>
+      <select name="type" class="form-control" ng-model="edit.type" ng-options="type.name for type in edit.types" ></select>
+
+      <table>
+        <thead>
+          <th class="col-md-7">Name</th>
+          <th>Modify</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="option in edit.options | filter: edit.type.name" ng-if="edit.type">
+            <td><input type="text" ng-value="option.name" /></td>
+            <td><button class="btn btn-danger" id="table-mod">X</button></td>
+          </tr>
+        </tbody>
+      </table>
 
   </form>
     </div>

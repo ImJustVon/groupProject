@@ -4,6 +4,8 @@ function EditOptionAdminController($uibModalInstance, OptionService) {
 
   var admin = this;
 
+  admin.optionsList = [];
+
   // Get option types for food creation/updating
   admin.getOptionTypes = function() {
     OptionService.getOptionTypes().then(function(response) {
@@ -19,6 +21,18 @@ function EditOptionAdminController($uibModalInstance, OptionService) {
       admin.options = response;
       console.log('Options:', admin.options);
     });
+  }
+
+  // Populate options based on option type
+  admin.populateOptions = function(type) {
+    console.log('type', type);
+    admin.optionsList = [];
+    for (i = 0; i < admin.options.length; i++) {
+      if (admin.options[i].type == type) {
+        admin.optionsList.push(admin.options[i]);
+      }
+    }
+    console.log('options.list:', admin.optionsList);
   }
 
   admin.getOptionTypes();
