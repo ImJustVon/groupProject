@@ -41,20 +41,20 @@
   <!-- Show:-->
   <select>
     <option selected disabled>Filter By:</option>
-    <option>Fruit</option>
-    <option>Vegetable</option>
-    <option>Grain</option>
-    <option>Protein</option>
-    <option>Dairy</option>
-    <option>Oil</option>
+    <option>None</option>
+    <option ng-repeat="category in admin.categories">
+      {{category.name}}
+    </option>
   </select>
+
+
 
   <select>
     <option selected disabled>Location:</option>
-    <option>Ball Game</option>
-    <option>Concession</option>
-    <option>Italian</option>
-    <option>Mexican</option>
+    <option>All</option>
+    <option ng-repeat="location in admin.locations">
+      {{location.name}}
+    </option>
   </select>
 
   <table class="table table-striped admin-table">
@@ -68,7 +68,7 @@
     <tr ng-repeat="food in admin.allFoods">
       <td>{{food.name}}</td>
       <td>{{food.category}}</td>
-      <td>{{food.grade}}</td>
+      <td class="{{food.grade}}">{{food.grade}}</td>
       <td><button class="btn btn-info" id="table-mod" ng-click="admin.editFood()">Edit</button><button class="btn btn-danger" id="table-mod" ng-click="admin.confirmDelete()">Delete</button></td>
     </tr>
     </tbody>
