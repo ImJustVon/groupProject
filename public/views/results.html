@@ -23,13 +23,13 @@
 
     <section class="food-search-results">
 
-      <div class="row search-result" ng-repeat="">
+      <div class="row search-result" ng-repeat="food in results.foods">
         <div class="col-xs-6 food-name">
-          <a href="/chosen-food"><span>Apple</span></a>
+          <a href="/chosen-food"><span>{{ food.name }}</span></a>
         </div>
         <div class="col-xs-6 food-grade">
-          <span class="options-value">Options: 3</span>
-          <span class="letter-grade a">A</span>
+          <span class="options-value">Options: {{ food.options.length }}</span>
+          <span class="letter-grade {{ food.grade }}">{{ food.grade }}</span>
         </div>
       </div>
 
