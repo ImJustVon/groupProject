@@ -1,1 +1,1 @@
-angular.module('routeApp', ['ngRoute', 'ui.bootstrap', 'ngFileUpload', 'ui.select', 'ngSanitize']);
+angular.module('routeApp', ['ngRoute', 'ui.bootstrap', 'ngFileUpload', 'ui.select', 'ngSanitize', 'angular.filter']);

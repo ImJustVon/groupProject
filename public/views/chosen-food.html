@@ -28,7 +28,7 @@
     </div>
 
 
-    <div class='row type-list-container' ng-repeat="option in food.chosenFood.options | filter: {type: {display:'radio'}} | filter: {type:{name}}">
+    <div class='row type-list-container' ng-repeat="option in food.chosenFood.options | groupBy: 'name'">
       <div class='col-xs-2'></div>
       <div class='col-xs-8 type-list'>
         <!-- {{ food.chosenFood.options[0].type.name }} -->
