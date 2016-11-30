@@ -34,31 +34,54 @@
 
       <select ng-model="option.name">
         <option disabled>Option</option>
-        <option ng-repeat="option in edit.options | filter: option.type.name" ng-if="option.type">{{option.name}}</option>
+        <option ng-repeat="option in edit.options | filter: option.type.name" ng-if="option.type">{{option.name.replace('_', ' ')}}</option>
       </select>
     </div>
     <div class="col-xs-6">
-      <button class="btn-danger">Delete</button>
-
+      <button class="btn btn-danger" ng-click="edit.deleteOptionFromFood(option)">Delete</button>
     </div>
     <br />
   </div>
   <div class="row">
-    <!-- TO BE FIXED -->
-    <button class="btn btn-success col-xs-4" id="add-option">Add Option</button>
+    <div class="col-xs-4">
+      <button class="btn btn-success" ng-click="edit.addOptionToFood()">Add Option</button>
+    </div>
   </div>
 
   <h4>Locations</h4>
   <!-- Do repeat on locations -->
   <div class="row" ng-repeat="locale in edit.food.location">
-    <select ng-model="locale">
-      <option disabled>Location</option>
-      <option ng-repeat="venue in edit.locations">{{venue.name.replace('_', ' ')}}</option>
-    </select>
+    <div class="col-xs-6">
+      <select ng-model="locale">
+        <option disabled>Location</option>
+        <option ng-repeat="venue in edit.locations">{{venue.name.replace('_', ' ')}}</option>
+      </select>
+    </div>
+    <div class="col-xs-6">
+      <button class="btn btn-danger" ng-click="edit.deleteLocationFromFood(locale)">Delete</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <button class="btn btn-success" ng-click="edit.addLocationToFood()">Add Location</button>
+    </div>
   </div>
 
   <h4>Tags</h4>
   <!-- Do tags -->
+  <div class="row" ng-repeat="tag in edit.food.tags">
+    <div class="col-xs-6">
+      <input type="text" ng-model="tag.value" />
+    </div>
+    <div class="col-xs-6">
+      <button class="btn btn-danger" ng-click="edit.deleteTagFromFood(tag)">Delete</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <button class="btn btn-success" ng-click="edit.addTagToFood()">Add Tag</button>
+    </div>
+  </div>
 
 
 

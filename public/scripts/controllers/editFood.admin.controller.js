@@ -55,10 +55,43 @@ function EditFoodAdminController(FoodService, CategoryService, LocationService, 
     }
 
     FoodService.updateFood(edit.food).then(function(response) {
+      console.log('Updating food:', edit.food);
       console.log('Update successful:', response);
     });
   }
 
+  //  UNFINISHED
+  edit.deleteOptionFromFood = function(optionData) {
+    var index = edit.food.options.indexOf(optionData);
+    edit.food.options.splice(index, 1);
+  }
+
+  edit.deleteLocationFromFood = function(location) {
+    var index = edit.food.location.indexOf(location);
+    edit.food.location.splice(index, 1);
+  }
+
+  edit.deleteTagFromFood = function(tag) {
+    var index = edit.food.tags.indexOf(tag);
+    edit.food.tags.splice(index, 1);
+  }
+
+  edit.addOptionToFood = function() {
+    edit.food.options.push({
+      name: 'Option',
+      type: {
+        name: 'Type'
+      }
+    });
+  }
+
+  edit.addLocationToFood = function() {
+    edit.food.location.push('Location');
+  }
+
+  edit.addTagToFood = function() {
+    edit.food.tags.push({value: ''});
+  }
+
   edit.getAll();
-  console.log('Edit.types:', edit.types);
 }
