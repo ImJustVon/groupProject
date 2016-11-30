@@ -33,7 +33,7 @@
       <div class='col-xs-8 type-list'>
         <!-- {{ food.chosenFood.options[0].type.name }} -->
         <ul>
-          <li ng-repeat="option in food.chosenFood.options | filter: {type: {display:'radio'}}">
+          <li ng-repeat="option in food.chosenFood.options | filter: {type: {display:'radio'}} | filter: {type: {name}}">
             <input type='radio' class='type-option' name='type-option' />
             <label for='type-option'>{{ option.name }}</label>
           </li>
@@ -44,7 +44,6 @@
 
 
     <div class='row option-checkbox-container'>
-
       <div class='col-xs-6 option-checkbox-div' ng-repeat="option in food.chosenFood.options | filter: {type: {display:'checkbox'}}">
         <input type='checkbox' class='option-checkbox' name='option' ng-model="option.clicked" ng-change="food.modifyScore(option)" />
         <label for='option'>{{ option.name }}</label>

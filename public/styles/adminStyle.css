@@ -1,7 +1,12 @@
 /* ----------- GENERAL ----------- */
+@font-face { font-family: 'Arvo'; src: url('../assets/fonts/Arvo-Regular.ttf');}
+@font-face { font-family: 'Arvo-Bold'; src: url('../assets/fonts/Arvo-Bold.ttf');}
+@font-face { font-family: 'Arvo-Italic'; src: url('../assets/fonts/Arvo-Italic.ttf');}
+@font-face { font-family: 'Arvo-Bold-Italic'; src: url('../assets/fonts/Arvo-BoldItalic.ttf');}
+
 
 body {
-  font-family: Arvo;
+  font-family: 'Arvo';
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: Futura;
@@ -12,7 +17,7 @@ select {
   margin-bottom: 10px;
 }
 .end-button {
-  margin-top: 50px;
+  margin: 50px 2px 20px 2px;
   float: right;
   width: 20%;
 }
