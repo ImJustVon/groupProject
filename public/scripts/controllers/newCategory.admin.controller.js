@@ -4,21 +4,18 @@ function NewCategoryAdminController(CategoryService, $uibModalInstance) {
 
   var admin = this;
 
-  admin.language_list = [{ name: 'english', url: 'https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/gb.png' }, { name: 'italian', url: 'https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/it.png' }];
   admin.defaults = [
-    { name: 'Apple', url: '/assets/images/category-items/apple.png' },
-    { name: 'Carrot', url: '/assets/images/category-items/carrot.png' },
-    { name: 'Cheese', url: '/assets/images/category-items/cheese.png' },
-    { name: 'Grain', url: '/assets/images/category-items/grain.png' },
-    { name: 'Oil', url: '/assets/images/category-items/olive-oil.png' },
-    { name: 'Steak', url: '/assets/images/category-items/steak.png' }, ];
-
-  //  admin.name -> new category name
+    { name: 'Apple', path: '/assets/images/category-items/apple.png' },
+    { name: 'Carrot', path: '/assets/images/category-items/carrot.png' },
+    { name: 'Cheese', path: '/assets/images/category-items/cheese.png' },
+    { name: 'Grain', path: '/assets/images/category-items/grain.png' },
+    { name: 'Oil', path: '/assets/images/category-items/olive-oil.png' },
+    { name: 'Steak', path: '/assets/images/category-items/steak.png' },];
 
   //  Post the new category
   admin.addCategory = function () {
     var categoryData = {
-      name: admin.name.replace(/ /g, '_'), //What is this?
+      name: admin.name.replace(/ /g, '_'),
       file: admin.file,
     };
     CategoryService.postCategory(categoryData).then(function (response) {
@@ -27,6 +24,7 @@ function NewCategoryAdminController(CategoryService, $uibModalInstance) {
       admin.getCategories();
     });
   };
+
   // Post the new category with a default image
   admin.addCategoryDefault = function () {
     console.log('admin.file.selected: ', admin.file.selected);

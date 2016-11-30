@@ -27,9 +27,9 @@
       <br />
 
     <ui-select ng-model="new.file.selected" theme="selectize" id="category-pic" ng-disabled="disabled">
-    <ui-select-match placeholder="Select a picture"><img HEIGHT=50 WIDTH=50 ng-src="{{ $select.selected.url }}" /> {{$select.selected.name}}</ui-select-match>
+    <ui-select-match placeholder="Select a picture"><img HEIGHT=50 WIDTH=50 ng-src="{{ $select.selected.path }}" /> {{$select.selected.name}}</ui-select-match>
     <ui-select-choices repeat="pic in new.defaults">
-      <img HEIGHT=50 WIDTH=50 ng-src="{{ pic.url }}" />
+      <img HEIGHT=50 WIDTH=50 ng-src="{{ pic.path }}" />
       <div ng-bind-html="pic.name" style="display: inline"></div>
     </ui-select-choices>
   </ui-select>
