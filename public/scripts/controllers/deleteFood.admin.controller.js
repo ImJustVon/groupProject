@@ -1,12 +1,16 @@
 angular.module('routeApp').controller('DeleteFoodAdminController', DeleteFoodAdminController);
 
-function DeleteFoodAdminController($uibModalInstance) {
+function DeleteFoodAdminController(DeleteService, $uibModalInstance) {
 
   var admin = this;
 
-
-  admin.cancel = function() {
+  admin.confirmDelete = function () {
+    DeleteService.deleteFood();
     $uibModalInstance.close();
-  }
+  };
+
+  admin.cancel = function () {
+    $uibModalInstance.close();
+  };
 
 }

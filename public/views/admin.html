@@ -57,7 +57,7 @@
       <td>{{food.name}}</td>
       <td>{{food.category}}</td>
       <td id="{{food.grade}}">{{food.grade}}</td>
-      <td><button class="btn btn-info" id="table-mod" ng-click="admin.editFood(food)">Edit</button><button class="btn btn-danger" id="table-mod" ng-click="admin.confirmDelete()">Delete</button></td>
+      <td><button class="btn btn-info" id="table-mod" ng-click="admin.editFood(food)">Edit</button><button class="btn btn-danger" id="table-mod" ng-click="admin.confirmDelete(food._id)">Delete</button></td>
     </tr>
     </tbody>
   </table>
