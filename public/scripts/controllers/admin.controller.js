@@ -43,6 +43,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
       templateUrl: 'views/modals/editFoodModal.html',
       controller: 'EditFoodAdminController as edit',
     });
+    modalInstance.result.then(admin.getFoods);
   } // end admin.editFood
 
   admin.editCategory = function () {

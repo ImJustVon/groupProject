@@ -1,13 +1,13 @@
 angular.module('routeApp')
   .controller('EditFoodAdminController', EditFoodAdminController);
 
-function EditFoodAdminController(FoodService, CategoryService, LocationService, OptionService) {
+function EditFoodAdminController(FoodService, CategoryService, LocationService, OptionService, $uibModalInstance) {
 
   var edit = this;
 
   //  Food to be edited {_id, name, category, [options], score, grade, overRide,
   //  overRideValue, tags, location, tip}
-  edit.food = FoodService.editFood;
+  edit.food = angular.copy(FoodService.editFood);
 
   //  Import all existing objects
   edit.categories = CategoryService.categories;
@@ -58,6 +58,14 @@ function EditFoodAdminController(FoodService, CategoryService, LocationService, 
       console.log('Updating food:', edit.food);
       console.log('Update successful:', response);
     });
+
+    $uibModalInstance.close();
+
+  }
+
+  edit.cancel = function() {
+    edit.food = FoodService.editFood;
+    $uibModalInstance.close();
   }
 
   //  UNFINISHED
