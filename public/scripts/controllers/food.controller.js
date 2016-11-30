@@ -11,10 +11,18 @@ function FoodController(FoodService) {
   console.log(food.chosenFood);
 
 // If an option is checked, its modifer score is applied to the food score
-  food.modifyScore = function(modifier) {
-    console.log('Modifier from clicked option: ', modifier);
-    food.chosenFood.score += modifier;
+  food.modifyScore = function(option) {
+    console.log('Modifier from clicked option: ', option.modifier);
     console.log('Grade after checked: ', food.chosenFood.score);
+
+    if (option.clicked) {
+      console.log('This click did something: ', option.clicked);
+      food.chosenFood.score += option.modifier;
+
+    } else if (!option.clicked) {
+      console.log('This click is ', option.clicked);
+      food.chosenFood.score += Math.abs(option.modifier);
+    }
 
     if (food.chosenFood.score >= 81) {
       food.chosenFood.grade = 'A';
@@ -27,6 +35,7 @@ function FoodController(FoodService) {
     } else if (food.chosenFood.score < 26) {
       food.chosenFood.grade = 'F';
     }
+
   }
 
 }

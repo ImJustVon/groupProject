@@ -44,19 +44,11 @@
 
 
     <div class='row option-checkbox-container'>
+
       <div class='col-xs-6 option-checkbox-div' ng-repeat="option in food.chosenFood.options | filter: {type: {display:'checkbox'}}">
-        <input type='checkbox' class='option-checkbox' name='option' ng-model="clicked" ng-change="food.modifyScore(option.modifier)" />
+        <input type='checkbox' class='option-checkbox' name='option' ng-model="option.clicked" ng-change="food.modifyScore(option)" />
         <label for='option'>{{ option.name }}</label>
       </div>
-
-
-
-
-
-
-
-
-
 
 
 
