@@ -28,12 +28,12 @@
     </div>
 
 
-    <div class='row type-list-container'>
+    <div class='row type-list-container' ng-repeat="option in food.chosenFood.options | filter: {type: {display:'radio'}} | filter: {type:{name}}">
       <div class='col-xs-2'></div>
       <div class='col-xs-8 type-list'>
         <!-- {{ food.chosenFood.options[0].type.name }} -->
         <ul>
-          <li ng-repeat="option in food.chosenFood.options | filter: {type: {display:'radio'}} | filter: {type: {name}}">
+          <li ng-repeat="option in food.chosenFood.options | filter: {type: {display:'radio'}}">
             <input type='radio' class='type-option' name='type-option' />
             <label for='type-option'>{{ option.name }}</label>
           </li>
@@ -41,6 +41,8 @@
       </div>
       <div class='col-xs-2'></div>
     </div>
+
+
 
 
     <div class='row option-checkbox-container'>
