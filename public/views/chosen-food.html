@@ -27,11 +27,40 @@
       </div>
     </div>
 
+
+    <div class='row type-list-container'>
+      <div class='col-xs-2'></div>
+      <div class='col-xs-8 type-list'>
+        <!-- {{ food.chosenFood.options[0].type.name }} -->
+        <ul>
+          <li ng-repeat="option in food.chosenFood.options | filter: {type: {display:'radio'}}">
+            <input type='radio' class='type-option' name='type-option' />
+            <label for='type-option'>{{ option.name }}</label>
+          </li>
+        </ul>
+      </div>
+      <div class='col-xs-2'></div>
+    </div>
+
+
     <div class='row option-checkbox-container'>
-      <div class='col-xs-6 option-checkbox-div' ng-repeat="option in food.chosenFood.options">
+      <div class='col-xs-6 option-checkbox-div' ng-repeat="option in food.chosenFood.options | filter: {type: {display:'checkbox'}}">
         <input type='checkbox' class='option-checkbox' name='option' ng-model="clicked" ng-change="food.modifyScore(option.modifier)" />
         <label for='option'>{{ option.name }}</label>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
       <!-- <div class='col-xs-6 option-checkbox-div'>
         <input type='checkbox' class='option-checkbox' name='option' />
         <label for='option'>Cheese</label>
