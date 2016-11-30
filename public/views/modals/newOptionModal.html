@@ -24,7 +24,7 @@
       <form class="form-horizontal">
         <div class="row">
           <div class="col-md-4">
-      <ui-select ng-model="new.type.selected" theme="bootstrap">
+      <ui-select ng-model="new.type.selected" theme="selectize">
         <ui-select-match placeholder="Select type">
           {{$select.selected.name}}
         </ui-select-match>
@@ -46,7 +46,7 @@
       <div class="col-md-10">
         <label for="modifier" class="col-md-3 col-form-label">Modifier:</label>
         <div class="col-md-3">
-        <input class="form-control" type="number" ng-model="new.modifier"/>
+        <input name="modifier" class="form-control" type="number" ng-model="new.modifier"/>
         </div>
       </div>
       <div class="col-md-1"></div>

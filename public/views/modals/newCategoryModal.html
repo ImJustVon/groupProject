@@ -19,14 +19,14 @@
     </div>
         <button class="end-button btn btn-success" id="admin-btn" type="submit" ng-click="new.addCategory(); new.cancel()">Save</button>
   </div>
+
+
   <div uib-accordion-group class="panel panel-success" heading="Use Default">
     <form>
-      <input type="text" ng-model="new.name" id="new-category" placeholder="New Food Category"/>
+      <input type="text" ng-model="new.name" id="new-category" class="form-control" placeholder="New Food Category"/>
       <br />
 
-
-
-    <ui-select ng-model="new.file.selected" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
+    <ui-select ng-model="new.file.selected" theme="selectize" id="category-pic" ng-disabled="disabled">
     <ui-select-match placeholder="Select a picture"><img HEIGHT=50 WIDTH=50 ng-src="{{ $select.selected.url }}" /> {{$select.selected.name}}</ui-select-match>
     <ui-select-choices repeat="pic in new.defaults">
       <img HEIGHT=50 WIDTH=50 ng-src="{{ pic.url }}" />
