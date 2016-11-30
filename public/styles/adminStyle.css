@@ -40,6 +40,9 @@ select {
 .modal-upload {
   border-left: 10px solid #358e42;
 }
+.modal-edit {
+  border-left: 10px solid #fdb813;
+}
 
 /* --- LETTER GRADES --- */
 #A {
