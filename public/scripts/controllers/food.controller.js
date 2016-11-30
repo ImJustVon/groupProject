@@ -3,6 +3,8 @@ angular.module('routeApp')
 
 function FoodController(FoodService) {
 
+  console.log('FoodController Loaded');
+
   var food = this;
 
 }

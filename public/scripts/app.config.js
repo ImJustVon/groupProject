@@ -11,10 +11,7 @@ angular.module('routeApp')
             controller: 'LocationController as location'
           }).when('/user-landing', {
             templateUrl: 'views/user-landing.html',
-            //controller: ''
-          }).when('/chosen-food', {
-            templateUrl: 'views/chosen-food.html',
-            //controller: ''
+            controller: 'UserLandingController as user'
           }).when('/chosen-food-hotdog', {
             templateUrl: 'views/chosen-food-hotdog.html',
             //controller: ''
