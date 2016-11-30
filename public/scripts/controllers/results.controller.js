@@ -9,4 +9,7 @@ function ResultsController(FoodService) {
 
   results.foods = FoodService.foods;
 
+  results.chosenFood = function(foodObject) {
+    FoodService.chosen = foodObject;
+  }
 }

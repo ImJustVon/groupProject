@@ -14,10 +14,10 @@
 
     <section class='row chosen-food-header'>
       <div class='col-xs-8 chosen-food-name'>
-        <span>Apple</span>
+        <span>{{ food.chosenFood.name }}</span>
       </div>
       <div class='col-xs-4 chosen-food-grade'>
-        <span class='chosen-food-letter-grade letter-grade A'>A</span>
+        <span class='chosen-food-letter-grade letter-grade {{  food.chosenFood.grade }}'>{{ food.chosenFood.grade }}</span>
       </div>
     </section>
 
@@ -28,11 +28,11 @@
     </div>
 
     <div class='row option-checkbox-container'>
-      <div class='col-xs-6 option-checkbox-div'>
-        <input type='checkbox' class='option-checkbox' name='option' />
-        <label for='option'>Caramel</label>
+      <div class='col-xs-6 option-checkbox-div' ng-repeat="option in food.chosenFood.options">
+        <input type='checkbox' class='option-checkbox' name='option' ng-model="clicked" ng-change="food.modifyScore(option.modifier)" />
+        <label for='option'>{{ option.name }}</label>
       </div>
-      <div class='col-xs-6 option-checkbox-div'>
+      <!-- <div class='col-xs-6 option-checkbox-div'>
         <input type='checkbox' class='option-checkbox' name='option' />
         <label for='option'>Cheese</label>
       </div>
@@ -43,7 +43,7 @@
         <input type='checkbox' class='option-checkbox' name='option' />
         <label for='option'>Chocolate</label>
       </div>
-    </div>
+    </div> -->
 
 
 </div>
