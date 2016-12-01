@@ -40,14 +40,24 @@ li {
 /*---------------------------------------------------------------------------
 User Landing Page
 ----------------------------------------------------------------------------*/
-/*.landing-page {
-  background: linear-gradient(#358e43, #59aa46, 20%, #b3ee8f, 25%, white);
-}*/
-.banner {
-  background: linear-gradient(#358e43, #59aa46, #b3ee8f);
-}
-.landing-body {
+.landing-page {
   background: linear-gradient(#b3ee8f, white);
+  positon: fixed;
+}
+.banner {
+  background: linear-gradient(#358e43, #59aa46, #b3ee8f, #b3ee8f);
+}
+/*.landing-body {
+  background: linear-gradient(#b3ee8f, white);
+}*/
+.search-food {
+  background: linear-gradient(#b3ee8f);
+}
+/*.search-banner {
+  background: linear-gradient(#b3ee8f);
+}*/
+.search-results {
+  background: linear-gradient(white);
 }
 
 .home img{
