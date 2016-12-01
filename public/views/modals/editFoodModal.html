@@ -25,28 +25,41 @@
 
     <h4>Options</h4>
 
-  <div class="row" ng-repeat="option in edit.food.options">
+    <select name="type" ng-model="edit.type" ng-options="type.name for type in edit.types">
+    </select>
+    <ui-select multiple ng-model="edit.food.options" theme="selectize" close-on-select="false" style="width: 100%;" title="Select an option">
+      <ui-select-match placeholder="Select option...">{{$item.name}}</ui-select-match>
+      <ui-select-choices repeat="option in edit.options | filter: edit.type.name" >
+         <!-- | propsFilter: {type:{name:type.name}} -->
+        <div ng-bind-html="option.name | highlight: $select.search"></div>
+        <small>Type: {{option.type.name}} &nbsp; | &nbsp; Modifier: {{option.modifier}}</small>
+      </ui-select-choices>
+    </ui-select>
+
+  <!-- <div class="row" ng-repeat="option in edit.food.options">
     <div class="col-xs-6">
-      <select ng-model="option.type.name">
+      <ui-select ng-model="edit.type.selected[$index]" theme="selectize" id="type-dropdown">
+      <ui-select-match placeholder="Select a type">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="type in edit.types">
+   <div ng-bind-html="type.name" style="display: inline"></div>
+      </ui-select-choices>
+    </ui-select>
+      <ui-select ng-model="option.type.name">
         <option disabled>Type</option>
         <option ng-repeat="type in edit.types">{{type.name}}</option>
-      </select>
-
+      </ui-select>
+      <ui-select ng-model="edit.option.selected[$index]" theme="selectize" id="type-dropdown">
+      <ui-select-match placeholder="Select an option">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="option in edit.options">
+   <div ng-bind-html="option.name" style="display: inline"></div>
+      </ui-select-choices>
+    </ui-select>
       <select ng-model="option.name">
         <option disabled>Option</option>
         <option ng-repeat="option in edit.options | filter: option.type.name" ng-if="option.type">{{option.name.replace('_', ' ')}}</option>
       </select>
-    </div>
-    <div class="col-xs-6">
-      <button class="btn btn-danger" ng-click="edit.deleteOptionFromFood(option)">Delete</button>
-    </div>
+    </div> -->
     <br />
-  </div>
-  <div class="row">
-    <div class="col-xs-4">
-      <button class="btn btn-success" ng-click="edit.addOptionToFood()">Add Option</button>
-    </div>
-  </div>
 
   <h4>Locations</h4>
   <!-- Do repeat on locations -->
@@ -57,7 +70,7 @@
         <option ng-repeat="venue in edit.locations">{{venue.name.replace('_', ' ')}}</option>
       </select>
     </div>
-    <div class="col-xs-6">
+    <div class="col-xs-4">
       <button class="btn btn-danger" ng-click="edit.deleteLocationFromFood(locale)">Delete</button>
     </div>
   </div>
@@ -83,16 +96,13 @@
     </div>
   </div>
 
-
-
-
-
     <button class="btn end-button" id="admin-btn" ng-click="edit.cancel()">Cancel</button>
     <button class="btn btn-success end-button"  id="admin-btn" ng-click="edit.updateFood()">Save</button>
     </form>
 
 
   </div>
+    </div>
   <div class="col-md-1"></div>
 </div>
 </section>

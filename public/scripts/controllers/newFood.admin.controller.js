@@ -33,7 +33,7 @@ function NewFoodAdminController(FoodService, OptionService, CategoryService, Loc
     console.log('type', type);
     admin.optionsList = [];
     for (i = 0; i < admin.options.length; i++) {
-      if (admin.options[i].type == type) {
+      if (admin.options[i].type === type) {
         admin.optionsList.push(admin.options[i]);
       }
 
