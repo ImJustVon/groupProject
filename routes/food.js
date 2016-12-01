@@ -21,7 +21,8 @@ Returns the document with matches
 saves search word in the searches database
  */
 router.get('/search/:word', function (req, res) {
-  var search = new RegExp('.*' + req.params.word + '*', 'i');
+  var search = new RegExp('.*' + req.params.word + '.*', 'i');
+  console.log('Search: ', search);
   // Search.find({ word: { $regex: search } }).then(function (responseFromDatabase) {
   //   console.log('response: ', responseFromDatabase);
   //   console.log(responseFromDatabase.length);
@@ -35,7 +36,7 @@ router.get('/search/:word', function (req, res) {
   // });
 
   //checks the name for a match and the tags array for a matching index then returns the document
-  Food.find({ $or: [{ name: { $regex: search } }, { tags: { $regex: search } }, { location: { $regex: search } }] }).then(function (dataFromTheDatabase) {
+  Food.find({ $or: [{ name: { $regex: search } }, { 'tags.$': { $regex: search } }, { 'location.$': { $regex: search } }] }).then(function (dataFromTheDatabase) {
     console.log('Search result ', dataFromTheDatabase);
     res.send(dataFromTheDatabase);
   });

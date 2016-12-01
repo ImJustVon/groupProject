@@ -6,6 +6,8 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
   admin.animationsEnabled = true;
 
   admin.allFoods = [];
+  admin.isOpenNew = false;
+  admin.isOpenEdit = false;
 
   admin.openNewCategory = function () {
     var modalInstance = $uibModal.open({
@@ -109,11 +111,11 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
     });
   };
 
-  admin.getEverything = function() {
+  admin.getEverything = function () {
     admin.getFoods();
     admin.getLocations();
     admin.getCategories();
-  }
+  };
 
   admin.getEverything();
 
