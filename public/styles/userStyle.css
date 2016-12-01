@@ -29,8 +29,8 @@ User Landing Page
   background: linear-gradient(#358e43, #59aa46, 20%, #b3ee8f, 25%, white);
 }
 
-.home img, .login-button button {
-  margin-top: 15px;
+.home img{
+  margin-right: 25px;
 }
 
 
