@@ -60,5 +60,9 @@ function FoodController(FoodService, $uibModal) {
     });
   };
 
+  // Back button
+  food.back = function() {
+ window.history.back();
+};
 
 }

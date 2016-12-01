@@ -41,4 +41,9 @@ location.openFeedback = function () {
 //  Get all locations when page loads
 location.getLocations();
 
+// Back button
+location.back = function() {
+window.history.back();
+};
+
 }

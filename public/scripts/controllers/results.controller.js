@@ -25,4 +25,9 @@ function ResultsController(FoodService, $uibModal) {
       }
     });
   };
+
+  // Back button
+  results.back = function() {
+ window.history.back();
+};
 }
