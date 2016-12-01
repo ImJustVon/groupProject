@@ -21,7 +21,7 @@ Returns the document with matches
 saves search word in the searches database
  */
 router.get('/search/:word', function (req, res) {
-  var search = new RegExp('.*' + req.params.word + '*');
+  var search = new RegExp('.*' + req.params.word + '*', 'i');
   // Search.find({ word: { $regex: search } }).then(function (responseFromDatabase) {
   //   console.log('response: ', responseFromDatabase);
   //   console.log(responseFromDatabase.length);
