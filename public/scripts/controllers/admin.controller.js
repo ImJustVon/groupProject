@@ -12,6 +12,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
       templateUrl: 'views/modals/newCategoryModal.html',
       controller: 'NewCategoryAdminController as new',
     });
+    modalInstance.result.then(admin.getEverything);
   }; // end admin.openNewCategory
 
   admin.openNewFood = function () {
@@ -19,6 +20,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
       templateUrl: 'views/modals/newFoodModal.html',
       controller: 'NewFoodAdminController as new',
     });
+    modalInstance.result.then(admin.getEverything);
   }; // end admin.openNewFood
 
   admin.openNewOption = function () {
@@ -26,6 +28,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
       templateUrl: 'views/modals/newOptionModal.html',
       controller: 'NewOptionAdminController as new',
     });
+    modalInstance.result.then(admin.getEverything);
   }; // end admin.openNewOption
 
   admin.openNewLocation = function () {
@@ -33,6 +36,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
       templateUrl: 'views/modals/newLocationModal.html',
       controller: 'NewLocationAdminController as new',
     });
+    modalInstance.result.then(admin.getEverything);
   }; // end admin.openNewLocation
 
   admin.editFood = function (food) {
@@ -42,7 +46,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
       templateUrl: 'views/modals/editFoodModal.html',
       controller: 'EditFoodAdminController as edit',
     });
-    modalInstance.result.then(admin.getFoods);
+    modalInstance.result.then(admin.getEverything);
   }; // end admin.editFood
 
   admin.editCategory = function () {
@@ -50,6 +54,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
       templateUrl: 'views/modals/editCategoryModal.html',
       controller: 'EditCategoryAdminController as edit',
     });
+    modalInstance.result.then(admin.getEverything);
   }; // end admin.editFood
 
   admin.editOption = function () {
@@ -57,6 +62,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
       templateUrl: 'views/modals/editOptionModal.html',
       controller: 'EditOptionAdminController as edit',
     });
+    modalInstance.result.then(admin.getEverything);
   }; // end admin.editFood
 
   admin.editLocation = function () {
@@ -64,6 +70,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
       templateUrl: 'views/modals/editLocationModal.html',
       controller: 'EditLocationAdminController as edit',
     });
+    modalInstance.result.then(admin.getEverything);
   }; // end admin.editFood
 
   admin.confirmDelete = function (id) {
@@ -72,6 +79,7 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
       templateUrl: 'views/modals/confirmDeleteModal.html',
       controller: 'DeleteFoodAdminController as delete',
     });
+    modalInstance.result.then(admin.getEverything);
   }; // end admin.confirmDelete
 
 
@@ -101,8 +109,12 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
     });
   };
 
-  admin.getFoods();
-  admin.getLocations();
-  admin.getCategories();
+  admin.getEverything = function() {
+    admin.getFoods();
+    admin.getLocations();
+    admin.getCategories();
+  }
+
+  admin.getEverything();
 
 } // end AdminController
