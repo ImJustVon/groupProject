@@ -97,6 +97,7 @@ function ReportController(ReportService) {
 
   //  Function to assign the list displayed on screen
   report.assignList = function(value) {
+    report.selected = value;
     if (value == 'all') {
       report.current = report.feedback;
     } else if (value == 'unresolved') {
@@ -104,7 +105,7 @@ function ReportController(ReportService) {
     } else if (value == 'resolved') {
       report.current = report.resolvedFeedback;
     }
-    report.getFeedback
+
   }
 
   //  Get feedback and search information on page load
