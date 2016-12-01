@@ -25,6 +25,15 @@ function LocationController(LocationService, FoodService, $uibModal) {
     });
   }
 
+//  Opens the feedback modal
+location.openFeedback = function () {
+  var modalInstance = $uibModal.open({
+    templateUrl: 'views/modals/feedbackModal.html',
+    controller: 'FeedbackController as feedback',
+  });
+  // modalInstance.result.then(admin.getEverything);
+};
+
 //  Get all locations when page loads
 location.getLocations();
 
