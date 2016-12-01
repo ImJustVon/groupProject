@@ -28,4 +28,10 @@ function CategoriesController(CategoryService, FoodService) {
 
   //  Get all categories when page loads [{_id, name, imageLocation}]
   cat.getCategories();
+
+
+    // Back button
+    cat.back = function() {
+   window.history.back();
+  };
 }
