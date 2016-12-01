@@ -268,3 +268,10 @@ Chosen Food-Hotdog
   height: 18px;
   width: 18px;
 }
+
+.food-display-type {
+  text-align: center;
+  font-family: 'Arvo-Bold';
+  font-size: 20px;
+  background: linear-gradient(#f47920, #fdb813);
+}
