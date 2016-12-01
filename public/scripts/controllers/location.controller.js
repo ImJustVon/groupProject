@@ -36,7 +36,6 @@ location.openFeedback = function () {
       }
     }
   });
-  // modalInstance.result.then(admin.getEverything);
 };
 
 //  Get all locations when page loads
