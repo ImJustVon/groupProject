@@ -15,7 +15,7 @@ function ReportController(ReportService) {
   report.current = [];
 
   //  This variable determines which list is assigned to report.current
-  report.selected = 'all';
+  report.selected = 'unresolved';
 
   //  Function to get all feedback from database
   report.getFeedback = function() {
