@@ -30,6 +30,11 @@ location.openFeedback = function () {
   var modalInstance = $uibModal.open({
     templateUrl: 'views/modals/feedbackModal.html',
     controller: 'FeedbackController as feedback',
+    resolve: {
+      type: function() {
+        return 'Locations';
+      }
+    }
   });
   // modalInstance.result.then(admin.getEverything);
 };
