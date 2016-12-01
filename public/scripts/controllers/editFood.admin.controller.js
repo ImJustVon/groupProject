@@ -28,7 +28,15 @@ function EditFoodAdminController(FoodService, CategoryService, LocationService, 
     });
   };
 
+  edit.getLocations = function () {
+    LocationService.getLocations().then(function (response) {
+      console.log('Locations from response:', response);
+      edit.locations = response;
+    });
+  };
+
   edit.getAll = function () {
+    edit.getLocations();
     edit.getOptions();
     edit.getTypes();
   };

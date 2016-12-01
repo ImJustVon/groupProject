@@ -10,7 +10,7 @@ function NewLocationAdminController(LocationService, $uibModalInstance) {
     { name: 'Groceries', path: '/assets/images/location-items/groceries.png' },
     { name: 'Restaurant', path: '/assets/images/location-items/restaurant.png' },
     { name: 'Stadium', path: '/assets/images/location-items/stadium-cylinder.png' },
-    { name: 'Vending Machine', path: '/assets/images/location-items/vending-machine.png' }, ];
+    { name: 'Vending Machine', path: '/assets/images/location-items/vending-machine.png' },];
 
   //  admin.name -> new location name
 
@@ -18,8 +18,9 @@ function NewLocationAdminController(LocationService, $uibModalInstance) {
   admin.addLocation = function () {
     var locationData = {
       name: admin.name.replace(/ /g, '_'),
-      file: admin.file,
+      file: admin.file.selected,
     };
+    console.log('locationData:', locationData);
     LocationService.postLocation(locationData).then(function (response) {
       //  Do something
       console.log('Response:', response);

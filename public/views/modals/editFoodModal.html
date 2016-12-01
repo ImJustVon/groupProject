@@ -63,7 +63,15 @@
 
   <h4>Locations</h4>
   <!-- Do repeat on locations -->
-  <div class="row" ng-repeat="locale in edit.food.location">
+
+  <ui-select multiple ng-model="edit.food.locale" theme="selectize" close-on-select="false" style="width: 100%;" title="Select a location">
+    <ui-select-match placeholder="Select a location...">{{$item.name}}</ui-select-match>
+    <ui-select-choices repeat="locale in edit.locations" >
+      <div ng-bind-html="locale.name | highlight: $select.search"></div>
+    </ui-select-choices>
+  </ui-select>
+
+  <!-- <div class="row" ng-repeat="locale in edit.food.location">
     <div class="col-xs-6">
       <select ng-model="locale">
         <option disabled>Location</option>
@@ -78,7 +86,7 @@
     <div class="col-xs-4">
       <button class="btn btn-success" ng-click="edit.addLocationToFood()">Add Location</button>
     </div>
-  </div>
+  </div> -->
 
   <h4>Tags</h4>
   <!-- Do tags -->
