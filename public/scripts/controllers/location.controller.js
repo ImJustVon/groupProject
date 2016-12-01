@@ -1,7 +1,7 @@
 angular.module('routeApp')
   .controller('LocationController', LocationController);
 
-function LocationController(LocationService, FoodService) {
+function LocationController(LocationService, FoodService, $uibModal) {
 
   console.log('LocationController Loaded');
 
