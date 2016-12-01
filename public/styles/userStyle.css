@@ -40,8 +40,14 @@ li {
 /*---------------------------------------------------------------------------
 User Landing Page
 ----------------------------------------------------------------------------*/
-.landing-page {
+/*.landing-page {
   background: linear-gradient(#358e43, #59aa46, 20%, #b3ee8f, 25%, white);
+}*/
+.banner {
+  background: linear-gradient(#358e43, #59aa46, #b3ee8f);
+}
+.landing-body {
+  background: linear-gradient(#b3ee8f, white);
 }
 
 .home img{
