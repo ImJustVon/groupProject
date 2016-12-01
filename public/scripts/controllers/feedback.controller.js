@@ -1,7 +1,7 @@
 angular.module('routeApp')
   .controller('FeedbackController', FeedbackController);
 
-function FeedbackController(ReportService, type) {
+function FeedbackController(ReportService, type, $uibModalInstance) {
 
   var feedback = this;
 
@@ -13,6 +13,11 @@ function FeedbackController(ReportService, type) {
     ReportService.postFeedback(feedbackToSubmit).then(function(response) {
       console.log('Feedback POST successful:', response);
     });
+    $uibModalInstance.close();
+  }
+
+  feedback.cancel = function() {
+    $uibModalInstance.close();
   }
 
 }
