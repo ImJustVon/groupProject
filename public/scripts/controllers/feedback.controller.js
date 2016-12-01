@@ -5,6 +5,14 @@ function FeedbackController(ReportService, type) {
 
   var feedback = this;
 
-  console.log('Type:', type);
+  feedback.submitFeedback = function() {
+    var feedbackToSubmit = {
+      type: type,
+      content: feedback.content
+    };
+    ReportService.postFeedback(feedbackToSubmit).then(function(response) {
+      console.log('Feedback POST successful:', response);
+    });
+  }
 
 }

@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
       <h3>Create Feedback</h3>
+      <p>
+        {{feedback.type}}
+      </p>
     </div>
   </div>
   <div class="row">
@@ -11,7 +14,7 @@
   </div>
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
-      <button class="btn btn-success">Submit</button>
+      <button class="btn btn-success" ng-click="feedback.submitFeedback()">Submit</button>
     </div>
   </div>
 </section>

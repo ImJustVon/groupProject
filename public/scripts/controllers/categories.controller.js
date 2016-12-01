@@ -1,7 +1,7 @@
 angular.module('routeApp')
   .controller('CategoriesController', CategoriesController);
 
-function CategoriesController(CategoryService, FoodService) {
+function CategoriesController(CategoryService, FoodService, $uibModal) {
 
   var cat = this;
 
@@ -25,6 +25,19 @@ function CategoriesController(CategoryService, FoodService) {
       FoodService.foods.current = cat.categoryFoods;
     });
   }
+
+  //  Opens the feedback modal
+  cat.openFeedback = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: 'views/modals/feedbackModal.html',
+      controller: 'FeedbackController as feedback',
+      resolve: {
+        type: function() {
+          return 'Categories';
+        }
+      }
+    });
+  };
 
   //  Get all categories when page loads [{_id, name, imageLocation}]
   cat.getCategories();

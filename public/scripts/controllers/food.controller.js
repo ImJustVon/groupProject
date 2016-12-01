@@ -1,7 +1,7 @@
 angular.module('routeApp')
   .controller('FoodController', FoodController);
 
-function FoodController(FoodService) {
+function FoodController(FoodService, $uibModal) {
 
   console.log('FoodController Loaded');
 
@@ -46,6 +46,19 @@ function FoodController(FoodService) {
     }
 
   }
+
+  //  Opens the feedback modal
+  food.openFeedback = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: 'views/modals/feedbackModal.html',
+      controller: 'FeedbackController as feedback',
+      resolve: {
+        type: function() {
+          return 'Food: ' + food.chosenFood.name.replace('_', ' ');
+        }
+      }
+    });
+  };
 
 
 }
