@@ -21,20 +21,21 @@ Returns the document with matches
 saves search word in the searches database
  */
 router.get('/search/:word', function (req, res) {
-  Search.find({ word: req.params.word }).then(function (responseFromDatabase) {
-    console.log('response: ', responseFromDatabase);
-    console.log(responseFromDatabase.length);
-    if (responseFromDatabase.length === 0) {
-      var searchTerm = new Search({ word: req.params.word, count: 1 });
-      searchTerm.save();
-    } else {
-      console.log(responseFromDatabase[0]);
-      Search.update({ _id: responseFromDatabase[0]._id }, { $inc: { count: 1 } }).exec();
-    }
-  });
+  var search = new RegExp('.*' + req.params.word + '*');
+  // Search.find({ word: { $regex: search } }).then(function (responseFromDatabase) {
+  //   console.log('response: ', responseFromDatabase);
+  //   console.log(responseFromDatabase.length);
+  //   if (responseFromDatabase.length === 0) {
+  //     var searchTerm = new Search({ word: req.params.word, count: 1 });
+  //     searchTerm.save();
+  //   } else {
+  //     console.log(responseFromDatabase[0]);
+  //     Search.update({ _id: responseFromDatabase[0]._id }, { $inc: { count: 1 } }).exec();
+  //   }
+  // });
 
   //checks the name for a match and the tags array for a matching index then returns the document
-  Food.find({ $or: [{ name: req.params.word }, { tags: req.params.word }, { location: req.params.word }] }).then(function (dataFromTheDatabase) {
+  Food.find({ $or: [{ name: { $regex: search } }, { tags: req.params.word }, { location: req.params.word }] }).then(function (dataFromTheDatabase) {
     console.log('Search result ', dataFromTheDatabase);
     res.send(dataFromTheDatabase);
   });
