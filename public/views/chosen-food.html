@@ -28,44 +28,16 @@
     </div>
 
 
-    <div class='row type-list-container' ng-repeat="option in food.chosenFood.options | groupBy: 'name'">
-      <div class='col-xs-2'></div>
-      <div class='col-xs-8 type-list'>
-        <!-- {{ food.chosenFood.options[0].type.name }} -->
-        <ul>
-          <li ng-repeat="option in food.chosenFood.options | filter: {type: {display:'radio'}}">
-            <input type='radio' class='type-option' name='type-option' />
-            <label for='type-option'>{{ option.name }}</label>
-          </li>
-        </ul>
+
+    <div class="row option-checkbox-container" ng-repeat="(key, value) in food.chosenFood.options | groupBy:'type.name'">
+      <div>
+        {{key}}
       </div>
-      <div class='col-xs-2'></div>
-    </div>
-
-
-
-
-    <div class='row option-checkbox-container'>
-      <div class='col-xs-6 option-checkbox-div' ng-repeat="option in food.chosenFood.options | filter: {type: {display:'checkbox'}}">
-        <input type='checkbox' class='option-checkbox' name='option' ng-model="option.clicked" ng-change="food.modifyScore(option)" />
+      <div class='col-xs-6 option-checkbox-div' ng-repeat="option in value">
+        <input type="{{option.type.display}}" class='option-checkbox' name='option' ng-model="option.clicked" ng-value="option" ng-change="food.modifyScore(option)" />
         <label for='option'>{{ option.name }}</label>
       </div>
 
-
-
-
-      <!-- <div class='col-xs-6 option-checkbox-div'>
-        <input type='checkbox' class='option-checkbox' name='option' />
-        <label for='option'>Cheese</label>
-      </div>
-    </div>
-
-    <div class='row option-checkbox-container'>
-      <div class='col-xs-6 option-checkbox-div'>
-        <input type='checkbox' class='option-checkbox' name='option' />
-        <label for='option'>Chocolate</label>
-      </div>
-    </div> -->
 
 
 </div>
