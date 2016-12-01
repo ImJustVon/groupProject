@@ -38,11 +38,10 @@
         <input type="{{option.type.display}}" class='option-checkbox' name='option' ng-model="option.clicked" ng-value="option" ng-change="food.modifyScore(option)" />
         <label for='option'>{{ option.name }}</label>
       </div>
+    </div>
 
-      <div class="col-xs-offset-1 col-xs-10">
-        <button class="btn btn-success" ng-click="food.openFeedback()">Feedback</button>
-      </div>
-
-
+<div class="col-xs-offset-1 col-xs-10">
+  <button class="btn btn-success" ng-click="food.openFeedback()">Feedback</button>
+</div>
 
 </div>
