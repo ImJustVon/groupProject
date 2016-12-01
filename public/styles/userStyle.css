@@ -1,7 +1,19 @@
 /*---------------------------------------------------------------------------
 Global
 ----------------------------------------------------------------------------*/
+html, body {
+  height: 100%;
+}
 
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -40px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 40px; /* .push must be the same height as .footer */
+}
 
 a {
   color: #333;
@@ -136,14 +148,6 @@ Where?
   background-color: #bd2408;
 }
 
-footer {
-  background-color: #373936;
-  color: #fff;
-  font-size: 12px;
-  padding: 10px;
-  text-align: center;
-}
-
 /*---------------------------------------------------------------------------
 Categories
 ----------------------------------------------------------------------------*/
@@ -274,4 +278,16 @@ Chosen Food-Hotdog
   font-family: 'Arvo-Bold';
   font-size: 20px;
   background: linear-gradient(#f47920, #fdb813);
+}
+
+/*---------------------------------------------------------------------------
+Footer
+----------------------------------------------------------------------------*/
+
+footer {
+  background-color: #373936;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px;
+  text-align: center;
 }
