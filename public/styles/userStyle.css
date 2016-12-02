@@ -37,7 +37,9 @@ li {
     list-style-type: none;
 }
 
-.back img {}
+.feedback-btn {
+    margin-top: 30px;
+}
 
 
 /*---------------------------------------------------------------------------
@@ -164,7 +166,9 @@ Where?
 }
 
 .letter-grade.B {
-    background-color: #15d623;
+    <<<<<<< HEAD background-color: #15d623;
+    =======background-color: #78ce58;
+    >>>>>>>51e30d9fa53e5bae2ea96f3c94d6ef0a9eb4aee7
 }
 
 
@@ -260,7 +264,11 @@ Chosen Food
 }
 
 .option-checkbox-container {
-    margin: 20px 0;
+    <<<<<<< HEAD margin: 20px 0;
+    =======margin: 20px 0;
+    width: 110%;
+    margin-left: -5%;
+    >>>>>>>51e30d9fa53e5bae2ea96f3c94d6ef0a9eb4aee7
 }
 
 .options-header {
@@ -270,13 +278,22 @@ Chosen Food
 }
 
 .option-checkbox-div {
-    font-size: 18px;
+    <<<<<<< HEAD font-size: 18px;
     padding-left: 40px;
     padding-right: 0;
 }
 
 .option-checkbox-div label {
     padding-left: 10px;
+    =======font-size: 18px;
+    padding-left: 40px;
+    padding-right: 0;
+    margin-left: -10px;
+}
+
+.option-checkbox-div label {
+    padding-left: 10px;
+    >>>>>>>51e30d9fa53e5bae2ea96f3c94d6ef0a9eb4aee7
 }
 
 .option-checkbox {
@@ -319,6 +336,18 @@ Chosen Food-Hotdog
     font-family: 'Arvo-Bold';
     font-size: 20px;
     background: linear-gradient(#f47920, #fdb813);
+}
+
+
+/*---------------------------------------------------------------------------
+Feedback Modal
+----------------------------------------------------------------------------*/
+
+.modal-feedback {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 20%;
+    width: 95%;
 }
 
 

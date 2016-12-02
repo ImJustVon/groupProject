@@ -31,17 +31,19 @@
 
 
     <div class="row option-checkbox-container" ng-repeat="(key, value) in food.chosenFood.options | groupBy:'type.name'">
+      <form>
       <div class="food-display-type">
         {{key}}
       </div>
       <div class='col-xs-6 option-checkbox-div' ng-repeat="option in value">
         <input type="{{option.type.display}}" class='option-checkbox' name='option' ng-model="option.clicked" ng-value="option" ng-change="food.modifyScore(option)" />
         <label for='option'>{{ option.name }}</label>
+      </form>
       </div>
     </div>
 
 <div class="col-xs-offset-1 col-xs-10">
-  <button class="btn btn-success" ng-click="food.openFeedback()">Feedback</button>
+  <button class="btn btn-success feedback-btn" ng-click="food.openFeedback()">Feedback</button>
 </div>
 
 </div>
