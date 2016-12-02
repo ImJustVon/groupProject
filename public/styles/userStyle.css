@@ -1,313 +1,335 @@
 /*---------------------------------------------------------------------------
 Global
 ----------------------------------------------------------------------------*/
+
 html, body {
-  height: 100%;
+    height: 100%;
 }
 
 .wrapper {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -40px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -40px;
+    /* the bottom margin is the negative value of the footer's height */
 }
+
 .footer, .push {
-    height: 40px; /* .push must be the same height as .footer */
+    height: 40px;
+    /* .push must be the same height as .footer */
 }
 
 a {
-  color: #333;
-  text-decoration: none;
+    color: #333;
+    text-decoration: none;
 }
 
 span, input[type=checkbox] {
-  display: inline-block;
+    display: inline-block;
 }
 
 ul {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 li {
-  list-style-type: none;
+    list-style-type: none;
 }
-.back img {
 
-}
+.back img {}
 
 
 /*---------------------------------------------------------------------------
 User Landing Page
 ----------------------------------------------------------------------------*/
+
 .landing-page {
-  background: linear-gradient(#b3ee8f, white);
-  positon: fixed;
+    background: linear-gradient(#b3ee8f, white);
+    positon: fixed;
+    height: 100%;
 }
+
 .banner {
-  background: linear-gradient(#358e43, #59aa46, #b3ee8f, #b3ee8f);
+    background: linear-gradient(#358e43, #59aa46, #b3ee8f, #b3ee8f);
 }
+
+
 /*.landing-body {
   background: linear-gradient(#b3ee8f, white);
 }*/
+
 .search-food {
-  background: linear-gradient(#b3ee8f);
+    background: linear-gradient(#b3ee8f);
 }
+
+
 /*.search-banner {
   background: linear-gradient(#b3ee8f);
 }*/
+
 .search-results {
-  background: linear-gradient(white);
+    background: linear-gradient(white);
 }
 
-.home img{
-  margin-top: 25px;
+.home img {
+    margin-top: 25px;
 }
-
 
 header.row.banner img {
-  width: 100%;
+    width: 100%;
 }
 
 button.btn {
-  height: 35px;
-  font-size: 16px;
-  width: 100%;
+    height: 35px;
+    font-size: 16px;
+    width: 100%;
 }
 
 .chef-marshall-logo img {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 #food-search {
-  font-size: 22px;
-  margin-top: 20px;
-  width: 100%;
+    font-size: 22px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 .where-image, .categories-image {
-  margin-top: 30px;
-  text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .where-image img, .categories-image img {
-  width: 40%;
+    width: 40%;
 }
-
 
 .where-image p, .categories-image p {
-  font-size: 30px;
-  padding-top: 10px;
+    font-size: 30px;
+    padding-top: 10px;
 }
+
 
 /*---------------------------------------------------------------------------
 Where?
 ----------------------------------------------------------------------------*/
+
 .food-search-results-banner {
-  border-bottom: 2px solid black;
-  margin-top: 20px;
+    border-bottom: 2px solid black;
+    margin-top: 20px;
 }
 
 .food-search-results-banner span {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .food-grade-banner {
-  text-align: right;
+    text-align: right;
 }
 
 .food-search-results {
-  min-height: 100%;
+    min-height: 100%;
 }
 
 .search-result {
-  border-bottom: 1px solid black;
-  padding: 20px 10px;
+    border-bottom: 1px solid black;
+    padding: 20px 10px;
 }
 
 .food-name, .letter-grade {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .food-grade {
-  text-align: right;
+    text-align: right;
 }
 
 .options-value {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 .letter-grade {
-  border-radius: 10px;
-  color: #fff;
-  font-weight: 700;
-  height: 30px;
-  margin-left: 10px;
-  text-align: center;
-  width: 30px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    height: 30px;
+    margin-left: 10px;
+    text-align: center;
+    width: 30px;
 }
 
 .letter-grade.A {
-  background-color: #358e42;
+    background-color: #358e42;
 }
 
 .letter-grade.B {
-  background-color: #15d623;
+    background-color: #15d623;
 }
+
+
 /*#59aa46*/
 
 .letter-grade.C {
-  background-color: #fdb813;
+    background-color: #fdb813;
 }
 
 .letter-grade.D {
-  background-color: #f47920;
+    background-color: #f47920;
 }
 
 .letter-grade.F {
-  background-color: #bd2408;
+    background-color: #bd2408;
 }
+
 
 /*---------------------------------------------------------------------------
 Categories
 ----------------------------------------------------------------------------*/
+
 .categories-banner {
-  border-bottom: 2px solid black;
-  padding-bottom: 10px;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
 }
 
 .category {
-  border-bottom: 1px solid black;
-  padding: 10px 0;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
 }
 
 .category-name {
-  font-size: 20px;
-  padding-top: 10px;
+    font-size: 20px;
+    padding-top: 10px;
 }
 
 .category-photo {
-  text-align: right;
+    text-align: right;
 }
 
 .category-photo img {
-  width: 35%;
+    width: 35%;
 }
+
 
 /*---------------------------------------------------------------------------
 Locations
 ----------------------------------------------------------------------------*/
 
 .locations-banner {
-  border-bottom: 2px solid black;
-  padding-bottom: 10px;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
 }
 
 .location {
-  border-bottom: 1px solid black;
-  padding: 10px 0;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
 }
 
 .location-name {
-  font-size: 20px;
-  padding-top: 10px;
+    font-size: 20px;
+    padding-top: 10px;
 }
 
 .location-photo {
-  text-align: right;
+    text-align: right;
 }
 
 .location-photo img {
-  width: 35%;
+    width: 35%;
 }
+
 
 /*---------------------------------------------------------------------------
 Chosen Food
 ----------------------------------------------------------------------------*/
+
 .chosen-food-header {
-  border-bottom: 2px solid black;
-  margin-top: 15px;
-  padding-bottom: 15px;
+    border-bottom: 2px solid black;
+    margin-top: 15px;
+    padding-bottom: 15px;
 }
 
 .chosen-food-name {
-  font-size: 40px;
+    font-size: 40px;
 }
 
 .chosen-food-letter-grade {
-  font-size: 40px;
-  height: 60px;
-  width: 60px;
+    font-size: 40px;
+    height: 60px;
+    width: 60px;
 }
 
 .option-checkbox-container {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .options-header {
-  font-size: 30px;
-  padding: 15px;
-  text-align: center;
+    font-size: 30px;
+    padding: 15px;
+    text-align: center;
 }
 
 .option-checkbox-div {
-  font-size: 18px;
-  padding-left: 40px;
-  padding-right: 0;
+    font-size: 18px;
+    padding-left: 40px;
+    padding-right: 0;
 }
 
 .option-checkbox-div label {
-  padding-left: 10px;
+    padding-left: 10px;
 }
 
 .option-checkbox {
-  height: 18px;
-  width: 18px;
+    height: 18px;
+    width: 18px;
 }
+
 
 /*---------------------------------------------------------------------------
 Chosen Food-Hotdog
 ----------------------------------------------------------------------------*/
+
 .type-header {
-  font-size: 20px;
-  margin-top: 10px;
-  text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .type-list {
-  border: 1px solid black;
-  font-size: 18px;
-  margin-top: 10px;
+    border: 1px solid black;
+    font-size: 18px;
+    margin-top: 10px;
 }
 
 .type-list label {
-  padding-left: 10px;
+    padding-left: 10px;
 }
 
 .type-list ul {
-  padding: 10px;
+    padding: 10px;
 }
 
 .type-option {
-  height: 18px;
-  width: 18px;
+    height: 18px;
+    width: 18px;
 }
 
 .food-display-type {
-  text-align: center;
-  font-family: 'Arvo-Bold';
-  font-size: 20px;
-  background: linear-gradient(#f47920, #fdb813);
+    text-align: center;
+    font-family: 'Arvo-Bold';
+    font-size: 20px;
+    background: linear-gradient(#f47920, #fdb813);
 }
+
 
 /*---------------------------------------------------------------------------
 Footer
 ----------------------------------------------------------------------------*/
 
 footer {
-  background-color: #373936;
-  color: #fff;
-  font-size: 12px;
-  padding: 10px;
-  text-align: center;
+    background-color: #373936;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px;
+    text-align: center;
 }

@@ -66,6 +66,11 @@ function NewFoodAdminController(FoodService, OptionService, CategoryService, Loc
     });
   };
 
+  admin.addFoodCsv = function () {
+    FoodService.postFoodCsv(admin.file).then(function (response) {
+    });
+  };
+
   //  Function to add a new food
   admin.addFood = function () {
     console.log('Step 1: function clicked');

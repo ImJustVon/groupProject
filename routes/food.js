@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const Food = require('../models/food');
 const Search = require('../models/search');
+const fs = require('fs');
+const parse = require('csv-parse/lib/sync');
 
 /*
 Gets all documents with the specified location /food/location/(the location)
@@ -60,6 +62,13 @@ router.get('/', function (req, res) {
     console.log('Documents from mongo ', dataFromTheDatabase);
     res.send(dataFromTheDatabase);
   });
+});
+
+router.post('/csv', function (req, res) {
+  console.log('req.body: ', req.body);
+  var records = parse(req.body, { columns: true });
+  console.log('records: ', records);
+  res.sendStatus(201);
 });
 
 /*
