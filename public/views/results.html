@@ -23,7 +23,7 @@
     </section>
 
     <section class="food-search-results">
-      <a href="/chosen-food" ng-repeat="food in results.foods.current" ng-click="results.chosenFood(food)">
+      <a href="/chosen-food" ng-repeat="food in results.foods.current | orderBy:'-score' " ng-click="results.chosenFood(food)">
         <div class="row search-result">
           <div class="col-xs-6 food-name">
             <span>{{ food.name }}</span>

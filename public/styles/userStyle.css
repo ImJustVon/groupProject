@@ -32,8 +32,8 @@ ul {
 li {
   list-style-type: none;
 }
-.back img {
-
+.feedback-btn {
+  margin-top: 30px;
 }
 
 
@@ -242,6 +242,8 @@ Chosen Food
 
 .option-checkbox-container {
   margin: 20px 0;
+  width: 110%;
+  margin-left: -5%;
 }
 
 .options-header {
@@ -254,10 +256,12 @@ Chosen Food
   font-size: 18px;
   padding-left: 40px;
   padding-right: 0;
+  margin-left: -10px;
 }
 
 .option-checkbox-div label {
   padding-left: 10px;
+
 }
 
 .option-checkbox {
