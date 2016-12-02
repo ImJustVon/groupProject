@@ -166,9 +166,7 @@ Where?
 }
 
 .letter-grade.B {
-    <<<<<<< HEAD background-color: #15d623;
-    =======background-color: #78ce58;
-    >>>>>>>51e30d9fa53e5bae2ea96f3c94d6ef0a9eb4aee7
+    background-color: #78ce58;
 }
 
 
@@ -264,11 +262,8 @@ Chosen Food
 }
 
 .option-checkbox-container {
-    <<<<<<< HEAD margin: 20px 0;
-    =======margin: 20px 0;
     width: 110%;
     margin-left: -5%;
-    >>>>>>>51e30d9fa53e5bae2ea96f3c94d6ef0a9eb4aee7
 }
 
 .options-header {
@@ -278,14 +273,7 @@ Chosen Food
 }
 
 .option-checkbox-div {
-    <<<<<<< HEAD font-size: 18px;
-    padding-left: 40px;
-    padding-right: 0;
-}
-
-.option-checkbox-div label {
-    padding-left: 10px;
-    =======font-size: 18px;
+    font-size: 18px;
     padding-left: 40px;
     padding-right: 0;
     margin-left: -10px;
@@ -293,7 +281,6 @@ Chosen Food
 
 .option-checkbox-div label {
     padding-left: 10px;
-    >>>>>>>51e30d9fa53e5bae2ea96f3c94d6ef0a9eb4aee7
 }
 
 .option-checkbox {
