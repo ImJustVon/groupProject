@@ -26,3 +26,6 @@ cp node_modules/angular-sanitize/angular-sanitize.min.js.map public/vendors;
 
 cp node_modules/ui-select/dist/select.min.css public/vendors;
 cp node_modules/ui-select/dist/select.min.css.map public/vendors;
+
+cp node_modules/angular-base64-upload/dist/angular-base64-upload.min.js public/vendors;
+cp node_modules/angular-base64-upload/dist/angular-base64-upload.min.js.map public/vendors;

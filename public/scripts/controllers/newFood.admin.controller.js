@@ -67,7 +67,12 @@ function NewFoodAdminController(FoodService, OptionService, CategoryService, Loc
   };
 
   admin.addFoodCsv = function () {
+    console.log('admin.file', admin.file);
+    var string = admin.file.base64;
+    // string = atob(string);
+    console.log('string:', string);
     FoodService.postFoodCsv(admin.file).then(function (response) {
+      console.log(response);
     });
   };
 

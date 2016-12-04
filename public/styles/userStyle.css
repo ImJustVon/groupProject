@@ -99,7 +99,7 @@ button.btn {
 }
 
 .where-image, .categories-image {
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
 }
 
@@ -261,10 +261,11 @@ Chosen Food
     width: 60px;
 }
 
-.option-checkbox-container {
+
+/*.option-checkbox-container {
     width: 110%;
     margin-left: -5%;
-}
+}*/
 
 .options-header {
     font-size: 30px;

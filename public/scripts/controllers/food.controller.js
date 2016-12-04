@@ -10,8 +10,8 @@ function FoodController(FoodService, $uibModal) {
   food.chosenFood = FoodService.chosen;
   console.log(food.chosenFood);
 
-// If an option is checked, its modifer score is applied to the food score
-  food.modifyScore = function(option) {
+  // If an option is checked, its modifer score is applied to the food score
+  food.modifyScore = function (option) {
 
     if (option.clicked) {
       food.chosenFood.score += option.modifier;
@@ -20,17 +20,17 @@ function FoodController(FoodService, $uibModal) {
       console.log('Grade after checked: ', food.chosenFood.score);
 
     } else if (!option.clicked) {
-        if (option.modifier < 0) {
-          food.chosenFood.score += Math.abs(option.modifier);
-          console.log('This click is ', option.clicked);
-          console.log('Modifier from clicked option: ', option.modifier);
-          console.log('Grade after checked: ', food.chosenFood.score);
-        } else {
-            food.chosenFood.score -= option.modifier;
-            console.log('This click is ', option.clicked);
-            console.log('Modifier from clicked option: ', option.modifier);
-            console.log('Grade after checked: ', food.chosenFood.score);
-          }
+      if (option.modifier < 0) {
+        food.chosenFood.score += Math.abs(option.modifier);
+        console.log('This click is ', option.clicked);
+        console.log('Modifier from clicked option: ', option.modifier);
+        console.log('Grade after checked: ', food.chosenFood.score);
+      } else {
+        food.chosenFood.score -= option.modifier;
+        console.log('This click is ', option.clicked);
+        console.log('Modifier from clicked option: ', option.modifier);
+        console.log('Grade after checked: ', food.chosenFood.score);
+      }
     }
 
     if (food.chosenFood.score >= 81) {
@@ -45,7 +45,7 @@ function FoodController(FoodService, $uibModal) {
       food.chosenFood.grade = 'F';
     }
 
-  }
+  };
 
   //  Opens the feedback modal
   food.openFeedback = function () {
@@ -53,16 +53,16 @@ function FoodController(FoodService, $uibModal) {
       templateUrl: 'views/modals/feedbackModal.html',
       controller: 'FeedbackController as feedback',
       resolve: {
-        type: function() {
+        type: function () {
           return 'Food: ' + food.chosenFood.name.replace('_', ' ');
-        }
-      }
+        },
+      },
     });
   };
 
   // Back button
-  food.back = function() {
- window.history.back();
-};
+  food.back = function () {
+    window.history.back();
+  };
 
 }

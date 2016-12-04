@@ -30,7 +30,7 @@
 
 
 
-    <div class="row option-checkbox-container" ng-repeat="(key, value) in food.chosenFood.options | groupBy:'type.name'">
+    <div class="row" ng-repeat="(key, value) in food.chosenFood.options | groupBy:'type.name'">
       <form>
       <div class="food-display-type">
         {{key}}

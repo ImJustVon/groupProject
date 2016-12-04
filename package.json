@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-base64-upload": "^0.1.19",
     "angular-filter": "^0.5.11",
     "angular-route": "^1.5.8",
     "angular-sanitize": "^1.5.9",

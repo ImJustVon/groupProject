@@ -3,6 +3,7 @@ const Food = require('../models/food');
 const Search = require('../models/search');
 const fs = require('fs');
 const parse = require('csv-parse/lib/sync');
+const Option = require('../models/option').Option;
 
 /*
 Gets all documents with the specified location /food/location/(the location)
@@ -64,10 +65,34 @@ router.get('/', function (req, res) {
   });
 });
 
+// async issue
 router.post('/csv', function (req, res) {
   console.log('req.body: ', req.body);
-  var records = parse(req.body, { columns: true });
+  var csv = Buffer.from(req.body.base64, 'base64');
+  csv = csv.toString();
+
+  var records = parse(csv, { columns: true });
   console.log('records: ', records);
+
+  for (var countOfFoods = 0; countOfFoods < records.length; countOfFoods++) {
+
+    var optionsArray =  records[countOfFoods].options.split(', ');
+    console.log('optionsArray', optionsArray);
+    var optionsObjectArray = [];
+    for (var index = 0; index < optionsArray.length; index++) {
+      Option.find({ name: optionsArray[index] }).then(function (dataFromTheDatabase) {
+        console.log('data', dataFromTheDatabase);
+        optionsObjectArray.push(dataFromTheDatabase);
+        console.log('optionsObjectArray', optionsObjectArray);
+      });
+    }
+
+    records[countOfFoods].options = optionsObjectArray;
+    console.log('record', records[countOfFoods]);
+  }
+
+  console.log('records', records);
+
   res.sendStatus(201);
 });
 

@@ -9,9 +9,9 @@ function ResultsController(FoodService, $uibModal) {
 
   results.foods = FoodService.foods;
 
-  results.chosenFood = function(foodObject) {
+  results.chosenFood = function (foodObject) {
     FoodService.chosen = foodObject;
-  }
+  };
 
   //  Opens the feedback modal
   results.openFeedback = function () {
@@ -19,15 +19,15 @@ function ResultsController(FoodService, $uibModal) {
       templateUrl: 'views/modals/feedbackModal.html',
       controller: 'FeedbackController as feedback',
       resolve: {
-        type: function() {
+        type: function () {
           return 'Food List';
-        }
-      }
+        },
+      },
     });
   };
 
   // Back button
-  results.back = function() {
- window.history.back();
-};
+  results.back = function () {
+    window.history.back();
+  };
 }
