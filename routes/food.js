@@ -65,7 +65,7 @@ router.get('/', function (req, res) {
   });
 });
 
-// async issue
+// async issue no longer
 router.post('/csv', function (req, res) {
   console.log('req.body: ', req.body);
   var csv = Buffer.from(req.body.base64, 'base64');
@@ -84,7 +84,8 @@ router.post('/csv', function (req, res) {
       for (var index = 0; index < optionsArray.length; index++) {
 
         console.log('optionsArray[index]:', optionsArray[index]);
-        var query = Option.findOne({ name: optionsArray[index] });
+        var search = new RegExp(optionsArray[index], 'i');
+        var query = Option.findOne({ name: { $regex: search } });
 
         var promise = query.exec();
         promise.then(function (dataFromTheDatabase) {
