@@ -50,7 +50,7 @@
     <th>Modify</th>
   </thead>
   <tbody>
-    <tr ng-repeat="food in admin.allFoods | filter: admin.category.name | filter: admin.location.name | orderBy: sort">
+    <tr ng-repeat="food in admin.allFoods | filter: admin.category.name | filter: admin.location.name | orderBy:'name'">
       <td>{{food.name}}</td>
       <td>{{food.category}}</td>
       <td id="{{food.grade}}">{{food.grade}}</td>
