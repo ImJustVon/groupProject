@@ -73,27 +73,70 @@ router.post('/csv', function (req, res) {
 
   var records = parse(csv, { columns: true });
   console.log('records: ', records);
+  var arrayOfFoods = [];
+  var arrayOfFoodPromises = [];
 
-  for (var countOfFoods = 0; countOfFoods < records.length; countOfFoods++) {
+  function foodComposer(optionsArray, food) {
+    var promiseArray = [];
+    return new Promise(
+      function (resolve, reject) {
 
-    var optionsArray =  records[countOfFoods].options.split(', ');
-    console.log('optionsArray', optionsArray);
-    var optionsObjectArray = [];
-    for (var index = 0; index < optionsArray.length; index++) {
-      Option.find({ name: optionsArray[index] }).then(function (dataFromTheDatabase) {
-        console.log('data', dataFromTheDatabase);
-        optionsObjectArray.push(dataFromTheDatabase);
-        console.log('optionsObjectArray', optionsObjectArray);
+      for (var index = 0; index < optionsArray.length; index++) {
+
+        console.log('optionsArray[index]:', optionsArray[index]);
+        var query = Option.findOne({ name: optionsArray[index] });
+
+        var promise = query.exec();
+        promise.then(function (dataFromTheDatabase) {
+            food.options.push(dataFromTheDatabase._doc);
+            console.log('dataFromTheDatabase:', dataFromTheDatabase._doc);
+            console.log('food:', food);
+          });
+
+        promiseArray.push(promise);
+      }
+
+      Promise.all(promiseArray).then(function () {
+        if (food.score >= 81) {
+          food.grade = 'A';
+        } else if (food.score >= 61 && food.score < 81) {
+          food.grade = 'B';
+        } else if (food.score >= 41 && food.score < 61) {
+          food.grade = 'C';
+        } else if (food.score >= 26 && food.score < 41) {
+          food.grade = 'D';
+        } else if (food.score < 26) {
+          food.grade = 'F';
+        }
+
+        resolve(food);
       });
-    }
 
-    records[countOfFoods].options = optionsObjectArray;
-    console.log('record', records[countOfFoods]);
+    });
   }
 
-  console.log('records', records);
+  for (var countOfFoods = 0; countOfFoods < records.length; countOfFoods++) {
+    var optionsArray =  records[countOfFoods].options.split(', ');
+    console.log('optionsArray', optionsArray);
+    records[countOfFoods].options = [];
+    var food = records[countOfFoods];
+    console.log('food before loop', food);
+    arrayOfFoodPromises.push(foodComposer(optionsArray, food));
 
-  res.sendStatus(201);
+  }
+
+  Promise.all(arrayOfFoodPromises).then(function () {
+      arrayOfFoodPromises.forEach(function (promise) {
+        promise.then(function (food) {
+          var foodToSave = new Food(food);
+          foodToSave.save(foodToSave);
+          arrayOfFoods.push(food);
+        });
+      });
+
+      res.sendStatus(201);
+      console.log('foodArray:', arrayOfFoods);
+    });
 });
 
 /*

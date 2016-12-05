@@ -84,7 +84,6 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
     modalInstance.result.then(admin.getEverything);
   }; // end admin.confirmDelete
 
-
   //  Function to get all foods in the database
   admin.getFoods = function () {
     FoodService.getFoods().then(function (response) {
