@@ -1,6 +1,6 @@
 angular.module('routeApp').controller('AdminController', AdminController);
 
-function AdminController(FoodService, CategoryService, LocationService, $uibModal, $log, $document, DeleteService) {
+function AdminController(FoodService, CategoryService, LocationService, $uibModal, $log, $document, DeleteService, ReportService) {
   var admin = this;
 
   admin.animationsEnabled = true;
@@ -111,10 +111,35 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
     });
   };
 
+  //  Function to get all feedback from database
+  admin.getFeedback = function () {
+    ReportService.getFeedback().then(function (response) {
+      console.log('Controller received feedback:', response);
+      admin.feedback = response;
+      sortFeedback();
+    });
+  };
+
+  function sortFeedback() {
+    admin.resolvedFeedback = admin.feedback.filter(isResolved);
+    admin.unresolvedFeedback = admin.feedback.filter(isUnresolved);
+  }
+
+  //  Function to check if resolved
+  function isResolved(entry) {
+    return entry.resolved;
+  }
+
+  //  Function to check if unresolved
+  function isUnresolved(entry) {
+    return !entry.resolved;
+  }
+
   admin.getEverything = function () {
     admin.getFoods();
     admin.getLocations();
     admin.getCategories();
+    admin.getFeedback();
   };
 
   admin.getEverything();

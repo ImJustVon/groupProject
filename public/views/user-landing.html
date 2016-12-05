@@ -12,7 +12,7 @@
 
     <section class="row search-food">
         <div class="col-xs-12 search-banner">
-            <input type="search" name="food-search" id="food-search" ng-model="user.search" ng-change="user.searchFood()" placeholder="Search food here..." />
+            <input type="search" name="food-search" id="food-search" ng-model="user.search" ng-change="user.searchFood()" placeholder="Search..." />
         </div>
     </section>
 
@@ -44,10 +44,9 @@
         </div>
     </section>
 
-    <div ng-show="user.search" class="col-xs-offset-1 col-xs-10">
-      <button class="btn btn-success" ng-click="user.openFeedback()">Feedback</button>
     </div>
-
+    <div ng-show="user.search" class="col-xs-offset-1 col-xs-10">
+      <button class="btn btn-success" ng-click="user.openFeedback()">Suggestion?</button>
     </div>
 
 </div>

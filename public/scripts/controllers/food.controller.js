@@ -9,7 +9,6 @@ function FoodController(FoodService, $uibModal) {
 
   food.chosenFood = FoodService.chosen;
   console.log(food.chosenFood);
-
   // If an option is checked, its modifer score is applied to the food score
   food.modifyScore = function (option) {
 
