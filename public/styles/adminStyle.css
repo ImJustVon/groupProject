@@ -166,3 +166,28 @@ select {
 
 
 /* ----------- NEW OPTION ----------- */
+
+
+/* ----------- LOG IN ----------- */
+.login-page {
+  background: linear-gradient(#358e43, #59aa46, white);
+  height: 100%;
+}
+.login-page img {
+  width: 20%;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+.login {
+  padding-top: 8%;
+  margin: auto;
+}
+#login-email {
+  width: 30%;
+}
+.login-field {
+  margin-right: 10px;
+  height: 35px;
+  width: 20%;
+
+}
