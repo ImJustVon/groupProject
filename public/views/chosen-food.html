@@ -17,9 +17,9 @@
       <div class='col-xs-8 chosen-food-name'>
         <span>{{ food.chosenFood.name }}</span>
       </div>
-      <div class='col-xs-4 chosen-food-grade'>
-        <span ng-class="" class='chosen-food-letter-grade letter-grade animate {{  food.chosenFood.grade }}'>{{ food.chosenFood.grade }}</span>
-      </div>
+      <food-Animate class='col-xs-4 chosen-food-grade animated'>
+        <span class='chosen-food-letter-grade letter-grade {{  food.chosenFood.grade }}'>{{ food.chosenFood.grade }}</span>
+      </food-Animate>
     </section>
 
     <div class='row options-header'>
