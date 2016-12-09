@@ -74,15 +74,15 @@ function FoodService($http) {
 
   //  Get foods by category
   food.getCategory = function (category) {
-    return $http.get('food/category/' + category.name).then(function (response) {
+    return $http.get('food/category/' + category).then(function (response) {
       //  Returns array of objects {_id, name, category, options, score, overRide, overRideValue, tags, location}
       return response.data;
     });
   };
 
   //  Get foods by location
-  food.getLocation = function (locationData) {
-    return $http.get('food/location/' + locationData.name).then(function (response) {
+  food.getLocation = function (location) {
+    return $http.get('food/location/' + location).then(function (response) {
       //  Returns array of objects {_id, name, category, options, score, overRide, overRideValue, tags, location}
       return response.data;
     });

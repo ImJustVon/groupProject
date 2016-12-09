@@ -9,22 +9,22 @@ function CategoriesController(CategoryService, FoodService, $uibModal) {
   cat.categories = [];
 
   //  Get all categories from database
-  cat.getCategories = function() {
-    CategoryService.getCategories().then(function(response) {
+  cat.getCategories = function () {
+    CategoryService.getCategories().then(function (response) {
       console.log('Got categories, in cat.categories:', response);
       cat.categories = response;
     });
-  }
+  };
 
   //  Get all foods in a particular category
-  cat.getCategoryFoods = function(category) {
-    FoodService.getCategory(category).then(function(response) {
+  cat.getCategoryFoods = function (category) {
+    FoodService.getCategory(category).then(function (response) {
       console.log('Foods in chosen category, in cat.categoryFoods:', response);
       cat.categoryFoods = response;
       //  Send to FoodService, to be accessed in another view
       FoodService.foods.current = cat.categoryFoods;
     });
-  }
+  };
 
   //  Opens the feedback modal
   cat.openFeedback = function () {
@@ -32,10 +32,10 @@ function CategoriesController(CategoryService, FoodService, $uibModal) {
       templateUrl: 'views/modals/feedbackModal.html',
       controller: 'FeedbackController as feedback',
       resolve: {
-        type: function() {
+        type: function () {
           return 'Categories';
-        }
-      }
+        },
+      },
     });
   };
 
@@ -43,8 +43,8 @@ function CategoriesController(CategoryService, FoodService, $uibModal) {
   cat.getCategories();
 
 
-    // Back button
-    cat.back = function() {
-   window.history.back();
+  // Back button
+  cat.back = function () {
+    window.history.back();
   };
 }

@@ -1,7 +1,7 @@
 angular.module('routeApp')
   .controller('FoodController', FoodController);
 
-function FoodController(FoodService, $uibModal, $scope, $animate) {
+function FoodController(FoodService, $uibModal, $scope, $animate, $routeParams) {
 
   console.log('FoodController Loaded');
 
@@ -55,6 +55,12 @@ function FoodController(FoodService, $uibModal, $scope, $animate) {
             console.log('animatedShake', food.animatedShake);
           };
 
+  food.getOneFood = function () {
+    FoodService.search($routeParams.food).then(function (response) {
+      food.chosenFood = response[0];
+    });
+  };
+
   //  Opens the feedback modal
   food.openFeedback = function () {
     var modalInstance = $uibModal.open({
@@ -73,4 +79,5 @@ function FoodController(FoodService, $uibModal, $scope, $animate) {
     window.history.back();
   };
 
+  food.getOneFood();
 }

@@ -15,7 +15,7 @@
 
     <section class='categories-list'>
 
-      <a href="/results" ng-repeat='category in cat.categories' ng-click="cat.getCategoryFoods(category)">
+      <a href="/category-results/{{category.name}}" ng-repeat='category in cat.categories' ng-click="cat.getCategoryFoods(category)">
         <div class='row category'>
           <div class='col-xs-6 category-name'>
             <span>{{ category.name }}</span>

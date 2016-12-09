@@ -9,13 +9,16 @@ angular.module('routeApp')
           }).when('/locations', {
             templateUrl: 'views/locations.html',
             controller: 'LocationController as location',
-          }).when('/user-landing', {
+          }).when('/landing', {
             templateUrl: 'views/user-landing.html',
             controller: 'UserLandingController as user',
           }).when('/admin', {
             templateUrl: 'views/admin.html',
             controller: 'AdminController as admin',
-          }).when('/results', {
+          }).when('/location-results/:location', {
+            templateUrl: 'views/results.html',
+            controller: 'ResultsController as results',
+          }).when('/category-results/:category', {
             templateUrl: 'views/results.html',
             controller: 'ResultsController as results',
           }).when('/categories', {
@@ -24,14 +27,14 @@ angular.module('routeApp')
           }).when('/report', {
             templateUrl: 'views/report.html',
             controller: 'ReportController as report',
-          }).when('/chosen-food', {
+          }).when('/chosen-food/:food', {
             templateUrl: 'views/chosen-food.html',
             controller: 'FoodController as food',
           }).when('/user-feedback', {
             templateUrl: 'views/user-feedback.html',
             controller: 'ReportController as report',
           }).otherwise({
-              redirectTo: '/home',
+              redirectTo: '/landing',
             });
 
           $locationProvider.html5Mode(true);

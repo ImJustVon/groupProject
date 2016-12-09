@@ -15,7 +15,7 @@
 
     <section class='locations-list'>
 
-      <a href="/results" ng-repeat='venue in location.locations' ng-click="location.getLocationFoods(venue)">
+      <a href="/location-results/{{venue.name}}" ng-repeat='venue in location.locations' ng-click="location.getLocationFoods(venue)">
         <div class='row location'>
           <div class='col-xs-6 location-name'>
             <span>{{ venue.name }}</span>
