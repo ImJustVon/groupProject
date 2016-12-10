@@ -8,7 +8,9 @@ function FoodController(FoodService, $uibModal, $scope, $animate, $routeParams) 
   var food = this;
 
   food.chosenFood = FoodService.chosen;
+
   console.log(food.chosenFood);
+
   food.animatedShake = false;
   // If an option is checked, its modifer score is applied to the food score
   food.modifyScore = function (option) {

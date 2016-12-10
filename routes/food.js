@@ -75,13 +75,14 @@ router.post('/csv', function (req, res) {
   console.log('records: ', records);
   var arrayOfFoods = [];
   var arrayOfFoodPromises = [];
+  var missingArray = [];
 
   function foodComposer(optionsArray, food) {
     var promiseArray = [];
     return new Promise(
       function (resolve, reject) {
 
-      for (var index = 0; index < optionsArray.length; index++) {
+      for (let index = 0; index < optionsArray.length; index++) {
 
         console.log('optionsArray[index]:', optionsArray[index]);
         var search = new RegExp(optionsArray[index], 'i');
@@ -92,6 +93,8 @@ router.post('/csv', function (req, res) {
             food.options.push(dataFromTheDatabase._doc);
             console.log('dataFromTheDatabase:', dataFromTheDatabase._doc);
             console.log('food:', food);
+          }).catch(function () {
+            missingArray.push(optionsArray[index]);
           });
 
         promiseArray.push(promise);
@@ -122,20 +125,17 @@ router.post('/csv', function (req, res) {
     records[countOfFoods].options = [];
     var food = records[countOfFoods];
     console.log('food before loop', food);
-    arrayOfFoodPromises.push(foodComposer(optionsArray, food));
+    arrayOfFoodPromises.push(foodComposer(optionsArray, food).then(function (food) {
+      var foodToSave = new Food(food);
+      foodToSave.save(foodToSave);
+      arrayOfFoods.push(food);
+    }));
 
   }
 
   Promise.all(arrayOfFoodPromises).then(function () {
-      arrayOfFoodPromises.forEach(function (promise) {
-        promise.then(function (food) {
-          var foodToSave = new Food(food);
-          foodToSave.save(foodToSave);
-          arrayOfFoods.push(food);
-        });
-      });
-
-      res.sendStatus(201);
+      console.log(missingArray);
+      res.send(missingArray).status(201);
       console.log('foodArray:', arrayOfFoods);
     });
 });
