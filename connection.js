@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 exports.connect = function () {
-  mongoose.connect('mongodb://localhost/chefmarshall');
+  mongoose.connect(process.env.MONGODB_URI);
 
   var db = mongoose.connection;
   db.on('error', function (error) {
