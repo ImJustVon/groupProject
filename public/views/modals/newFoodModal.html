@@ -36,14 +36,14 @@
     <label for="category">Category:</label>
         <select ng-model="new.category" name="category">
           <option disabled value="initial">Category</option>
-          <option ng-repeat="category in new.categories" ng-value="{{category.name}}">{{category.name.replace('_', ' ')}}</option>
+          <option ng-repeat="category in new.categories" value="{{category.name}}" ng-value="{{category.name}}">{{category.name.replace('_', ' ')}}</option>
         </select>
 &nbsp;
     <!-- LOCATION -->
     <label for="location">Location:</label>
         <select ng-model="new.location" name="location">
           <option disabled value="initial">Location</option>
-          <option ng-repeat="location in new.locations" ng-value="{{location.name}}">{{location.name.replace('_', ' ')}}</option>
+          <option ng-repeat="location in new.locations" value="{{location.name}}" ng-value="{{location.name}}">{{location.name.replace('_', ' ')}}</option>
         </select>
 
 
