@@ -41,8 +41,7 @@
     <!-- LOCATION -->
     <label for="location">Location:</label>
         <select ng-model="new.location" name="location">
-          <option disabled value="initial">Location</option>
-          <option ng-repeat="location in new.locations" value="{{location.name}}" ng-value="{{location.name}}">{{location.name.replace('_', ' ')}}</option>
+          <option ng-repeat="location in new.locations" value="{{location.name}}">{{location.name.replace('_', ' ')}}</option>
         </select>
 
 
