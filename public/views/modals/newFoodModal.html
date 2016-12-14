@@ -35,8 +35,7 @@
     <!-- CATEGORY -->
     <label for="category">Category:</label>
         <select ng-model="new.category" name="category">
-          <option disabled value="initial">Category</option>
-          <option ng-repeat="category in new.categories" value="{{category.name}}">{{category.name.replace('_', ' ')}}</option>
+          <option ng-repeat="category in new.categories" ng-value="{{category.name}}">{{category.name.replace('_', ' ')}}</option>
         </select>
 &nbsp;
     <!-- LOCATION -->
