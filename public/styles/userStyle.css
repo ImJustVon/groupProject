@@ -42,18 +42,36 @@ li {
 }
 
 
+
 /*---------------------------------------------------------------------------
 User Landing Page
 ----------------------------------------------------------------------------*/
 
 .landing-page {
-    background: linear-gradient(#b3ee8f, white);
+    background: linear-gradient(white, #b3ee8f);
     positon: fixed;
     height: 100%;
 }
 
 .banner {
-    background: linear-gradient(#358e43, #59aa46, #b3ee8f, #b3ee8f);
+    /*background: linear-gradient(#358e43, #59aa46, #b3ee8f, #b3ee8f);*/
+}
+
+.head-nav {
+  background-color: lightgrey;
+  height: 20px;
+  margin-top: 3px;
+}
+
+.head-nav img {
+  height: 17px;
+  margin-top: -5px;
+}
+
+.head-nav p {
+  margin-left: 10px;
+  font-size: 17px;
+  color: #f47920;
 }
 
 
@@ -76,6 +94,12 @@ User Landing Page
 
 .home img {
     margin-top: 25px;
+}
+
+.home p {
+  margin-top: 30px;
+  color: #f47920;
+  font-size: 15px;
 }
 
 header.row.banner img {
@@ -108,7 +132,7 @@ button.btn {
 }
 
 .where-image p, .categories-image p {
-    font-size: 30px;
+    font-size: 25px;
     padding-top: 10px;
 }
 
