@@ -17,7 +17,7 @@
     </section>
 
     <section class="row search-results" ng-show="user.search">
-      <a href="/chosen-food/:{{food.name}}" ng-repeat="food in user.searchResult" ng-click="user.chosenFood(food)">
+      <a href="/chosen-food/{{food.name}}" ng-repeat="food in user.searchResult" ng-click="user.chosenFood(food)">
         <div class="row search-result">
           <div class="col-xs-6 food-name">
             <span>{{ food.name }}</span>
