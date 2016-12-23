@@ -4,7 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const connection = require('./connection');
 const favicon = require('serve-favicon');
-//const passport = require('passport'); Should be in auth/setup.js
+const passport = require('passport');
 const session = require('express-session');
 
 //passport
@@ -22,11 +22,11 @@ auth.setup();
 const app = express();
 
 //  Middleware
+app.use(passport.initialize());
 app.use(session(sessionConfig));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
-app.use(passport.initialize());
 app.use(passport.session());
 
 //  Declare routes
@@ -39,7 +39,6 @@ const category = require('./routes/category');
 const location = require('./routes/location');
 const type = require('./routes/type');
 const login = require('./routes/login');
-const register = require('./routes/register');
 
 //  Connect routes
 app.use('/food', food);

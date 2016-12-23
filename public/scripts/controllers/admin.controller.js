@@ -2,12 +2,14 @@ angular.module('routeApp').controller('AdminController', AdminController);
 
 function AdminController(FoodService, CategoryService, LocationService, $uibModal, $log, $document, DeleteService, ReportService) {
   var admin = this;
+  console.log('AdminController Loaded');
 
   admin.animationsEnabled = true;
 
   admin.allFoods = [];
   admin.isOpenNew = false;
   admin.isOpenEdit = false;
+
 
   admin.openNewCategory = function () {
     var modalInstance = $uibModal.open({
