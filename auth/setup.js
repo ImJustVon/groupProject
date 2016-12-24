@@ -1,6 +1,6 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const Admin = ('../models/admin');
+const User = ('../models/admin');
 
 exports.setup = function() {
   // passport configuration
@@ -17,7 +17,7 @@ exports.setup = function() {
 
   // converts a user id to a user
   passport.deserializeUser(function(id, done){
-    Admin.findById(id).then(function(user){
+    User.findById(id).then(function(user){
       done(null, user);
     }).catch(function(err){
       done(err);
@@ -27,8 +27,10 @@ exports.setup = function() {
 
 function findAndComparePassword (username, password, done) {
   // look up the user by their username
-  Admin.findOne({ username: username }).then(function(user){
+  User.findOne({ username: username }).then(function(user){
     if(!user) {
+      //didn't find a user with the same username
+      console.log('Failed to find user with username: ', username);
       return done(null, false);
     }
 

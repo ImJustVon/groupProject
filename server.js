@@ -6,9 +6,11 @@ const connection = require('./connection');
 const favicon = require('serve-favicon');
 const passport = require('passport');
 const session = require('express-session');
+const app = express();
 
 //passport
 const auth = require('./auth/setup');
+auth.setup();
 const sessionConfig = {
   secret: 'admin only',
   key: 'admin', //not quite sure what this does so keep that in mind
@@ -17,16 +19,14 @@ const sessionConfig = {
 };
 
 connection.connect();
-auth.setup();
 
-const app = express();
 
 //  Middleware
-app.use(passport.initialize());
 app.use(session(sessionConfig));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.use(passport.initialize());
 app.use(passport.session());
 
 //  Declare routes

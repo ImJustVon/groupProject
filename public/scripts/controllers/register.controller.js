@@ -1,7 +1,7 @@
 angular.module('routeApp')
        .controller('RegisterController', RegisterController);
 
-function RegisterController($http, $location) {
+function RegisterController($http, $location, $uibModalInstance) {
   console.log('RegisterController Loaded');
   var register = this;
 
