@@ -43,7 +43,6 @@ const login = require('./routes/login');
 //  Connect routes
 app.use('/food', food);
 app.use('/feedback', feedback);
-app.use('/register', register);
 app.use('/reports', reports);
 app.use('/options', options);
 app.use('/category', category);
