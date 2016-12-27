@@ -6,6 +6,7 @@ const connection = require('./connection');
 const favicon = require('serve-favicon');
 const passport = require('passport');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const app = express();
 
 //passport
@@ -15,7 +16,8 @@ const sessionConfig = {
   secret: 'admin only',
   key: 'admin', //not quite sure what this does so keep that in mind
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {maxAge: 30 * 60 * 1000, secure: false}
 };
 
 connection.connect();
@@ -23,6 +25,7 @@ connection.connect();
 
 //  Middleware
 app.use(session(sessionConfig));
+app.use(cookieParser()); //Do I need this? NOt sure
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -61,7 +64,7 @@ app.get('/*', function (req, res) {
 
 app.use(ensureAuthenticated);
 
-app.get('/adminAccess', function(req, res){ // I don't understand what this is doing
+app.get('/admin', function(req, res){ // I don't understand what this is doing
   res.send('Access Granted.'); // Or this...
 });
 
