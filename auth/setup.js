@@ -1,6 +1,6 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const User = ('../models/admin');
+const User = require('../models/admin');
 
 exports.setup = function() {
   // passport configuration
