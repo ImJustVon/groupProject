@@ -17,4 +17,8 @@ function RegisterController($http, $location, $uibModalInstance) {
         console.log('Error registering new admin!', err);
     });
   };
+
+  register.cancel = function() {
+      $uibModalInstance.close();
+  };
 }// End of controller

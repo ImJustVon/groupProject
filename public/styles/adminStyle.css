@@ -94,6 +94,12 @@ select {
   margin-left: -10px;
 }
 
+#registration-link {
+  bottom: 0;
+  position: absolute;
+  font-size: 10px;
+}
+
 /* ----------- FOOD TABLE ----------- */
 
 #admin-content h2 {

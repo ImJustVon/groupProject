@@ -11,7 +11,7 @@ function LoginController($http, $location) {
       username: login.username,
       password: login.password
     }).then(function(response){
-      console.log(response);
+      $location.path('/admin');
     }, function(err){
       console.log('Error logging in', err);
     });
