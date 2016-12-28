@@ -10,7 +10,8 @@ function RegisterController($http, $location, $uibModalInstance) {
     console.log(register.username, register.password);
     $http.post('/register', {
       username: register.username,
-      password: register.password
+      password: register.password,
+      role: "admin"
     }).then(function(){
       $location.path('/admin');
     }, function(err){

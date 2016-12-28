@@ -17,7 +17,9 @@ const sessionConfig = {
   key: 'admin', //not quite sure what this does so keep that in mind
   resave: true,
   saveUninitialized: true,
-  cookie: {maxAge: 30 * 60 * 1000, secure: false}
+  cookie: {maxAge: 30 * 60 * 1000,
+  secure: false
+  }
 };
 
 connection.connect();
@@ -53,6 +55,8 @@ app.use('/location', location);
 app.use('/type', type);
 app.use('/login', login);
 app.use('/register', register);
+app.use('/admin', ensureAuthenticated);
+app.use('/user-feedback', ensureAuthenticated);
 
 //favicon
 app.use(favicon(__dirname + '/public/assets/images/web-art/favicon.ico'));
