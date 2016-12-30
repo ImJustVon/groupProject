@@ -1,0 +1,19 @@
+<section class="modal-upload" id="register-admin">
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <h3>Register New Administrator</h3>
+    <hr />
+
+    <form id="new-admin-form" ng-submit="submitNewAdmin()">
+      <input type="text" class="form-control" ng-model="register.username" placeholder="Email Address..." />
+      <input type="password" class="form-control" ng-model="register.password" placeholder="Password..." />
+    </form>
+
+    <button class="btn end-button" id="admin-btn" ng-click="register.cancel()">Cancel</button>
+    <button class="btn btn-success end-button" ng-click="register.confirm()" id="admin-btn">Register</button>
+
+  </div>
+  <div class="col-md-1"></div>
+</div>
+</section>

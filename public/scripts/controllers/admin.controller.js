@@ -2,12 +2,14 @@ angular.module('routeApp').controller('AdminController', AdminController);
 
 function AdminController(FoodService, CategoryService, LocationService, $uibModal, $log, $document, DeleteService, ReportService) {
   var admin = this;
+  console.log('AdminController Loaded');
 
   admin.animationsEnabled = true;
 
   admin.allFoods = [];
   admin.isOpenNew = false;
   admin.isOpenEdit = false;
+
 
   admin.openNewCategory = function () {
     var modalInstance = $uibModal.open({
@@ -40,6 +42,14 @@ function AdminController(FoodService, CategoryService, LocationService, $uibModa
     });
     modalInstance.result.then(admin.getEverything);
   }; // end admin.openNewLocation
+
+  admin.openAdmin = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: 'views/modals/newAdminModal.html',
+      controller: 'RegisterController as register',
+    });
+    modalInstance.result.then(admin.getEverything);
+  } // end of admin.openAdmin
 
   admin.editFood = function (food) {
     //  Assign edited food to FoodService
