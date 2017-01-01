@@ -5,17 +5,29 @@ const SALT_ROUNDS = 10;
 const userSchema = new mongoose.Schema({
   username: String,
   password: String,
-  role: String
+  role: String,
 });
 
-//Ensure that every new user's password is hashed(encrypted)
+// make sure that everytime we save a user, the password gets hashed
+userSchema.pre('save', function (done) {
+  const user = this;
+  console.log(user.password);
+  bcrypt.hash(user.password, SALT_ROUNDS, function (err, hash) {
+    if (err) {
+      console.log('Error hashing password', err);
+      return done(new Error('Error hashing password'));
+    }
 
+    user.password = hash;
+    done();
+  });
+});
 
-userSchema.methods.comparePassword = function(password) {
+userSchema.methods.comparePassword = function (password) {
   const user = this;
 
-  return new Promise(function(resolve){
-    bcrypt.compare(password, user.password, function(err, match){
+  return new Promise(function (resolve) {
+    bcrypt.compare(password, user.password, function (err, match) {
       if (err) {
         console.log('Error comparing password', err);
         return resolve(false);
@@ -25,20 +37,6 @@ userSchema.methods.comparePassword = function(password) {
     });
   });
 };
-
-userSchema.pre('save', hashPassword);
-
-function hashPassword(next) {
-  const user = this;
-  bcrypt.hash(user.password, SALT_ROUNDS, function(err, hash){
-    if(err) {
-      console.log(err);
-      return next(new Error('Error hashing password'));
-    }
-    user.password = hash;
-    next();
-  });
-}
 
 const User = mongoose.model('User', userSchema);
 

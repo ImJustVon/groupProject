@@ -17,9 +17,9 @@ const sessionConfig = {
   key: 'admin', //not quite sure what this does so keep that in mind
   resave: true,
   saveUninitialized: true,
-  cookie: {maxAge: 30 * 60 * 1000,
-  secure: false
-  }
+  cookie: { maxAge: 30 * 60 * 1000,
+    secure: false,
+  },
 };
 
 connection.connect();
@@ -68,7 +68,7 @@ app.get('/*', function (req, res) {
 
 app.use(ensureAuthenticated);
 
-app.get('/admin', function(req, res){ // I don't understand what this is doing
+app.get('/admin', function (req, res) { // I don't understand what this is doing
   res.send('Access Granted.'); // Or this...
 });
 

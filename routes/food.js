@@ -26,17 +26,6 @@ saves search word in the searches database
 router.get('/search/:word', function (req, res) {
   var search = new RegExp('.*' + req.params.word + '.*', 'i');
   console.log('Search: ', search);
-  // Search.find({ word: { $regex: search } }).then(function (responseFromDatabase) {
-  //   console.log('response: ', responseFromDatabase);
-  //   console.log(responseFromDatabase.length);
-  //   if (responseFromDatabase.length === 0) {
-  //     var searchTerm = new Search({ word: req.params.word, count: 1 });
-  //     searchTerm.save();
-  //   } else {
-  //     console.log(responseFromDatabase[0]);
-  //     Search.update({ _id: responseFromDatabase[0]._id }, { $inc: { count: 1 } }).exec();
-  //   }
-  // });
 
   //checks the name for a match and the tags array for a matching index then returns the document
   Food.find({ $or: [{ name: { $regex: search } }, { 'tags.$': { $regex: search } }, { 'location.$': { $regex: search } }] }).then(function (dataFromTheDatabase) {

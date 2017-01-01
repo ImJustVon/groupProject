@@ -4,8 +4,8 @@ const Feedback = require('../models/feedback');
 /*
 Get all feedback items from the database
 */
-router.get('/', function(req, res) {
-  Feedback.find({}).then(function(dataFromTheDatabase) {
+router.get('/', function (req, res) {
+  Feedback.find({}).then(function (dataFromTheDatabase) {
     console.log('Feedback documents from Mongo:', dataFromTheDatabase);
     res.send(dataFromTheDatabase);
   });
@@ -18,18 +18,18 @@ req.body.content = string with feedback content
 req.body.date = date of feedback creation, created in server
 req.body.resolved = status of feedback item, initially set to false
 */
-router.post('/', function(req, res) {
+router.post('/', function (req, res) {
   var feedbackToSave = new Feedback({
     type: req.body.type,
     content: req.body.content,
     date: Date.now(),
-    resolved: false
+    resolved: false,
   });
   console.log('Feedback to save:', feedbackToSave);
-  feedbackToSave.save().then(function() {
+  feedbackToSave.save().then(function () {
     console.log('Saved feedback entry');
     res.sendStatus(201);
-  }).catch(function(err) {
+  }).catch(function (err) {
     console.log('Error saving feedback:', err);
     res.sendStatus(500);
   });
@@ -39,8 +39,8 @@ router.post('/', function(req, res) {
 Updates a feedback entry
 Takes form {_id, type, content, date, resolved}
 */
-router.put('/:id', function(req, res) {
-  Feedback.update({ _id: req.params.id }, req.body).then(function() {
+router.put('/:id', function (req, res) {
+  Feedback.update({ _id: req.params.id }, req.body).then(function () {
     console.log('Updated feedback entry');
     res.sendStatus(204);
   });
@@ -49,9 +49,9 @@ router.put('/:id', function(req, res) {
 /*
 Deletes a feedback entry by _id
 */
-router.delete('/:id', function(req, res) {
+router.delete('/:id', function (req, res) {
   console.log('Deleting:', req.params.id);
-  Feedback.remove({ _id: req.params.id }).then(function() {
+  Feedback.remove({ _id: req.params.id }).then(function () {
     res.sendStatus(204);
   });
 });
