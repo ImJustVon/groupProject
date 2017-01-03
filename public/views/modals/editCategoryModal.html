@@ -14,7 +14,7 @@
     <tbody>
       <tr ng-repeat="category in edit.categories">
       <td><input type="text" ng-value="category.name" /></td>
-      <td><button class="btn btn-info" id="table-mod">Edit</button><button class="btn btn-warning" id="table-mod">Delete</button></td>
+      <td><button class="btn btn-info" id="table-mod" ng-click="edit.updateCategory(category)">Edit</button><button class="btn btn-warning" id="table-mod" ng-click="edit.deleteCategory(category)">Delete</button></td>
       </tr>
     </tbody>
   </table>
