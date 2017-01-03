@@ -12,6 +12,13 @@ function EditCategoryAdminController($uibModalInstance, CategoryService) {
     });
   }
 
+  admin.updateCategory = function(category) {
+    console.log('Update category data:', category);
+  }
+
+  admin.deleteCategory = function(category) {
+    console.log('Delete category data:', category);
+  }
 
   admin.cancel = function() {
     $uibModalInstance.close();
